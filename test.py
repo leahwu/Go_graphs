@@ -1,7 +1,8 @@
 import networkx as nx
 from ValidDegree import *
 from PowerLawDistribution import *
-import SimpleDirectedGraph as sdg
+import SimpleDirectedGraph as SDG
+import matplotlib.pyplot as plt
 
 
 # assign the parameters
@@ -19,12 +20,13 @@ fg = PowerLaw(a, b, alpha, beta)
 bi_seq = directed_gen(alpha, beta, fg, n)
 
 # generate simple directed configuration graph
-D = sdg.gen_simple_DCM(bi_seq)
-sdg.plot_hist(D)
+D = SDG.gen_simple_DCM(bi_seq)
+
+# plot the degree distribution
+plt.figure(1)
+SDG.plot_hist(D, 'ErasedAlg_Power_law_degree_distribution')
 
 # plot the graph
-draw_exp = directed_gen(alpha, beta, fg, 100)
-draw_graph = sdg.gen_simple_DCM(draw_exp)
-# plot the graph
-sdg.plot_graph(draw_graph)
+plt.figure(2)
+SDG.plot_graph(D, 'ErasedAlg_Graph')
 

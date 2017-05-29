@@ -21,16 +21,18 @@ def gen_simple_DCM( bi_degree ):
     return dcm
 
 
-def plot_graph(G):
+def plot_graph(G, title):
     pos = nx.spring_layout(G)
-    nx.draw(G, pos, arrows = True)
-    pylab.show()
+    nx.draw(G, pos, arrows = True, node_size=0.5)
+    plt.title(title)
+    plt.savefig(title + '.eps')
 
-def plot_hist(G):
+
+
+def plot_hist(G, title):
     in_degrees = G.in_degree()  # dictionary node:degree
     in_values = sorted(set(in_degrees.values()))
     in_hist = [Counter(in_degrees.values())[x] for x in in_values]
-    plt.figure()
     plt.plot(in_values, in_hist,'ro-')  # in-degree
 
     out_degrees = G.out_degree()
@@ -41,5 +43,5 @@ def plot_hist(G):
     plt.legend(['In-degree', 'Out-degree'])
     plt.xlabel('Degree')
     plt.ylabel('Number of nodes')
-    plt.title('Power law simulation network')
-    plt.savefig('Power_law_degree_distribution.pdf')
+    plt.title(title)
+    plt.savefig(title + '.eps')
