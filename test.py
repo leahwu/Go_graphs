@@ -1,8 +1,6 @@
-from ValidDegree import *
 import SDGErased as SDG
+import CDMGenerator as cdm_g
 import matplotlib.pyplot as plt
-from PowerLawDistribution import *
-from ValidDegree import *
 import time
 
 start = time.clock()
@@ -16,14 +14,12 @@ b = 2
 
 n = 2000 # simulation times
 
-# the Power Law Distribution
-fg = PowerLaw(a, alpha, beta, b)
 
-# generate the sample of power law distribution
-bi_seq = directed_gen(alpha, beta, fg, n)
 
-# generate simple directed configuration graph
-D = SDG.gen_simple_DCM(bi_seq)
+# generate simple directed configuration model
+dcm = cdm_g.CDMGenerator(a,alpha, beta, n, 'Erased')
+D = dcm.graph
+
 
 # plot the bi-degree distribution with generated simple DCM degree distribution
 fig =plt.figure(1,figsize=(6,4))
@@ -35,13 +31,13 @@ SDG.plot_hist(D, 'ErasedAlg_Power_law_degree_distribution')
 
 # plot the sequence degree distribution
 sub2 = fig.add_subplot(2,2,3)
-plt.hist(bi_seq[0], bins ="auto", color = 'r' )
-plt.hist(bi_seq[1], bins ="auto", color = 'b')
+plt.hist(D.bi_seq[0], bins ="auto", color = 'r' )
+plt.hist(D.bi_seq[1], bins ="auto", color = 'b')
 plt.legend(['In-degree', 'Out-degree'])
 
 # plot the sequence degree bivariate distribution
 sub3 = fig.add_subplot(2,2,4)
-plt.hist2d(bi_seq[0],bi_seq[1])
+plt.hist2d(D.bi_seq[0],D.bi_seq[1])
 cbar = plt.colorbar()
 cbar.ax.set_ylabel('Counts')
 plt.xlabel('In-degree')

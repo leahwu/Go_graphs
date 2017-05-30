@@ -4,7 +4,7 @@ import pylab
 from collections import Counter
 
 # generate the simple directed configuration graph from the sample bi-degree sequence
-def gen_simple_DCM( bi_degree ):
+def gen_simple_DCM(bi_degree):
     # convert the bi-seq array to list
     d_in = bi_degree[0].tolist()
     d_out = bi_degree[1].tolist()
