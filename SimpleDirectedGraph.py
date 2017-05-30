@@ -45,3 +45,4 @@ def plot_hist(G, title):
     plt.ylabel('Number of nodes')
     plt.title(title)
     plt.savefig(title + '.eps')
+

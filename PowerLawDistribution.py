@@ -1,5 +1,6 @@
 import numpy as np
-from scipy.stats import rv_continuous, rv_discrete, poisson, describe, histogram, randint
+import matplotlib.pyplot as plt
+from scipy.stats import rv_continuous, rv_discrete, poisson, describe
 
 
 class GenerateW(rv_continuous):
@@ -15,18 +16,30 @@ class PowerLaw:
     
     """
 
-    def __init__(self, a, b, alpha, beta):
-        self.a = a # floor for W+
-        self.b = b # floor for W-
-        self.alpha = alpha # power for W+
-        self.beta = beta # power for W-
+    def __init__(self, a, alpha, beta, b = 2):
+        # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
+        # b equals to c, could be assigned with any positive values, we default it as b = 2
+        if alpha == beta:
+            self.a = 1
+            self.b = b
+        else:
+            self.a = a # floor for W+
+            # calculating the floor for W+ b using alpha and beta
+            self.b = (alpha / (alpha - 1) * (beta - 1) / beta * a ** (alpha / beta)) ** (beta / (alpha - beta))
+
+        self.alpha = alpha  # power for W+
+        self.beta = beta  # power for W-
 
         self.d = beta / alpha  # power dependence between W+ and W-
         self.c = (b / a) ** (alpha / beta)  # W- ceiling
         self.wgenerator = GenerateW( a=self.c, name="wnegerator")
 
-    # method to generate one sample (d+, d-)
+
     def gene_one_pair(self):
+        """
+        method to generate one sample (d+, d-)
+        :return: tuple with a pair of d+ and d- 
+        """
         w_minus = self.wgenerator(floor=self.c, tao=self.beta).rvs()
         w_plus = self.a * w_minus ** self.d
         # derive the sample degree from W+ and W-
@@ -34,8 +47,12 @@ class PowerLaw:
         d_minus = int(poisson(mu=w_minus).rvs())
         return d_plus, d_minus
 
-    # method to generate n sample pairs from the distribution
     def iid(self, n):
+        """
+        # method to generate n sample pairs from the distribution
+        :param n: number of sample pairs
+        :return: tuple of n sample sequence pairs 
+        """
         d_out = np.zeros(n, dtype=np.int)
         d_in = np.zeros(n, dtype=np.int)
         for i in range(0, n):
@@ -44,5 +61,40 @@ class PowerLaw:
             d_out[i] = pair[1]
 
         return d_in, d_out
+
+def difference(bi_degree):
+    """
+    # a function that returns the difference between in-degree sequence and out-degree sequence
+    :param bi_degree: the sample of bidegree sequence
+    :return: the difference 
+    """
+    in_sum = sum(bi_degree[0])
+    out_sum = sum(bi_degree[1])
+    # denote delta_n as the difference
+    delta_n = in_sum - out_sum
+    return delta_n
+
+# test for the convergence of bi_degree sequence
+N = range(1000,6000,1000)
+a = 1
+alpha = 2
+
+def test_beta(beta, rep):
+    power_law = PowerLaw(a, alpha, beta)
+    relative_diff = []
+    for n in N:
+        # generate the sequence with sample size n
+        diff_arr = np.zeros(rep)
+        for i in range(rep):
+            bi_seq = power_law.iid(n)
+            diff_arr[i] = difference(bi_seq)
+
+        # get the average sequence degree difference
+        diff = np.average(diff_arr)
+        # use the relative with n to measure the convergence
+        relative_diff += [diff/n]
+    return relative_diff
+
+
 
 
