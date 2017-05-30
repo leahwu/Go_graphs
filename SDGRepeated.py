@@ -33,7 +33,7 @@ def plot_graph(G, title):
     pos = nx.spring_layout(G)
     nx.draw(G, pos, arrows = True, node_size=0.5)
     plt.title(title)
-    plt.savefig(title + '.eps')
+    plt.savefig(title)
 
 
 
@@ -52,4 +52,4 @@ def plot_hist(G, title):
     plt.xlabel('Degree')
     plt.ylabel('Number of nodes')
     plt.title(title)
-    plt.savefig(title + '.eps')
+    plt.savefig(title)
