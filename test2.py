@@ -1,4 +1,4 @@
-import CDMGenerator as cdm_g
+import DCMGenerator as cdm_g
 import SDGRepeated as SDGr
 import matplotlib.pyplot as plt
 import time

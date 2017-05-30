@@ -1,4 +1,4 @@
-import CDMGenerator as cdm_g
+import DCMGenerator as cdm_g
 import networkx as nx
 import operator
 
@@ -39,11 +39,11 @@ bc_vs_pk(D_era)
 # Inhomogenuous bi-degree
 beta = 2.5  # setting beta to 2.5
 
-indcm_era = cdm_g.CDMGenerator(a,alpha, beta, n,'Erased')
+#indcm_era = cdm_g.CDMGenerator(a,alpha, beta, n,'Erased')
 
-inD_era =  indcm_era.graph
+#inD_era =  indcm_era.graph
 
-bc_vs_pk(inD_era)
+#bc_vs_pk(inD_era)
 
 # consider the enhanced out-degree case (a = 1.1 & beta = 2.5)
 indcm2_era = cdm_g.CDMGenerator(1.01,alpha, beta, n,'Erased')

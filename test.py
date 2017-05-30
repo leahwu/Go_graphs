@@ -1,5 +1,5 @@
 import SDGErased as SDG
-import CDMGenerator as cdm_g
+import DCMGenerator as cdm_g
 import matplotlib.pyplot as plt
 import time
 
