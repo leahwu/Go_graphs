@@ -22,6 +22,7 @@ fig =plt.figure(2,figsize=(6,4))
 fig.subplots_adjust(bottom=0.025, left=0.025, top = 0.975, right=0.975)
 sub4 = fig.add_subplot(2,2, (1,2))
 SDG.plot_hist(D_beta, 'Power_law_degree_different_power')
+SDG.plot_graph(D_beta, 'ErasedAlg_Graph_Linear&Power')
 
 # plot the sequence degree distribution
 sub5 = fig.add_subplot(2,2,3)
@@ -43,4 +44,15 @@ bi_seq_a1 = directed_gen(alpha, beta, fg_a1, n)
 D_a1 = SDG.gen_simple_DCM(bi_seq_a1)
 plt.figure(4)
 SDG.plot_hist(D_a1, 'ErasedAlg_Power_law_degree_distribution_a=1.01 ')
+plt.figure(5)
+SDG.plot_graph(D_a1, 'ErasedAlg_Graph_Linear&Power')
 
+# test for linear dependent a = 1.5
+beta = 2
+fg_a2 = PowerLaw(2,alpha, beta)
+bi_seq_a2 = directed_gen(alpha, beta, fg_a2, n)
+D_a2 = SDG.gen_simple_DCM(bi_seq_a2)
+plt.figure(6)
+SDG.plot_hist(D_a2, 'ErasedAlg_Power_law_degree_distribution_a=2. ')
+plt.figure(7)
+SDG.plot_graph(D_a2, 'ErasedAlg_Graph_Linear')
