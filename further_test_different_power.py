@@ -1,6 +1,6 @@
 ## Case when alpha not equals to beta
 from ValidDegree import *
-import SimpleDirectedGraph as SDG
+import SDGErased as SDG
 import matplotlib.pyplot as plt
 from PowerLawDistribution import *
 from ValidDegree import *

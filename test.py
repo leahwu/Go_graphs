@@ -1,5 +1,5 @@
 from ValidDegree import *
-import SimpleDirectedGraph as SDG
+import SDGErased as SDG
 import matplotlib.pyplot as plt
 from PowerLawDistribution import *
 from ValidDegree import *
@@ -47,3 +47,5 @@ plt.ylabel('Out-degree')
 # plot the graph
 plt.figure(2)
 SDG.plot_graph(D, 'ErasedAlg_Graph')
+
+
