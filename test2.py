@@ -22,7 +22,7 @@ fig.subplots_adjust(bottom=0.025, left=0.025, top = 0.975, right=0.975)
 
 # plot the graph degree distribution
 sub1 = fig.add_subplot(2,2, (1,2))
-SDGr.plot_hist(D, 'Case2RevisedRepeatedAlg_Power_law_degree_distribution.png')
+SDGr.plot_hist(D, 'Case2RevisedRepeatedAlg_Power_law_degree_distribution')
 
 # plot the sequence degree distribution
 sub2 = fig.add_subplot(2,2,3)
@@ -40,7 +40,7 @@ plt.ylabel('Out-degree')
 
 # plot the graph
 plt.figure(2)
-SDGr.plot_graph(D, 'Case2RevisedRepeatedAlg_Graph.png')
+SDGr.plot_graph(D, 'Case2RevisedRepeatedAlg_Graph')
 
 
 elapsed = (time.clock() - start)
