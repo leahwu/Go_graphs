@@ -125,7 +125,7 @@ def directed_configuration_model_revised(in_degree_sequence,
     # shuffle stublists and assign pairs by removing 2 elements at a time
     random.shuffle(in_stublist)
     random.shuffle(out_stublist)
-    flag = True
+
     while in_stublist and out_stublist:
         source = out_stublist.pop()
         target = in_stublist.pop()
@@ -135,4 +135,4 @@ def directed_configuration_model_revised(in_degree_sequence,
         G.add_edge(source,target)
 
     G.name="directed configuration_model_revised %d nodes %d edges"%(G.order(),G.size())
-    return G, flag
+    return G

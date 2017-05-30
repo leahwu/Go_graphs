@@ -11,7 +11,7 @@ def gen_simple_DCM(bi_degree):
     d_out = bi_degree[1].tolist()
 
     # repeating generate the multigraph untill no parallel edges and self-loops
-    (dcm, flag) = dcm_r.directed_configuration_model_revised(d_in, d_out)
+    (dcm, flag) = dcm_r.directed_configuration_model_revised(d_in, d_out,)
     while flag == False:
         (dcm, flag) = dcm_r.directed_configuration_model_revised(d_in, d_out)
 
@@ -23,7 +23,8 @@ def gen_simple_DCM2(bi_degree):
     d_out = bi_degree[1].tolist()
 
     # repeating generate the multigraph untill no parallel edges and self-loops
-    (dcm, flag) = dcm_r2.directed_configuration_model_revised(d_in, d_out)
+    dcm = dcm_r2.directed_configuration_model_revised(d_in, d_out)
+    dcm = nx.DiGraph(dcm)
 
     return dcm
 

@@ -3,6 +3,9 @@ import SDGErased as SDG
 import matplotlib.pyplot as plt
 from PowerLawDistribution import *
 from ValidDegree import *
+import time
+
+start = time.clock()
 
 # assign the parameters
 # [Special Case [Alpha = Beta]]
@@ -48,4 +51,5 @@ plt.ylabel('Out-degree')
 plt.figure(2)
 SDG.plot_graph(D, 'ErasedAlg_Graph')
 
-
+elapsed = (time.clock() - start)
+print("Time used:",elapsed)

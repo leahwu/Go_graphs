@@ -3,13 +3,14 @@ import ValidDegree as VD
 import PowerLawDistribution as PLD
 import SDGRepeated as SDGr
 import matplotlib.pyplot as plt
+import time
 
-
+start = time.clock()
 
 # assign the parameters
 a = 1 # the floor for W+
 alpha = 2 # the power for W+
-beta = 2.5 # the power for W+
+beta = 2 # the power for W+
 b = 2
 n = 2000 # simulation times
 
@@ -49,3 +50,5 @@ plt.figure(2)
 SDGr.plot_graph(D, 'RevisedRepeatedAlg_Graph_2')
 
 
+elapsed = (time.clock() - start)
+print("Time used:",elapsed)
