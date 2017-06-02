@@ -46,7 +46,7 @@ class PowerLaw:
         d_minus = int(poisson(mu=w_minus).rvs())
         return d_plus, d_minus
 
-    def iid(self, n):
+    def rvs(self, n):
         """
         # method to generate n sample pairs from the distribution
         :param n: number of sample pairs
@@ -76,7 +76,7 @@ def difference(bi_degree):
 # test for the convergence of bi_degree sequence
 N = range(1000,6000,1000)
 a = 1
-alpha = 2
+alpha = 3
 
 def test_beta(beta, rep):
     power_law = PowerLaw(a, alpha, beta)
@@ -85,7 +85,7 @@ def test_beta(beta, rep):
         # generate the sequence with sample size n
         diff_arr = np.zeros(rep)
         for i in range(rep):
-            bi_seq = power_law.iid(n)
+            bi_seq = power_law.rvs(n)
             diff_arr[i] = difference(bi_seq)
 
         # get the average sequence degree difference
