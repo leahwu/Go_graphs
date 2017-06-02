@@ -73,12 +73,13 @@ def difference(bi_degree):
     delta_n = in_sum - out_sum
     return delta_n
 
+
 # test for the convergence of bi_degree sequence
 N = range(1000,6000,1000)
 a = 1
 alpha = 3
 
-def test_beta(beta, rep):
+def test_converg_speed(alpha, beta, N,  rep = 10, a = 1):
     power_law = PowerLaw(a, alpha, beta)
     relative_diff = []
     for n in N:
