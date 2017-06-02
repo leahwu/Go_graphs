@@ -20,7 +20,7 @@ def directed_gen(alpha, beta, fg, n):
     tol = n ** (1 - kappa + delta_0) # take the tolerance limit for delta_n
 
     # derive the sample bi-degree sequence
-    bi_seq = fg.iid(n)
+    bi_seq = fg.rvs(n)
     in_seq = bi_seq[0]  # the sample in-degree sequence
     out_seq = bi_seq[1]  # the sample out-degree sequence
     original = bi_seq
@@ -36,7 +36,7 @@ def directed_gen(alpha, beta, fg, n):
     # repeat sample generation until Delta_n is small enough to be "negligible"
     while abs(delta_n) > tol:
         # repeat the sample working
-        bi_seq = fg.iid(n)
+        bi_seq = fg.rvs(n)
         in_seq = bi_seq[0]
         out_seq = bi_seq[1]
 
