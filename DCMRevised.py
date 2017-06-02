@@ -132,6 +132,7 @@ def directed_configuration_model_revised(in_degree_sequence,
         if source == target or G.edges().__contains__((source, target)):
             flag = False
             print(source, target)
+            print(flag)
             break
         G.add_edge(source,target)
 
