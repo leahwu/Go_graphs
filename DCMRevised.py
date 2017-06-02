@@ -135,5 +135,6 @@ def directed_configuration_model_revised(in_degree_sequence,
             break
         G.add_edge(source,target)
 
-    G.name="directed configuration_model_revised %d nodes %d edges"%(G.order(),G.size())
+    G.name = "directed configuration_model_revised %d nodes %d edges"%(G.order(), G.size())
     return G, flag
+

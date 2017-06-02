@@ -8,9 +8,9 @@ start = time.clock()
 # assign the parameters
 # [Special Case [Alpha = Beta]]
 a = 1 # the floor for W+
-alpha = 2 # the power for W+
-beta = 2 # the power for W+
-b = 2
+alpha = 2.5 # the power for W+
+beta = 2.5 # the power for W+
+b = 2.5
 
 n = 2000 # simulation times
 

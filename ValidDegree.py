@@ -21,14 +21,16 @@ def directed_gen(alpha, beta, fg, n):
 
     # derive the sample bi-degree sequence
     bi_seq = fg.iid(n)
-    in_seq = bi_seq[0] # the sample in-degree sequence
-    out_seq = bi_seq[1] # the sample out-degree sequence
+    in_seq = bi_seq[0]  # the sample in-degree sequence
+    out_seq = bi_seq[1]  # the sample out-degree sequence
+    original = bi_seq
 
     # derive the Delta_n
     in_sum = sum(in_seq)
     out_sum = sum(out_seq)
     delta_n = in_sum - out_sum
 
+    i = 1
     # repeat sample generation until Delta_n is small enough to be "negligible"
     while abs(delta_n) > tol:
         # repeat the sample working
@@ -39,14 +41,16 @@ def directed_gen(alpha, beta, fg, n):
         in_sum = sum(in_seq)
         out_sum = sum(out_seq)
         delta_n = in_sum - out_sum
+        print(i)
+        i += 1
 
     if abs(delta_n) > 0:
         # derive random sample node's index  delta_i
         delta_i = random.sample(range(0, n), int(abs(delta_n)))
         for i in delta_i:
-            if delta_n > 0: # in-degree sequence sum is larger , increase the random out-degree
+            if delta_n > 0:  # in-degree sequence sum is larger , increase the random out-degree
                 out_seq[i] += 1
-            else: # out-degree is larger, increase the random in-degree
+            else:  # out-degree is larger, increase the random in-degree
                 in_seq[i] += 1
 
-    return in_seq, out_seq
+    return in_seq, out_seq, original

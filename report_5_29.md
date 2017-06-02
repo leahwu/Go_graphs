@@ -49,7 +49,7 @@ $$
 Furthermore, according to the conditions of Algorithm 2.1 to converge, the expectation of F and G should be equal. Conditional on W+ and W-, it suffices to let the expecation of W+ and W- to be equal. Thus, we have
 $$
 p(W^+) = \frac{d}{dt} (1-(\frac{x}{b})^{-\alpha}) = \frac{a}{b}(\frac{x}{b})^{-\alpha - 1} \\
-E(W^+) = \int_b^\infty xp(W^+) dx = \frac{\alpha b^\alpha}{\alpha-1}b^{1-\alpha} \\
+E(W^+) = \int_b^\infty xp(W^+) dx = \frac{\alpha b^\alpha}{\alpha-1}b^{1-\alpha} = \frac{b\alpha}{\alpha - 1}\\
 E(W^+) = E(W^-) \Rightarrow c = \frac{\alpha}{\beta}(\frac{\beta - 1}{\alpha - 1})b \qquad \qquad \qquad \qquad (2)
 $$
 By (1) & (2), we can derive

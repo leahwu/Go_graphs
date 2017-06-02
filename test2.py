@@ -6,18 +6,18 @@ import time
 start = time.clock()
 
 # assign the parameters
-a = 1 # the floor for W+
-alpha = 2 # the power for W+
-beta = 2 # the power for W+
+a = 1  # the floor for W+
+alpha = 2  # the power for W+
+beta = 2  # the power for W+
 b = 2
-n = 2000 # simulation times
+n = 2000  # size of the graph
 
 # generate simple directed configuration model
-dcm = cdm_g.CDMGenerator(a,alpha, beta, n, 'RevisedRepeated')
+dcm = cdm_g.CDMGenerator(a,alpha, beta, n, 'Repeated')
 D = dcm.graph
 
 # plot the bi-degree distribution with generated simple DCM degree distribution
-fig =plt.figure(1,figsize=(6,4))
+fig = plt.figure(1,figsize=(6,4))
 fig.subplots_adjust(bottom=0.025, left=0.025, top = 0.975, right=0.975)
 
 # plot the graph degree distribution

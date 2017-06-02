@@ -1,12 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import rv_continuous, rv_discrete, poisson, describe
+from scipy.stats import poisson, describe
 
 
-class GenerateW(rv_continuous):
-    # generate W power-law distribution
-    def _pdf(self, x, floor, tao ):
-        return (tao/floor) * (x / floor) ** (-tao-1)
+def generate_w(c, beta):
+    # generate r.v. w ~ (x/c)^{-\beta}
+    u = np.random.uniform(0, 1)
+    w = c * (1 - u)**(-1.0/beta)
+    return w
 
 
 class PowerLaw:
@@ -32,15 +33,13 @@ class PowerLaw:
 
         self.d = beta / alpha  # power dependence between W+ and W-
         self.c = (b / a) ** (alpha / beta)  # W- ceiling
-        self.wgenerator = GenerateW( a=self.c, name="wnegerator")
-
 
     def gene_one_pair(self):
         """
         method to generate one sample (d+, d-)
         :return: tuple with a pair of d+ and d- 
         """
-        w_minus = self.wgenerator(floor=self.c, tao=self.beta).rvs()
+        w_minus = generate_w(self.c, self.beta)
         w_plus = self.a * w_minus ** self.d
         # derive the sample degree from W+ and W-
         d_plus = int(poisson(mu=w_plus).rvs())

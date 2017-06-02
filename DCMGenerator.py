@@ -15,3 +15,7 @@ class CDMGenerator(object):
             self.graph = sdg_e.gen_simple_DCM(self.bi_seq)
         if algorithm == 'RevisedRepeated':
             self.graph = sdg_r.gen_simple_DCM2(self.bi_seq)
+        if algorithm == 'Repeated':
+            self.graph = sdg_r.gen_simple_DCM(self.bi_seq)
+
+

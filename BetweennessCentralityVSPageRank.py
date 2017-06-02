@@ -14,11 +14,11 @@ def bc_vs_pk(D):
     bc_sorted = sorted(bc.items(), key=operator.itemgetter(1), reverse=True)
     pr_sorted = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
 
-    bc_sorted_top20 = bc_sorted[0: 20]
-    pr_sorted_top20 = pr_sorted[0: 20]
+    bc_sorted_top = bc_sorted[0: 50]
+    pr_sorted_top = pr_sorted[0: 50]
 
-    print(bc_sorted_top20)
-    print(pr_sorted_top20)
+    print(bc_sorted_top)
+    print(pr_sorted_top)
 
 # Homogenuous bi-degree
 a = 1
@@ -50,4 +50,4 @@ indcm2_era = cdm_g.CDMGenerator(1.01,alpha, beta, n,'Erased')
 
 inD2_era =  indcm2_era.graph
 
-bc_vs_pk(indcm2_era)
+bc_vs_pk(inD2_era)

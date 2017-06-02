@@ -12,10 +12,11 @@ def gen_simple_DCM(bi_degree):
 
     # repeating generate the multigraph untill no parallel edges and self-loops
     (dcm, flag) = dcm_r.directed_configuration_model_revised(d_in, d_out,)
-    while flag == False:
+    while not flag:
         (dcm, flag) = dcm_r.directed_configuration_model_revised(d_in, d_out)
 
     return dcm
+
 
 def gen_simple_DCM2(bi_degree):
     # convert the bi-seq array to list
@@ -33,7 +34,7 @@ def plot_graph(G, title):
     pos = nx.spring_layout(G)
     nx.draw(G, pos, arrows = True, node_size=0.5)
     plt.title(title)
-    plt.savefig(title + '.png')
+    #plt.savefig(title + '.png')
 
 
 
@@ -52,4 +53,4 @@ def plot_hist(G, title):
     plt.xlabel('Degree')
     plt.ylabel('Number of nodes')
     plt.title(title)
-    plt.savefig(title + '.png')
+    #plt.savefig(title + '.png')
