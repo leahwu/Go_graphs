@@ -1,53 +1,25 @@
-import DCMGenerator as cdm_g
+import DCMGenerator as dg
 import networkx as nx
+import matplotlib.pyplot as plt
 import operator
 
-# define comparison function
-def bc_vs_pk(D):
-    """
-    
-    :param D: the simple DCM graph 
-    """
-    bc = nx.betweenness_centrality(D)
-    pr = nx.pagerank(D)
+dcm = dg.CDMGenerator(1, 3, 3.5, 2000, 'Erased')
+dcm.pk_vs_bc_plot()
+bc = dcm.betweeness_centrality
+pr = dcm.page_rank
+pr_sort = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
+pr_scores = [node[1] for node in pr_sort]
+bc_scores = [bc[node[0]] for node in pr_sort]
 
-    bc_sorted = sorted(bc.items(), key=operator.itemgetter(1), reverse=True)
-    pr_sorted = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
+# scale the bc_scores that it sums to 1 in comparison to page-rank
+bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
 
-    bc_sorted_top = bc_sorted[0: 50]
-    pr_sorted_top = pr_sorted[0: 50]
-
-    print(bc_sorted_top)
-    print(pr_sorted_top)
-
-# Homogenuous bi-degree
-a = 1
-b = 2
-alpha = 2
-beta = 2
-
-n = 2000
-
-dcm_era = cdm_g.CDMGenerator(a,alpha, beta, n,'Erased')
-dcm_rep = cdm_g.CDMGenerator(a,alpha, beta, n,'Erased')
-
-D_era = dcm_era.graph
-D_rep = dcm_rep.graph
-
-bc_vs_pk(D_era)
-
-# Inhomogenuous bi-degree
-beta = 2.5  # setting beta to 2.5
-
-#indcm_era = cdm_g.CDMGenerator(a,alpha, beta, n,'Erased')
-
-#inD_era =  indcm_era.graph
-
-#bc_vs_pk(inD_era)
-
-# consider the enhanced out-degree case (a = 1.1 & beta = 2.5)
-indcm2_era = cdm_g.CDMGenerator(1.01,alpha, beta, n,'Erased')
-
-inD2_era =  indcm2_era.graph
-
-bc_vs_pk(inD2_era)
+plt.figure(2)
+bc_100 = bc_scaled_scores[0:100]
+pr_100 = pr_scores[0:100]
+plt.plot(pr_100, 'ro', markersize=2)
+plt.plot(bc_100, 'bx', markersize=2)
+plt.legend(['Page_Rank', 'Betweeness_Centrality'])
+plt.xlabel('Node')
+plt.ylabel('Ranking')
+plt.title('Top100 nodes comparison between Pagerank and Betweeness centrality')
