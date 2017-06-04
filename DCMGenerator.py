@@ -22,11 +22,15 @@ class CDMGenerator(object):
         if algorithm == 'Repeated':
             self.graph = sdg_r.gen_simple_DCM(self.bi_seq)
 
+<<<<<<< HEAD
         self.graph_bi_seq = ([val for val in self.graph.in_degree().values()], [val for val in self.graph.out_degree().values()])
         # betweenness_centrality as attribute
         self.betweeness_centrality = nx.betweenness_centrality(self.graph)
         # page-rank
         self.page_rank = nx.pagerank(self.graph)
+=======
+        self.graph_bi_seq = (self.graph.in_degree(), self.graph.out_degree())
+>>>>>>> 08e07e1fea915f4fc0b57c260c79a06055de67a1
 
 
     def degrees_plot(self):
@@ -60,6 +64,7 @@ class CDMGenerator(object):
         plt.ylabel('Number of nodes')
         plt.xlim([0,40])
 
+<<<<<<< HEAD
     def wilx_test(self):
         in_seq = self.bi_seq[0]
         out_seq = self.bi_seq[1]
@@ -95,5 +100,8 @@ class CDMGenerator(object):
 
 
 
+=======
+        def stat_
+>>>>>>> 08e07e1fea915f4fc0b57c260c79a06055de67a1
 
 
