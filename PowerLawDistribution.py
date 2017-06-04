@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import poisson, describe
+from scipy.stats import poisson
 
 
 def generate_w(c, beta):
