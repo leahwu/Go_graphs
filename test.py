@@ -19,7 +19,13 @@ n = 2000 # simulation times
 
 # generate simple directed configuration model
 dcm = cdm_g.CDMGenerator(a,alpha, beta, n, 'Erased')
-D = dcm.graph
 
-# plot the bi-degree distribution with generated simple DCM degree distribution
+# plot the bi-degree distribution to compare with generated simple DCM degree distribution
 dcm.degrees_plot()
+
+#
+dcm.pr_vs_bc_plot()
+
+
+# calculate the rank corr of the dcm
+corr, pvalue = dcm.spearman_test()

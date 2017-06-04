@@ -16,7 +16,7 @@ def directed_gen(alpha, beta, fg, n):
 
     # derive kappa
     kappa = min(1 - 1/alpha, 1 - 1/beta, 1/2)
-    delta_0 = 9.99 / 10 * kappa  # take a fixed delta0
+    delta_0 = 9.95 / 10 * kappa  # take a fixed delta0
     tol = n ** (1 - kappa + delta_0) # take the tolerance limit for delta_n
 
     # derive the sample bi-degree sequence

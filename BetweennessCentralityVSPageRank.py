@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import operator
 
 dcm = dg.CDMGenerator(1, 3, 3.5, 2000, 'Erased')
-dcm.pk_vs_bc_plot()
+dcm.pr_vs_bc_plot()
 bc = dcm.betweeness_centrality
 pr = dcm.page_rank
 pr_sort = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
