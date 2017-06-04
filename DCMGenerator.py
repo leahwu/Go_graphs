@@ -1,8 +1,11 @@
 from collections import Counter
+from scipy.stats import wilcoxon
 import SDGErased as sdg_e
 import PowerLawDistribution as pld
 import matplotlib.pyplot as plt
 import SDGRepeated as sdg_r
+import networkx as nx
+import operator
 from ValidDegree import *
 
 
@@ -19,7 +22,15 @@ class CDMGenerator(object):
         if algorithm == 'Repeated':
             self.graph = sdg_r.gen_simple_DCM(self.bi_seq)
 
+<<<<<<< HEAD
+        self.graph_bi_seq = ([val for val in self.graph.in_degree().values()], [val for val in self.graph.out_degree().values()])
+        # betweenness_centrality as attribute
+        self.betweeness_centrality = nx.betweenness_centrality(self.graph)
+        # page-rank
+        self.page_rank = nx.pagerank(self.graph)
+=======
         self.graph_bi_seq = (self.graph.in_degree(), self.graph.out_degree())
+>>>>>>> 08e07e1fea915f4fc0b57c260c79a06055de67a1
 
 
     def degrees_plot(self):
@@ -53,6 +64,44 @@ class CDMGenerator(object):
         plt.ylabel('Number of nodes')
         plt.xlim([0,40])
 
+<<<<<<< HEAD
+    def wilx_test(self):
+        in_seq = self.bi_seq[0]
+        out_seq = self.bi_seq[1]
+
+        graph_in = self.graph_bi_seq[0]
+        graph_out = self.graph_bi_seq[1]
+
+        return [wilcoxon(in_seq,graph_in), wilcoxon(out_seq, graph_out)]
+
+    def pk_vs_bc_plot(self):
+        pr = self.page_rank
+        bc = self.betweeness_centrality
+
+        pr_sort = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
+
+        nodes = [str(node[0]) for node in pr_sort ]
+        pr_scores = [node[1] for node in pr_sort]
+        bc_scores = [bc[node[0]] for node in pr_sort]
+        bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
+        plt.plot(pr_scores, 'ro', markersize=3)
+        plt.plot(bc_scaled_scores, 'bx', markersize=3)
+
+        plt.legend(['Page_Rank', 'Betweeness_Centrality'])
+        plt.xlabel('Node')
+        plt.ylabel('Ranking')
+        plt.title('Comparison between Pagerank and Betweeness centrality')
+
+
+
+
+
+
+
+
+
+=======
         def stat_
+>>>>>>> 08e07e1fea915f4fc0b57c260c79a06055de67a1
 
 
