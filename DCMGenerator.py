@@ -100,8 +100,5 @@ class CDMGenerator(object):
 
 
 
-=======
-        def stat_
->>>>>>> 08e07e1fea915f4fc0b57c260c79a06055de67a1
 
 
