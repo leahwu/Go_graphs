@@ -1,5 +1,4 @@
 from collections import Counter
-from scipy.stats import wilcoxon
 import SDGErased as sdg_e
 import PowerLawDistribution as pld
 import matplotlib.pyplot as plt
@@ -7,6 +6,7 @@ import SDGRepeated as sdg_r
 import networkx as nx
 import operator
 from ValidDegree import *
+import scipy.stats as st
 
 
 class CDMGenerator(object):
@@ -22,30 +22,26 @@ class CDMGenerator(object):
         if algorithm == 'Repeated':
             self.graph = sdg_r.gen_simple_DCM(self.bi_seq)
 
-<<<<<<< HEAD
-        self.graph_bi_seq = ([val for val in self.graph.in_degree().values()], [val for val in self.graph.out_degree().values()])
-        # betweenness_centrality as attribute
-        self.betweeness_centrality = nx.betweenness_centrality(self.graph)
-        # page-rank
+        # return to a dictionary
         self.page_rank = nx.pagerank(self.graph)
-=======
-        self.graph_bi_seq = (self.graph.in_degree(), self.graph.out_degree())
->>>>>>> 08e07e1fea915f4fc0b57c260c79a06055de67a1
+        self.betweenness_centrality = nx.betweenness_centrality(self.graph)
+
+        self.din = list(self.graph.in_degree().values())
+        self.dout = list(self.graph.out_degree().values())
+
 
 
     def degrees_plot(self):
         """
         method that plots the degree distribution of bi-sequence and the generated simple graph   
         """
-
-        G_in_degrees = self.graph_bi_seq[0]
-        G_in_values = sorted(set(G_in_degrees.values()))
-        G_in_hist = [Counter(G_in_degrees.values())[x] for x in G_in_values]
+        plt.figure(1)
+        G_in_values = sorted(set(self.din))
+        G_in_hist = [Counter(self.din)[x] for x in G_in_values]
         plt.plot(G_in_values, G_in_hist, 'ro-', markersize=5)  # in-degree
 
-        G_out_degrees = self.graph_bi_seq[1]
-        G_out_values = sorted(set(G_out_degrees.values()))
-        G_out_hist = [Counter(G_out_degrees.values())[x] for x in G_out_values]
+        G_out_values = sorted(set(self.dout))
+        G_out_hist = [Counter(self.dout)[x] for x in G_out_values]
         plt.plot(G_out_values, G_out_hist, 'bv-', markersize=5)  # out-degree
 
         # plot the sequence degree distribution
@@ -64,23 +60,24 @@ class CDMGenerator(object):
         plt.ylabel('Number of nodes')
         plt.xlim([0,40])
 
-<<<<<<< HEAD
+
     def wilx_test(self):
         in_seq = self.bi_seq[0]
         out_seq = self.bi_seq[1]
 
-        graph_in = self.graph_bi_seq[0]
-        graph_out = self.graph_bi_seq[1]
+        return [st.wilcoxon(in_seq,self.din), st.wilcoxon(out_seq, self.dout)]
 
-        return [wilcoxon(in_seq,graph_in), wilcoxon(out_seq, graph_out)]
+    # plot the nodes in the decreasing order of pagerank, and then plot their corresponding
+    # betweenness_centrality value
+    def pr_vs_bc_plot(self):
+        plt.figure(2)
 
-    def pk_vs_bc_plot(self):
         pr = self.page_rank
-        bc = self.betweeness_centrality
+        bc = self.betweenness_centrality
 
         pr_sort = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
 
-        nodes = [str(node[0]) for node in pr_sort ]
+        # nodes = [str(node[0]) for node in pr_sort ]
         pr_scores = [node[1] for node in pr_sort]
         bc_scores = [bc[node[0]] for node in pr_sort]
         bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
@@ -90,15 +87,13 @@ class CDMGenerator(object):
         plt.legend(['Page_Rank', 'Betweeness_Centrality'])
         plt.xlabel('Node')
         plt.ylabel('Ranking')
-        plt.title('Comparison between Pagerank and Betweeness centrality')
+        plt.title('Comparison between Pagerank and Betweenness centrality')
 
 
+    def spearman_test(self):
+        pr = list(self.page_rank.values())
+        bc = list(self.betweenness_centrality.values())
+        corr, pvalue =st.spearmanr(pr, bc)
 
-
-
-
-
-
-
-
+        return corr, pvalue
 
