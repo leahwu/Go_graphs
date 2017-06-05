@@ -27,10 +27,15 @@ class PowerLaw:
         self.a = a
         self.d = d
         self.beta = beta
-        self.b = a**((beta-1)/(beta-1-(beta-d)*d)) * ((beta - d)/((beta-1)*a))**(d/(beta -1 - (beta-d)*d))
-
-        self.c = (self.b / a)**(1/d)
         self.alpha = beta / d
+
+        if d == 1:
+            self.b = 2
+        else:
+            self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
+
+        self.c = (self.b / a) ** (self.alpha / beta)
+
         print("The parameters are:")
         print("a = ", self.a)
         print("b = ", self.b)
@@ -39,6 +44,23 @@ class PowerLaw:
         print("alpha = ", self.alpha)
         print("beta = ", self.beta)
 
+        self.e_w_minus = self.c * beta/ (self.beta - 1)
+        self.e_w_plus = a*beta*self.c**d / (beta - d)
+
+        print("E[W^minus] = ", self.e_w_minus)
+        print("E[W^plus] = ", self.e_w_plus)
+
+    def gene_iid_pairs_of_w(self, n):
+
+        w_minus = np.zeros(n)
+        w_plus = np.zeros(n)
+
+        for i in range(0, n):
+            w_minus[i] = generate_w(self.c, self.beta)
+            w_plus[i] = self.a * w_minus[i] ** self.d
+
+
+        return w_minus, w_plus
 
     def gene_one_pair(self):
         """
@@ -110,15 +132,23 @@ def test_converg_speed(a, d, beta, N,  rep = 10):
     return relative_diff
 
 def test():
-    a = 2  # the lower bound for W+
-    alpha = 5  # the power for W+
-    beta = 6  # the power for W+
-    b = 2.5  # if alpha != beta, we could choose any b = c
+    a = 1.2  # the lower bound for W+
+    alpha = 3  # the power for W+
+    beta = 3.5  # the power for W+
+
     d = beta / alpha
 
-    n = 2000  # graph size
+    n = 5000  # graph size
 
-    test_converg_speed(a, d, beta,[2000])
+    pld = PowerLaw(a, d, beta)
+    din, dout = pld.rvs(n)
+
+    w_minus, w_plus = pld.gene_iid_pairs_of_w(n)
+    print("mean of w_minus is ", np.mean(w_minus))
+    print("mean of w_plus is ", np.mean(w_plus))
+
+    print("mean of in-degree sequence is ", np.mean(din))
+    print("mean of out-degree sequence is ", np.mean(dout))
 
 
 

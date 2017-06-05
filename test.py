@@ -6,7 +6,7 @@ start = time.clock()
 
 # assign the parameters
 # [Special Case [Alpha = Beta]]
-a = 1.2  # the lower bound for W+
+a = 1  # the lower bound for W+
 
 alpha = 3  # the power for W+
 beta = 3.5  # the power for W+

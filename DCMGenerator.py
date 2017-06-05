@@ -155,8 +155,8 @@ class DCMGenerator(object):
         bc_scores = [node[1] for node in bc_sort]
         pr_scores = [pr[node[0]] for node in bc_sort]
         bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
-        plt.plot(pr_scores[0: k], 'ro', markersize=3)
-        plt.plot(bc_scaled_scores[0: k], 'bx', markersize=1)
+        plt.plot(pr_scores[0: k], 'ro', markersize=1)
+        plt.plot(bc_scaled_scores[0: k], 'bx', markersize=3)
 
         plt.legend(['Page_Rank', 'Betweeness_Centrality'])
         plt.xlabel('Node')
