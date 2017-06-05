@@ -17,7 +17,7 @@ class PowerLaw:
     
     """
 
-    def __init__(self, a, alpha, beta, b = 2):
+    def __init__(self, a, alpha, beta, b=2):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
         if alpha == beta:
