@@ -54,7 +54,7 @@ def test2():
     #beta_range = np.arange(3.2,3.5,0.2) # 2.8, 3.0, 3.2, 3.4
     #d_range = np.arange(1.1, 1.3, 0.2) # 0.6, 0.8, 1.0, 1.2
 
-    beta_range = np.arange(2.8, 3.3, 0.2) # 3 choices
+    beta_range = np.arange(2.6, 3.3, 0.2) # 3 choices
     d_range = np.arange(0.8, 1.3, 0.2) # 3 choices
     n = 2000
 # 5*3*3=45
