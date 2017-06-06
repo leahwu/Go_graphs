@@ -60,8 +60,6 @@ class DCMGenerator(object):
         # return to a dictionary
         self.page_rank = nx.pagerank(self.graph)
         self.betweenness_centrality = nx.betweenness_centrality(self.graph)
-        self.scaled_betweenness_centrality = [elem/sum(list(dcm_erased_ls[j][i].betweenness_centrality)) for elem in list(dcm_erased_ls[j][i].betweenness_centrality)]
-
 
         self.graph_din = list(self.graph.in_degree().values())
         self.graph_dout = list(self.graph.out_degree().values())
