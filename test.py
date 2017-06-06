@@ -6,7 +6,7 @@ import numpy as np
 def test1():
     # assign the parameters
     # [Special Case [Alpha = Beta]]
-    a = 0.5  # the lower bound for W+
+    a = 1.5  # the lower bound for W+
 
     alpha = 3  # the power for W+
     beta = 2.5  # the power for W+
@@ -49,16 +49,16 @@ def test1():
 def test2():
     f = open("results1.txt", 'w+')
 
-    a_range = np.arange(0.8, 1.3, 0.1) # 5 choices
+    a_range = np.arange(0.6, 1.6, 0.2) # 5 choices
 
     #beta_range = np.arange(3.2,3.5,0.2) # 2.8, 3.0, 3.2, 3.4
     #d_range = np.arange(1.1, 1.3, 0.2) # 0.6, 0.8, 1.0, 1.2
 
-    beta_range = np.arange(2.6, 3.3, 0.2) # 3 choices
-    d_range = np.arange(0.8, 1.3, 0.2) # 3 choices
+    beta_range = np.arange(2.5, 3.5, 0.2)  # 2.5, 2.7, 2.9, 3.1, 3.3, # 5 choices
+    d_range = np.arange(0.8, 1.3, 0.2)  # 0.8, 1.0, 1.2 # 3 choices
     n = 2000
-# 5*3*3=45
-    models = []
+# 5*5*3= 75
+    models = {}
     s = 'ALl the graph\'s size is' + repr(n) + '.\n'
     i = 1
     for a in a_range:
@@ -102,7 +102,8 @@ def test2():
                 corr, pvalue = model.spearman_test()
                 s += "correlation = " + repr(corr) + ", pvalue = " + repr(pvalue) + "\n"
 
-                models.append(model)
+                param = (a, d, beta)
+                models[param] = model
 
                 s += '\n'
                 i += 1
@@ -110,3 +111,15 @@ def test2():
     f.write(s)
     f.close()
 
+    return models
+
+def test3():
+    a = 0.6
+    beta = 2.6
+    d = 1
+    n = 2000
+    model = dcm_g.DCMGenerator(a, d, beta, n, 'Erased')
+
+
+
+models = test2()

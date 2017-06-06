@@ -30,11 +30,12 @@ class PowerLaw:
         self.alpha = beta / d
 
         if d == 1:
-            self.b = 2
+            self.b = 2 # set default values
+            self.a = 1
         else:
             self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
 
-        self.c = (self.b / a) ** (self.alpha / beta)
+        self.c = (self.b / self.a) ** (self.alpha / beta)
 
         print("The parameters are:")
         print("a = ", self.a)
@@ -47,7 +48,8 @@ class PowerLaw:
         self.e_w_minus = self.c * beta/ (self.beta - 1)
         self.e_w_plus = a*beta*self.c**d / (beta - d)
 
-        self.params = {'a': self.a, 'b': self.b, 'c': self.c, 'd': self.d, 'alpha': self.alpha, 'beta': self.beta}
+        self.params = {'a': self.a, 'd': self.d, 'beta': self.beta, 'alpha': self.alpha,
+                       'b': self.b, 'c': self.c}
 
         # print("E[W^minus] = ", self.e_w_minus)
         # print("E[W^plus] = ", self.e_w_plus)
