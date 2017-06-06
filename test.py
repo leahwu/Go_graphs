@@ -47,7 +47,7 @@ def test1():
 
 
 def test2():
-    f = open("results1", 'w+')
+    f = open("results1.txt", 'w+')
 
     a_range = np.arange(0.8, 1.3, 0.1) # 5 choices
 
