@@ -1,0 +1,2206 @@
+ALl the graph's size is2000.
+Model1:
+
+The params are:
+a = 0.80000
+b = 0.21499
+c = 0.19349
+d = 0.80000
+alpha = 3.50000
+beta = 2.80000
+
+Expectation of W^minus is 0.30098718720000001
+Expectation of W^plus is 0.30098718720000001
+
+Mean of original in-degree sequence is 0.32450000000000001
+Mean of original out-degree sequence is 0.27900000000000003
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.28849999999999998
+Mean of equal-sum out-degree sequence is 0.28849999999999998
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.2885
+Mean of out-degree sequnces is 0.2885
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.34
+100	 : 	0.33
+150	 : 	0.31333333333333335
+200	 : 	0.35
+250	 : 	0.36
+300	 : 	0.38
+350	 : 	0.38285714285714284
+400	 : 	0.415
+450	 : 	0.4222222222222222
+500	 : 	0.424
+550	 : 	0.49818181818181817
+600	 : 	0.5583333333333333
+650	 : 	0.6061538461538462
+700	 : 	0.6485714285714286
+750	 : 	0.6933333333333334
+800	 : 	0.73
+850	 : 	0.76
+900	 : 	0.79
+950	 : 	0.8052631578947368
+
+Spearsman's rank correlation test:
+correlation = 0.46559742864817255, pvalue = 3.7337621073954698e-108
+
+Model2:
+
+The params are:
+a = 0.80000
+b = 2.00000
+c = 2.50000
+d = 1.00000
+alpha = 2.80000
+beta = 2.80000
+
+Expectation of W^minus is 3.8888888888888893
+Expectation of W^plus is 3.1111111111111112
+
+Mean of original in-degree sequence is 3.1309999999999998
+Mean of original out-degree sequence is 3.8969999999999998
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.9464999999999999
+Mean of equal-sum out-degree sequence is 3.9464999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.9225
+Mean of out-degree sequnces is 3.9225
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.46
+100	 : 	0.42
+150	 : 	0.44
+200	 : 	0.525
+250	 : 	0.516
+300	 : 	0.5033333333333333
+350	 : 	0.5171428571428571
+400	 : 	0.555
+450	 : 	0.5622222222222222
+500	 : 	0.576
+550	 : 	0.6018181818181818
+600	 : 	0.62
+650	 : 	0.64
+700	 : 	0.6528571428571428
+750	 : 	0.6653333333333333
+800	 : 	0.68375
+850	 : 	0.7011764705882353
+900	 : 	0.7133333333333334
+950	 : 	0.7231578947368421
+
+Spearsman's rank correlation test:
+correlation = 0.63173898304600118, pvalue = 3.0085332885800168e-223
+
+Model3:
+
+The params are:
+a = 0.80000
+b = 1.50534
+c = 1.69351
+d = 1.20000
+alpha = 2.33333
+beta = 2.80000
+
+Expectation of W^minus is 2.634346992422492
+Expectation of W^plus is 2.6343469924224925
+
+Mean of original in-degree sequence is 2.7294999999999998
+Mean of original out-degree sequence is 2.6204999999999998
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.6495000000000002
+Mean of equal-sum out-degree sequence is 2.6495000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.6425
+Mean of out-degree sequnces is 2.6425
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.74
+100	 : 	0.56
+150	 : 	0.49333333333333335
+200	 : 	0.495
+250	 : 	0.512
+300	 : 	0.5366666666666666
+350	 : 	0.5571428571428572
+400	 : 	0.5725
+450	 : 	0.6
+500	 : 	0.632
+550	 : 	0.6418181818181818
+600	 : 	0.6483333333333333
+650	 : 	0.6646153846153846
+700	 : 	0.6714285714285714
+750	 : 	0.688
+800	 : 	0.68875
+850	 : 	0.691764705882353
+900	 : 	0.7077777777777777
+950	 : 	0.7431578947368421
+
+Spearsman's rank correlation test:
+correlation = 0.68073851494467386, pvalue = 2.164669493151911e-272
+
+Model4:
+
+The params are:
+a = 0.80000
+b = 0.22381
+c = 0.20346
+d = 0.80000
+alpha = 3.75000
+beta = 3.00000
+
+Expectation of W^minus is 0.30519524871003595
+Expectation of W^plus is 0.30519524871003595
+
+Mean of original in-degree sequence is 0.32100000000000001
+Mean of original out-degree sequence is 0.29099999999999998
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.313
+Mean of equal-sum out-degree sequence is 0.313
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.313
+Mean of out-degree sequnces is 0.313
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.24
+100	 : 	0.36
+150	 : 	0.31333333333333335
+200	 : 	0.36
+250	 : 	0.344
+300	 : 	0.37
+350	 : 	0.3742857142857143
+400	 : 	0.3675
+450	 : 	0.37555555555555553
+500	 : 	0.41
+550	 : 	0.45636363636363636
+600	 : 	0.5183333333333333
+650	 : 	0.5707692307692308
+700	 : 	0.6128571428571429
+750	 : 	0.6533333333333333
+800	 : 	0.68625
+850	 : 	0.7141176470588235
+900	 : 	0.7377777777777778
+950	 : 	0.76
+
+Spearsman's rank correlation test:
+correlation = 0.4687966057550193, pvalue = 8.1304601743893757e-110
+
+Model5:
+
+The params are:
+a = 0.80000
+b = 2.00000
+c = 2.50000
+d = 1.00000
+alpha = 3.00000
+beta = 3.00000
+
+Expectation of W^minus is 3.75
+Expectation of W^plus is 3.0000000000000004
+
+Mean of original in-degree sequence is 3.0844999999999998
+Mean of original out-degree sequence is 3.8174999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.8845000000000001
+Mean of equal-sum out-degree sequence is 3.8845000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.8775
+Mean of out-degree sequnces is 3.8775
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.6
+100	 : 	0.54
+150	 : 	0.52
+200	 : 	0.49
+250	 : 	0.504
+300	 : 	0.52
+350	 : 	0.5371428571428571
+400	 : 	0.555
+450	 : 	0.5711111111111111
+500	 : 	0.59
+550	 : 	0.5890909090909091
+600	 : 	0.5966666666666667
+650	 : 	0.6215384615384615
+700	 : 	0.6285714285714286
+750	 : 	0.6333333333333333
+800	 : 	0.65625
+850	 : 	0.6788235294117647
+900	 : 	0.69
+950	 : 	0.7021052631578948
+
+Spearsman's rank correlation test:
+correlation = 0.60767303954588037, pvalue = 3.2627542815678562e-202
+
+Model6:
+
+The params are:
+a = 0.80000
+b = 1.62183
+c = 1.80203
+d = 1.20000
+alpha = 2.50000
+beta = 3.00000
+
+Expectation of W^minus is 2.7030487060546857
+Expectation of W^plus is 2.7030487060546853
+
+Mean of original in-degree sequence is 2.6924999999999999
+Mean of original out-degree sequence is 2.7075
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.6964999999999999
+Mean of equal-sum out-degree sequence is 2.6964999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.692
+Mean of out-degree sequnces is 2.692
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.56
+100	 : 	0.51
+150	 : 	0.5066666666666667
+200	 : 	0.495
+250	 : 	0.512
+300	 : 	0.51
+350	 : 	0.5228571428571429
+400	 : 	0.54
+450	 : 	0.5755555555555556
+500	 : 	0.6
+550	 : 	0.6072727272727273
+600	 : 	0.6183333333333333
+650	 : 	0.6369230769230769
+700	 : 	0.6571428571428571
+750	 : 	0.6733333333333333
+800	 : 	0.69125
+850	 : 	0.7105882352941176
+900	 : 	0.7211111111111111
+950	 : 	0.7326315789473684
+
+Spearsman's rank correlation test:
+correlation = 0.67027087385020001, pvalue = 4.2495916791648609e-261
+
+Model7:
+
+The params are:
+a = 0.80000
+b = 0.23136
+c = 0.21208
+d = 0.80000
+alpha = 4.00000
+beta = 3.20000
+
+Expectation of W^minus is 0.308485267489712
+Expectation of W^plus is 0.308485267489712
+
+Mean of original in-degree sequence is 0.3105
+Mean of original out-degree sequence is 0.29899999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.3145
+Mean of equal-sum out-degree sequence is 0.3145
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.314
+Mean of out-degree sequnces is 0.314
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.36
+100	 : 	0.37
+150	 : 	0.3333333333333333
+200	 : 	0.365
+250	 : 	0.352
+300	 : 	0.36333333333333334
+350	 : 	0.38
+400	 : 	0.375
+450	 : 	0.4066666666666667
+500	 : 	0.406
+550	 : 	0.43636363636363634
+600	 : 	0.49166666666666664
+650	 : 	0.5476923076923077
+700	 : 	0.59
+750	 : 	0.636
+800	 : 	0.67125
+850	 : 	0.6976470588235294
+900	 : 	0.7288888888888889
+950	 : 	0.7589473684210526
+
+Spearsman's rank correlation test:
+correlation = 0.45845505306779227, pvalue = 1.657710964129442e-104
+
+Model8:
+
+The params are:
+a = 0.80000
+b = 2.00000
+c = 2.50000
+d = 1.00000
+alpha = 3.20000
+beta = 3.20000
+
+Expectation of W^minus is 3.6363636363636362
+Expectation of W^plus is 2.9090909090909096
+
+Mean of original in-degree sequence is 3.0074999999999998
+Mean of original out-degree sequence is 3.6640000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.5840000000000001
+Mean of equal-sum out-degree sequence is 3.5840000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.5775
+Mean of out-degree sequnces is 3.5775
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.46
+100	 : 	0.47
+150	 : 	0.44666666666666666
+200	 : 	0.485
+250	 : 	0.488
+300	 : 	0.5066666666666667
+350	 : 	0.5428571428571428
+400	 : 	0.54
+450	 : 	0.5688888888888889
+500	 : 	0.578
+550	 : 	0.6218181818181818
+600	 : 	0.6416666666666667
+650	 : 	0.6492307692307693
+700	 : 	0.6528571428571428
+750	 : 	0.6746666666666666
+800	 : 	0.6975
+850	 : 	0.7070588235294117
+900	 : 	0.7255555555555555
+950	 : 	0.7421052631578947
+
+Spearsman's rank correlation test:
+correlation = 0.6709815123708327, pvalue = 7.522589669645725e-262
+
+Model9:
+
+The params are:
+a = 0.80000
+b = 1.72264
+c = 1.89490
+d = 1.20000
+alpha = 2.66667
+beta = 3.20000
+
+Expectation of W^minus is 2.756220361590711
+Expectation of W^plus is 2.7562203615907115
+
+Mean of original in-degree sequence is 2.7069999999999999
+Mean of original out-degree sequence is 2.7595000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.7810000000000001
+Mean of equal-sum out-degree sequence is 2.7810000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.7745
+Mean of out-degree sequnces is 2.7745
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.36
+100	 : 	0.42
+150	 : 	0.46
+200	 : 	0.485
+250	 : 	0.508
+300	 : 	0.51
+350	 : 	0.54
+400	 : 	0.555
+450	 : 	0.6088888888888889
+500	 : 	0.622
+550	 : 	0.6418181818181818
+600	 : 	0.6383333333333333
+650	 : 	0.6569230769230769
+700	 : 	0.67
+750	 : 	0.6826666666666666
+800	 : 	0.69625
+850	 : 	0.7070588235294117
+900	 : 	0.7211111111111111
+950	 : 	0.7389473684210527
+
+Spearsman's rank correlation test:
+correlation = 0.68187217266098088, pvalue = 1.2130685091501981e-273
+
+Model10:
+
+The params are:
+a = 0.90000
+b = 0.38742
+c = 0.34868
+d = 0.80000
+alpha = 3.50000
+beta = 2.80000
+
+Expectation of W^minus is 0.54238868460000011
+Expectation of W^plus is 0.54238868460000023
+
+Mean of original in-degree sequence is 0.55249999999999999
+Mean of original out-degree sequence is 0.5575
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.55200000000000005
+Mean of equal-sum out-degree sequence is 0.55200000000000005
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.5515
+Mean of out-degree sequnces is 0.5515
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.36
+100	 : 	0.37
+150	 : 	0.42
+200	 : 	0.435
+250	 : 	0.444
+300	 : 	0.44333333333333336
+350	 : 	0.4542857142857143
+400	 : 	0.475
+450	 : 	0.5088888888888888
+500	 : 	0.518
+550	 : 	0.5218181818181818
+600	 : 	0.53
+650	 : 	0.5384615384615384
+700	 : 	0.5628571428571428
+750	 : 	0.5693333333333334
+800	 : 	0.58125
+850	 : 	0.6188235294117647
+900	 : 	0.6566666666666666
+950	 : 	0.6905263157894737
+
+Spearsman's rank correlation test:
+correlation = 0.55318846221760754, pvalue = 1.0361202779743611e-160
+
+Model11:
+
+The params are:
+a = 0.90000
+b = 2.00000
+c = 2.22222
+d = 1.00000
+alpha = 2.80000
+beta = 2.80000
+
+Expectation of W^minus is 3.4567901234567904
+Expectation of W^plus is 3.1111111111111116
+
+Mean of original in-degree sequence is 3.0665
+Mean of original out-degree sequence is 3.5289999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.3805000000000001
+Mean of equal-sum out-degree sequence is 3.3805000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.3735
+Mean of out-degree sequnces is 3.3735
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.46
+100	 : 	0.51
+150	 : 	0.52
+200	 : 	0.505
+250	 : 	0.508
+300	 : 	0.5066666666666667
+350	 : 	0.5485714285714286
+400	 : 	0.57
+450	 : 	0.6
+500	 : 	0.62
+550	 : 	0.6309090909090909
+600	 : 	0.6383333333333333
+650	 : 	0.6430769230769231
+700	 : 	0.6585714285714286
+750	 : 	0.6786666666666666
+800	 : 	0.7
+850	 : 	0.711764705882353
+900	 : 	0.7288888888888889
+950	 : 	0.7315789473684211
+
+Spearsman's rank correlation test:
+correlation = 0.67010729266372926, pvalue = 6.3262740646273812e-261
+
+Model12:
+
+The params are:
+a = 0.90000
+b = 0.83536
+c = 0.93978
+d = 1.20000
+alpha = 2.33333
+beta = 2.80000
+
+Expectation of W^minus is 1.4618754296889052
+Expectation of W^plus is 1.4618754296889054
+
+Mean of original in-degree sequence is 1.3895
+Mean of original out-degree sequence is 1.4750000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 1.4824999999999999
+Mean of equal-sum out-degree sequence is 1.4824999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 1.481
+Mean of out-degree sequnces is 1.481
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.32
+100	 : 	0.38
+150	 : 	0.46
+200	 : 	0.455
+250	 : 	0.492
+300	 : 	0.5033333333333333
+350	 : 	0.5257142857142857
+400	 : 	0.54
+450	 : 	0.5822222222222222
+500	 : 	0.596
+550	 : 	0.6236363636363637
+600	 : 	0.65
+650	 : 	0.6584615384615384
+700	 : 	0.6728571428571428
+750	 : 	0.6893333333333334
+800	 : 	0.715
+850	 : 	0.7188235294117648
+900	 : 	0.7277777777777777
+950	 : 	0.7336842105263158
+
+Spearsman's rank correlation test:
+correlation = 0.66631429771790385, pvalue = 5.9849708451438257e-257
+
+Model13:
+
+The params are:
+a = 0.90000
+b = 0.40331
+c = 0.36665
+d = 0.80000
+alpha = 3.75000
+beta = 3.00000
+
+Expectation of W^minus is 0.54997174807980098
+Expectation of W^plus is 0.54997174807980087
+
+Mean of original in-degree sequence is 0.55700000000000005
+Mean of original out-degree sequence is 0.54849999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.5575
+Mean of equal-sum out-degree sequence is 0.5575
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.5575
+Mean of out-degree sequnces is 0.5575
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.22
+100	 : 	0.32
+150	 : 	0.36
+200	 : 	0.37
+250	 : 	0.396
+300	 : 	0.4
+350	 : 	0.4257142857142857
+400	 : 	0.435
+450	 : 	0.45555555555555555
+500	 : 	0.492
+550	 : 	0.5054545454545455
+600	 : 	0.5333333333333333
+650	 : 	0.5353846153846153
+700	 : 	0.5485714285714286
+750	 : 	0.5706666666666667
+800	 : 	0.5825
+850	 : 	0.5964705882352941
+900	 : 	0.6322222222222222
+950	 : 	0.6663157894736842
+
+Spearsman's rank correlation test:
+correlation = 0.53651713235512044, pvalue = 1.7377613034960623e-149
+
+Model14:
+
+The params are:
+a = 0.90000
+b = 2.00000
+c = 2.22222
+d = 1.00000
+alpha = 3.00000
+beta = 3.00000
+
+Expectation of W^minus is 3.3333333333333335
+Expectation of W^plus is 3.0000000000000004
+
+Mean of original in-degree sequence is 2.8935
+Mean of original out-degree sequence is 3.2814999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.3334999999999999
+Mean of equal-sum out-degree sequence is 3.3334999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.329
+Mean of out-degree sequnces is 3.329
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.48
+100	 : 	0.47
+150	 : 	0.44666666666666666
+200	 : 	0.5
+250	 : 	0.536
+300	 : 	0.5666666666666667
+350	 : 	0.5942857142857143
+400	 : 	0.6325
+450	 : 	0.6466666666666666
+500	 : 	0.65
+550	 : 	0.6545454545454545
+600	 : 	0.67
+650	 : 	0.683076923076923
+700	 : 	0.6928571428571428
+750	 : 	0.708
+800	 : 	0.70875
+850	 : 	0.72
+900	 : 	0.7322222222222222
+950	 : 	0.7442105263157894
+
+Spearsman's rank correlation test:
+correlation = 0.7106090195081125, pvalue = 2.1920867863868617e-307
+
+Model15:
+
+The params are:
+a = 0.90000
+b = 0.90000
+c = 1.00000
+d = 1.20000
+alpha = 2.50000
+beta = 3.00000
+
+Expectation of W^minus is 1.4999999999999991
+Expectation of W^plus is 1.4999999999999989
+
+Mean of original in-degree sequence is 1.4750000000000001
+Mean of original out-degree sequence is 1.4604999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 1.5235000000000001
+Mean of equal-sum out-degree sequence is 1.5235000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 1.5205
+Mean of out-degree sequnces is 1.5205
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.52
+100	 : 	0.53
+150	 : 	0.48
+200	 : 	0.51
+250	 : 	0.512
+300	 : 	0.5166666666666667
+350	 : 	0.5257142857142857
+400	 : 	0.555
+450	 : 	0.5644444444444444
+500	 : 	0.572
+550	 : 	0.5818181818181818
+600	 : 	0.5966666666666667
+650	 : 	0.6338461538461538
+700	 : 	0.65
+750	 : 	0.6666666666666666
+800	 : 	0.67125
+850	 : 	0.691764705882353
+900	 : 	0.7
+950	 : 	0.7231578947368421
+
+Spearsman's rank correlation test:
+correlation = 0.64248415475898524, pvalue = 2.9587204923097747e-233
+
+Model16:
+
+The params are:
+a = 0.90000
+b = 0.41693
+c = 0.38218
+d = 0.80000
+alpha = 4.00000
+beta = 3.20000
+
+Expectation of W^minus is 0.55590046875000032
+Expectation of W^plus is 0.55590046875000021
+
+Mean of original in-degree sequence is 0.55449999999999999
+Mean of original out-degree sequence is 0.57099999999999995
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.55400000000000005
+Mean of equal-sum out-degree sequence is 0.55400000000000005
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.554
+Mean of out-degree sequnces is 0.554
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.34
+100	 : 	0.34
+150	 : 	0.36666666666666664
+200	 : 	0.38
+250	 : 	0.372
+300	 : 	0.3933333333333333
+350	 : 	0.40285714285714286
+400	 : 	0.4375
+450	 : 	0.47333333333333333
+500	 : 	0.486
+550	 : 	0.5018181818181818
+600	 : 	0.5033333333333333
+650	 : 	0.5169230769230769
+700	 : 	0.5428571428571428
+750	 : 	0.5613333333333334
+800	 : 	0.5675
+850	 : 	0.5952941176470589
+900	 : 	0.6311111111111111
+950	 : 	0.6663157894736842
+
+Spearsman's rank correlation test:
+correlation = 0.52213273515579928, pvalue = 2.6994611258889865e-140
+
+Model17:
+
+The params are:
+a = 0.90000
+b = 2.00000
+c = 2.22222
+d = 1.00000
+alpha = 3.20000
+beta = 3.20000
+
+Expectation of W^minus is 3.2323232323232323
+Expectation of W^plus is 2.9090909090909096
+
+Mean of original in-degree sequence is 2.9115000000000002
+Mean of original out-degree sequence is 3.0935000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.2040000000000002
+Mean of equal-sum out-degree sequence is 3.2040000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.2005
+Mean of out-degree sequnces is 3.2005
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.44
+100	 : 	0.48
+150	 : 	0.5
+200	 : 	0.52
+250	 : 	0.536
+300	 : 	0.5533333333333333
+350	 : 	0.5571428571428572
+400	 : 	0.56
+450	 : 	0.5955555555555555
+500	 : 	0.612
+550	 : 	0.6309090909090909
+600	 : 	0.6583333333333333
+650	 : 	0.6738461538461539
+700	 : 	0.6842857142857143
+750	 : 	0.696
+800	 : 	0.72125
+850	 : 	0.7164705882352941
+900	 : 	0.7411111111111112
+950	 : 	0.7526315789473684
+
+Spearsman's rank correlation test:
+correlation = 0.68835557679102921, pvalue = 6.54165249917069e-281
+
+Model18:
+
+The params are:
+a = 0.90000
+b = 0.95594
+c = 1.05154
+d = 1.20000
+alpha = 2.66667
+beta = 3.20000
+
+Expectation of W^minus is 1.5295064913648735
+Expectation of W^plus is 1.5295064913648735
+
+Mean of original in-degree sequence is 1.6145
+Mean of original out-degree sequence is 1.5765
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 1.524
+Mean of equal-sum out-degree sequence is 1.524
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 1.521
+Mean of out-degree sequnces is 1.521
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.34
+100	 : 	0.41
+150	 : 	0.46
+200	 : 	0.46
+250	 : 	0.476
+300	 : 	0.49666666666666665
+350	 : 	0.5114285714285715
+400	 : 	0.535
+450	 : 	0.58
+500	 : 	0.598
+550	 : 	0.6236363636363637
+600	 : 	0.64
+650	 : 	0.6523076923076923
+700	 : 	0.6757142857142857
+750	 : 	0.688
+800	 : 	0.6925
+850	 : 	0.7058823529411765
+900	 : 	0.7188888888888889
+950	 : 	0.7231578947368421
+
+Spearsman's rank correlation test:
+correlation = 0.63944532114513741, pvalue = 2.1972297652306687e-230
+
+Model19:
+
+The params are:
+a = 1.00000
+b = 0.65610
+c = 0.59049
+d = 0.80000
+alpha = 3.50000
+beta = 2.80000
+
+Expectation of W^minus is 0.91854000000000013
+Expectation of W^plus is 0.91854000000000002
+
+Mean of original in-degree sequence is 0.91449999999999998
+Mean of original out-degree sequence is 0.91700000000000004
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.89000000000000001
+Mean of equal-sum out-degree sequence is 0.89000000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.889
+Mean of out-degree sequnces is 0.889
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.18
+100	 : 	0.32
+150	 : 	0.37333333333333335
+200	 : 	0.395
+250	 : 	0.444
+300	 : 	0.4766666666666667
+350	 : 	0.48
+400	 : 	0.52
+450	 : 	0.5488888888888889
+500	 : 	0.552
+550	 : 	0.5727272727272728
+600	 : 	0.6016666666666667
+650	 : 	0.6015384615384616
+700	 : 	0.6042857142857143
+750	 : 	0.6173333333333333
+800	 : 	0.635
+850	 : 	0.6470588235294118
+900	 : 	0.66
+950	 : 	0.6894736842105263
+
+Spearsman's rank correlation test:
+correlation = 0.59532682171264506, pvalue = 4.1741786619410652e-192
+
+Model20:
+
+The params are:
+a = 1.00000
+b = 2.00000
+c = 2.00000
+d = 1.00000
+alpha = 2.80000
+beta = 2.80000
+
+Expectation of W^minus is 3.1111111111111112
+Expectation of W^plus is 3.1111111111111112
+
+Mean of original in-degree sequence is 3.1339999999999999
+Mean of original out-degree sequence is 3.165
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.1204999999999998
+Mean of equal-sum out-degree sequence is 3.1204999999999998
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.1145
+Mean of out-degree sequnces is 3.1145
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.42
+100	 : 	0.46
+150	 : 	0.5133333333333333
+200	 : 	0.515
+250	 : 	0.536
+300	 : 	0.55
+350	 : 	0.5714285714285714
+400	 : 	0.6
+450	 : 	0.6066666666666667
+500	 : 	0.606
+550	 : 	0.6163636363636363
+600	 : 	0.6316666666666667
+650	 : 	0.6446153846153846
+700	 : 	0.65
+750	 : 	0.664
+800	 : 	0.68625
+850	 : 	0.7023529411764706
+900	 : 	0.7122222222222222
+950	 : 	0.7242105263157895
+
+Spearsman's rank correlation test:
+correlation = 0.65927453225557531, pvalue = 1.0063768009457956e-249
+
+Model21:
+
+The params are:
+a = 1.00000
+b = 0.49327
+c = 0.55493
+d = 1.20000
+alpha = 2.33333
+beta = 2.80000
+
+Expectation of W^minus is 0.86322282247700166
+Expectation of W^plus is 0.86322282247700188
+
+Mean of original in-degree sequence is 0.84399999999999997
+Mean of original out-degree sequence is 0.81200000000000006
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.86650000000000005
+Mean of equal-sum out-degree sequence is 0.86650000000000005
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.8655
+Mean of out-degree sequnces is 0.8655
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.26
+100	 : 	0.34
+150	 : 	0.31333333333333335
+200	 : 	0.375
+250	 : 	0.42
+300	 : 	0.4666666666666667
+350	 : 	0.49714285714285716
+400	 : 	0.525
+450	 : 	0.5466666666666666
+500	 : 	0.572
+550	 : 	0.5872727272727273
+600	 : 	0.5883333333333334
+650	 : 	0.5984615384615385
+700	 : 	0.6014285714285714
+750	 : 	0.608
+800	 : 	0.63
+850	 : 	0.64
+900	 : 	0.6577777777777778
+950	 : 	0.6705263157894736
+
+Spearsman's rank correlation test:
+correlation = 0.60098735619509258, pvalue = 1.1003343472059534e-196
+
+Model22:
+
+The params are:
+a = 1.00000
+b = 0.68301
+c = 0.62092
+d = 0.80000
+alpha = 3.75000
+beta = 3.00000
+
+Expectation of W^minus is 0.93138198458873278
+Expectation of W^plus is 0.93138198458873256
+
+Mean of original in-degree sequence is 0.93049999999999999
+Mean of original out-degree sequence is 0.91800000000000004
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.95750000000000002
+Mean of equal-sum out-degree sequence is 0.95750000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.956
+Mean of out-degree sequnces is 0.956
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.22
+100	 : 	0.3
+150	 : 	0.36666666666666664
+200	 : 	0.38
+250	 : 	0.388
+300	 : 	0.4166666666666667
+350	 : 	0.46
+400	 : 	0.48
+450	 : 	0.5088888888888888
+500	 : 	0.542
+550	 : 	0.5563636363636364
+600	 : 	0.5916666666666667
+650	 : 	0.6076923076923076
+700	 : 	0.6314285714285715
+750	 : 	0.6386666666666667
+800	 : 	0.65
+850	 : 	0.6611764705882353
+900	 : 	0.6711111111111111
+950	 : 	0.6905263157894737
+
+Spearsman's rank correlation test:
+correlation = 0.59592651624071857, pvalue = 1.3796570247387992e-192
+
+Model23:
+
+The params are:
+a = 1.00000
+b = 2.00000
+c = 2.00000
+d = 1.00000
+alpha = 3.00000
+beta = 3.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 3.0
+
+Mean of original in-degree sequence is 2.9359999999999999
+Mean of original out-degree sequence is 2.9525000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.9870000000000001
+Mean of equal-sum out-degree sequence is 2.9870000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.9825
+Mean of out-degree sequnces is 2.9825
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.44
+100	 : 	0.47
+150	 : 	0.4533333333333333
+200	 : 	0.45
+250	 : 	0.468
+300	 : 	0.46
+350	 : 	0.4828571428571429
+400	 : 	0.525
+450	 : 	0.5355555555555556
+500	 : 	0.578
+550	 : 	0.5963636363636363
+600	 : 	0.61
+650	 : 	0.6338461538461538
+700	 : 	0.6428571428571429
+750	 : 	0.6493333333333333
+800	 : 	0.66125
+850	 : 	0.6858823529411765
+900	 : 	0.7066666666666667
+950	 : 	0.7252631578947368
+
+Spearsman's rank correlation test:
+correlation = 0.64816039471837328, pvalue = 1.0482399406302665e-238
+
+Model24:
+
+The params are:
+a = 1.00000
+b = 0.53144
+c = 0.59049
+d = 1.20000
+alpha = 2.50000
+beta = 3.00000
+
+Expectation of W^minus is 0.88573499999999972
+Expectation of W^plus is 0.88573499999999972
+
+Mean of original in-degree sequence is 0.878
+Mean of original out-degree sequence is 0.875
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.89800000000000002
+Mean of equal-sum out-degree sequence is 0.89800000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.8975
+Mean of out-degree sequnces is 0.8975
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.28
+100	 : 	0.34
+150	 : 	0.29333333333333333
+200	 : 	0.385
+250	 : 	0.472
+300	 : 	0.5233333333333333
+350	 : 	0.5371428571428571
+400	 : 	0.5775
+450	 : 	0.6111111111111112
+500	 : 	0.602
+550	 : 	0.6163636363636363
+600	 : 	0.63
+650	 : 	0.6261538461538462
+700	 : 	0.63
+750	 : 	0.6413333333333333
+800	 : 	0.65125
+850	 : 	0.6576470588235294
+900	 : 	0.6688888888888889
+950	 : 	0.6863157894736842
+
+Spearsman's rank correlation test:
+correlation = 0.62710098640350187, pvalue = 4.7495589203849268e-219
+
+Model25:
+
+The params are:
+a = 1.00000
+b = 0.70607
+c = 0.64723
+d = 0.80000
+alpha = 4.00000
+beta = 3.20000
+
+Expectation of W^minus is 0.94142232510288071
+Expectation of W^plus is 0.94142232510288071
+
+Mean of original in-degree sequence is 0.97499999999999998
+Mean of original out-degree sequence is 0.91849999999999998
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.93999999999999995
+Mean of equal-sum out-degree sequence is 0.93999999999999995
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.9395
+Mean of out-degree sequnces is 0.9395
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.06
+100	 : 	0.2
+150	 : 	0.24
+200	 : 	0.315
+250	 : 	0.36
+300	 : 	0.42333333333333334
+350	 : 	0.4657142857142857
+400	 : 	0.515
+450	 : 	0.5422222222222223
+500	 : 	0.578
+550	 : 	0.5909090909090909
+600	 : 	0.6066666666666667
+650	 : 	0.6107692307692307
+700	 : 	0.61
+750	 : 	0.632
+800	 : 	0.6475
+850	 : 	0.6541176470588236
+900	 : 	0.6544444444444445
+950	 : 	0.6705263157894736
+
+Spearsman's rank correlation test:
+correlation = 0.58644421515158507, pvalue = 4.21594232616264e-185
+
+Model26:
+
+The params are:
+a = 1.00000
+b = 2.00000
+c = 2.00000
+d = 1.00000
+alpha = 3.20000
+beta = 3.20000
+
+Expectation of W^minus is 2.9090909090909092
+Expectation of W^plus is 2.9090909090909092
+
+Mean of original in-degree sequence is 2.9359999999999999
+Mean of original out-degree sequence is 2.8940000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.9794999999999998
+Mean of equal-sum out-degree sequence is 2.9794999999999998
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.973
+Mean of out-degree sequnces is 2.973
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.36
+100	 : 	0.46
+150	 : 	0.5133333333333333
+200	 : 	0.515
+250	 : 	0.492
+300	 : 	0.5033333333333333
+350	 : 	0.54
+400	 : 	0.575
+450	 : 	0.5866666666666667
+500	 : 	0.606
+550	 : 	0.62
+600	 : 	0.6466666666666666
+650	 : 	0.66
+700	 : 	0.6671428571428571
+750	 : 	0.688
+800	 : 	0.695
+850	 : 	0.7070588235294117
+900	 : 	0.7133333333333334
+950	 : 	0.7221052631578947
+
+Spearsman's rank correlation test:
+correlation = 0.66867618334786416, pvalue = 2.0333036428092942e-259
+
+Model27:
+
+The params are:
+a = 1.00000
+b = 0.56447
+c = 0.62092
+d = 1.20000
+alpha = 2.66667
+beta = 3.20000
+
+Expectation of W^minus is 0.90315828808604426
+Expectation of W^plus is 0.90315828808604448
+
+Mean of original in-degree sequence is 0.90600000000000003
+Mean of original out-degree sequence is 0.90900000000000003
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.91900000000000004
+Mean of equal-sum out-degree sequence is 0.91900000000000004
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.9185
+Mean of out-degree sequnces is 0.9185
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.18
+100	 : 	0.25
+150	 : 	0.32666666666666666
+200	 : 	0.32
+250	 : 	0.388
+300	 : 	0.4266666666666667
+350	 : 	0.44571428571428573
+400	 : 	0.4975
+450	 : 	0.5422222222222223
+500	 : 	0.578
+550	 : 	0.6054545454545455
+600	 : 	0.605
+650	 : 	0.6169230769230769
+700	 : 	0.6185714285714285
+750	 : 	0.6333333333333333
+800	 : 	0.64
+850	 : 	0.6552941176470588
+900	 : 	0.6655555555555556
+950	 : 	0.6810526315789474
+
+Spearsman's rank correlation test:
+correlation = 0.6025893022652602, pvalue = 5.3569505033326999e-198
+
+Model28:
+
+The params are:
+a = 1.10000
+b = 1.05666
+c = 0.95099
+d = 0.80000
+alpha = 3.50000
+beta = 2.80000
+
+Expectation of W^minus is 1.4793178554000019
+Expectation of W^plus is 1.4793178554000017
+
+Mean of original in-degree sequence is 1.488
+Mean of original out-degree sequence is 1.474
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 1.5055000000000001
+Mean of equal-sum out-degree sequence is 1.5055000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 1.5025
+Mean of out-degree sequnces is 1.5025
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.3
+100	 : 	0.28
+150	 : 	0.41333333333333333
+200	 : 	0.43
+250	 : 	0.468
+300	 : 	0.4866666666666667
+350	 : 	0.5228571428571429
+400	 : 	0.5475
+450	 : 	0.5488888888888889
+500	 : 	0.562
+550	 : 	0.56
+600	 : 	0.5816666666666667
+650	 : 	0.5969230769230769
+700	 : 	0.6114285714285714
+750	 : 	0.6266666666666667
+800	 : 	0.6375
+850	 : 	0.6552941176470588
+900	 : 	0.6711111111111111
+950	 : 	0.6894736842105263
+
+Spearsman's rank correlation test:
+correlation = 0.60193077801153549, pvalue = 1.8595306240485866e-197
+
+Model29:
+
+The params are:
+a = 1.10000
+b = 2.00000
+c = 1.81818
+d = 1.00000
+alpha = 2.80000
+beta = 2.80000
+
+Expectation of W^minus is 2.8282828282828287
+Expectation of W^plus is 3.1111111111111112
+
+Mean of original in-degree sequence is 3.1619999999999999
+Mean of original out-degree sequence is 2.8214999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.0274999999999999
+Mean of equal-sum out-degree sequence is 3.0274999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.0235
+Mean of out-degree sequnces is 3.0235
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.48
+100	 : 	0.52
+150	 : 	0.5466666666666666
+200	 : 	0.565
+250	 : 	0.544
+300	 : 	0.56
+350	 : 	0.5857142857142857
+400	 : 	0.5925
+450	 : 	0.6111111111111112
+500	 : 	0.634
+550	 : 	0.6545454545454545
+600	 : 	0.655
+650	 : 	0.6692307692307692
+700	 : 	0.6885714285714286
+750	 : 	0.6973333333333334
+800	 : 	0.71375
+850	 : 	0.7211764705882353
+900	 : 	0.7422222222222222
+950	 : 	0.7589473684210526
+
+Spearsman's rank correlation test:
+correlation = 0.7140516628992587, pvalue = 1.0442907744326263e-311
+
+Model30:
+
+The params are:
+a = 1.10000
+b = 0.30628
+c = 0.34457
+d = 1.20000
+alpha = 2.33333
+beta = 2.80000
+
+Expectation of W^minus is 0.53599345702727763
+Expectation of W^plus is 0.53599345702727763
+
+Mean of original in-degree sequence is 0.54500000000000004
+Mean of original out-degree sequence is 0.53700000000000003
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.51600000000000001
+Mean of equal-sum out-degree sequence is 0.51600000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.5155
+Mean of out-degree sequnces is 0.5155
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.4
+100	 : 	0.41
+150	 : 	0.42
+200	 : 	0.46
+250	 : 	0.46
+300	 : 	0.4866666666666667
+350	 : 	0.5057142857142857
+400	 : 	0.505
+450	 : 	0.52
+500	 : 	0.528
+550	 : 	0.5454545454545454
+600	 : 	0.54
+650	 : 	0.5492307692307692
+700	 : 	0.5628571428571428
+750	 : 	0.5773333333333334
+800	 : 	0.615
+850	 : 	0.6529411764705882
+900	 : 	0.6833333333333333
+950	 : 	0.7157894736842105
+
+Spearsman's rank correlation test:
+correlation = 0.58984313123012866, pvalue = 9.3412495120513649e-188
+
+Model31:
+
+The params are:
+a = 1.10000
+b = 1.10000
+c = 1.00000
+d = 0.80000
+alpha = 3.75000
+beta = 3.00000
+
+Expectation of W^minus is 1.5000000000000018
+Expectation of W^plus is 1.5000000000000013
+
+Mean of original in-degree sequence is 1.512
+Mean of original out-degree sequence is 1.524
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 1.5389999999999999
+Mean of equal-sum out-degree sequence is 1.5389999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 1.5365
+Mean of out-degree sequnces is 1.5365
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.32
+100	 : 	0.34
+150	 : 	0.36666666666666664
+200	 : 	0.425
+250	 : 	0.436
+300	 : 	0.46
+350	 : 	0.47714285714285715
+400	 : 	0.5125
+450	 : 	0.5333333333333333
+500	 : 	0.552
+550	 : 	0.5509090909090909
+600	 : 	0.5733333333333334
+650	 : 	0.5953846153846154
+700	 : 	0.6114285714285714
+750	 : 	0.62
+800	 : 	0.6425
+850	 : 	0.6552941176470588
+900	 : 	0.6611111111111111
+950	 : 	0.6894736842105263
+
+Spearsman's rank correlation test:
+correlation = 0.59577830454335101, pvalue = 1.814232895276072e-192
+
+Model32:
+
+The params are:
+a = 1.10000
+b = 2.00000
+c = 1.81818
+d = 1.00000
+alpha = 3.00000
+beta = 3.00000
+
+Expectation of W^minus is 2.7272727272727271
+Expectation of W^plus is 3.0
+
+Mean of original in-degree sequence is 2.9390000000000001
+Mean of original out-degree sequence is 2.6495000000000002
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.0514999999999999
+Mean of equal-sum out-degree sequence is 3.0514999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.0415
+Mean of out-degree sequnces is 3.0415
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.56
+100	 : 	0.48
+150	 : 	0.44
+200	 : 	0.42
+250	 : 	0.476
+300	 : 	0.5266666666666666
+350	 : 	0.54
+400	 : 	0.56
+450	 : 	0.5777777777777777
+500	 : 	0.596
+550	 : 	0.6181818181818182
+600	 : 	0.6283333333333333
+650	 : 	0.6415384615384615
+700	 : 	0.6571428571428571
+750	 : 	0.6746666666666666
+800	 : 	0.69125
+850	 : 	0.7176470588235294
+900	 : 	0.7155555555555555
+950	 : 	0.7294736842105263
+
+Spearsman's rank correlation test:
+correlation = 0.67381097346543573, pvalue = 7.2672620855816133e-265
+
+Model33:
+
+The params are:
+a = 1.10000
+b = 0.32998
+c = 0.36665
+d = 1.20000
+alpha = 2.50000
+beta = 3.00000
+
+Expectation of W^minus is 0.54997174807980043
+Expectation of W^plus is 0.54997174807980043
+
+Mean of original in-degree sequence is 0.53949999999999998
+Mean of original out-degree sequence is 0.5605
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.57599999999999996
+Mean of equal-sum out-degree sequence is 0.57599999999999996
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.5755
+Mean of out-degree sequnces is 0.5755
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.14
+100	 : 	0.29
+150	 : 	0.3933333333333333
+200	 : 	0.425
+250	 : 	0.448
+300	 : 	0.47333333333333333
+350	 : 	0.5
+400	 : 	0.4975
+450	 : 	0.5244444444444445
+500	 : 	0.536
+550	 : 	0.56
+600	 : 	0.575
+650	 : 	0.5907692307692308
+700	 : 	0.6171428571428571
+750	 : 	0.6106666666666667
+800	 : 	0.61625
+850	 : 	0.6411764705882353
+900	 : 	0.6766666666666666
+950	 : 	0.7147368421052631
+
+Spearsman's rank correlation test:
+correlation = 0.59081058559433974, pvalue = 1.6182856411087587e-188
+
+Model34:
+
+The params are:
+a = 1.10000
+b = 1.13713
+c = 1.04237
+d = 0.80000
+alpha = 4.00000
+beta = 3.20000
+
+Expectation of W^minus is 1.5161700688014426
+Expectation of W^plus is 1.5161700688014419
+
+Mean of original in-degree sequence is 1.5155000000000001
+Mean of original out-degree sequence is 1.494
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 1.518
+Mean of equal-sum out-degree sequence is 1.518
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 1.5165
+Mean of out-degree sequnces is 1.5165
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.16
+100	 : 	0.27
+150	 : 	0.2733333333333333
+200	 : 	0.325
+250	 : 	0.364
+300	 : 	0.42333333333333334
+350	 : 	0.4828571428571429
+400	 : 	0.4975
+450	 : 	0.5177777777777778
+500	 : 	0.55
+550	 : 	0.5636363636363636
+600	 : 	0.5716666666666667
+650	 : 	0.5846153846153846
+700	 : 	0.6042857142857143
+750	 : 	0.6213333333333333
+800	 : 	0.64
+850	 : 	0.6505882352941177
+900	 : 	0.6688888888888889
+950	 : 	0.7010526315789474
+
+Spearsman's rank correlation test:
+correlation = 0.58271249541104964, pvalue = 3.1862968062160889e-182
+
+Model35:
+
+The params are:
+a = 1.10000
+b = 2.00000
+c = 1.81818
+d = 1.00000
+alpha = 3.20000
+beta = 3.20000
+
+Expectation of W^minus is 2.6446280991735538
+Expectation of W^plus is 2.9090909090909092
+
+Mean of original in-degree sequence is 2.944
+Mean of original out-degree sequence is 2.6154999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.8690000000000002
+Mean of equal-sum out-degree sequence is 2.8690000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.866
+Mean of out-degree sequnces is 2.866
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.44
+100	 : 	0.43
+150	 : 	0.44666666666666666
+200	 : 	0.47
+250	 : 	0.504
+300	 : 	0.5233333333333333
+350	 : 	0.5514285714285714
+400	 : 	0.5725
+450	 : 	0.5933333333333334
+500	 : 	0.608
+550	 : 	0.6072727272727273
+600	 : 	0.6116666666666667
+650	 : 	0.6415384615384615
+700	 : 	0.65
+750	 : 	0.6706666666666666
+800	 : 	0.6875
+850	 : 	0.7023529411764706
+900	 : 	0.7211111111111111
+950	 : 	0.7410526315789474
+
+Spearsman's rank correlation test:
+correlation = 0.68678240981281813, pvalue = 3.9521010716929325e-279
+
+Model36:
+
+The params are:
+a = 1.10000
+b = 0.35049
+c = 0.38554
+d = 1.20000
+alpha = 2.66667
+beta = 3.20000
+
+Expectation of W^minus is 0.56079023917022786
+Expectation of W^plus is 0.56079023917022797
+
+Mean of original in-degree sequence is 0.5605
+Mean of original out-degree sequence is 0.53900000000000003
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.5645
+Mean of equal-sum out-degree sequence is 0.5645
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.5645
+Mean of out-degree sequnces is 0.5645
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.28
+100	 : 	0.45
+150	 : 	0.44
+200	 : 	0.45
+250	 : 	0.488
+300	 : 	0.5066666666666667
+350	 : 	0.5171428571428571
+400	 : 	0.51
+450	 : 	0.5244444444444445
+500	 : 	0.538
+550	 : 	0.5272727272727272
+600	 : 	0.5283333333333333
+650	 : 	0.5446153846153846
+700	 : 	0.5585714285714286
+750	 : 	0.5733333333333334
+800	 : 	0.58125
+850	 : 	0.6188235294117647
+900	 : 	0.6588888888888889
+950	 : 	0.6915789473684211
+
+Spearsman's rank correlation test:
+correlation = 0.57747971760718975, pvalue = 3.0002150003419936e-178
+
+Model37:
+
+The params are:
+a = 1.20000
+b = 1.63259
+c = 1.46933
+d = 0.80000
+alpha = 3.50000
+beta = 2.80000
+
+Expectation of W^minus is 2.2856214528000001
+Expectation of W^plus is 2.2856214528000005
+
+Mean of original in-degree sequence is 2.2469999999999999
+Mean of original out-degree sequence is 2.2250000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.3264999999999998
+Mean of equal-sum out-degree sequence is 2.3264999999999998
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.3195
+Mean of out-degree sequnces is 2.3195
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.3
+100	 : 	0.36
+150	 : 	0.38666666666666666
+200	 : 	0.45
+250	 : 	0.468
+300	 : 	0.5033333333333333
+350	 : 	0.5285714285714286
+400	 : 	0.5275
+450	 : 	0.5244444444444445
+500	 : 	0.548
+550	 : 	0.5818181818181818
+600	 : 	0.5916666666666667
+650	 : 	0.6215384615384615
+700	 : 	0.64
+750	 : 	0.656
+800	 : 	0.67625
+850	 : 	0.6952941176470588
+900	 : 	0.7111111111111111
+950	 : 	0.728421052631579
+
+Spearsman's rank correlation test:
+correlation = 0.62802724420170364, pvalue = 6.9807885723337793e-220
+
+Model38:
+
+The params are:
+a = 1.20000
+b = 2.00000
+c = 1.66667
+d = 1.00000
+alpha = 2.80000
+beta = 2.80000
+
+Expectation of W^minus is 2.592592592592593
+Expectation of W^plus is 3.1111111111111112
+
+Mean of original in-degree sequence is 3.1644999999999999
+Mean of original out-degree sequence is 2.6495000000000002
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 3.1659999999999999
+Mean of equal-sum out-degree sequence is 3.1659999999999999
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 3.159
+Mean of out-degree sequnces is 3.159
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.48
+100	 : 	0.49
+150	 : 	0.52
+200	 : 	0.565
+250	 : 	0.552
+300	 : 	0.5666666666666667
+350	 : 	0.5857142857142857
+400	 : 	0.59
+450	 : 	0.6044444444444445
+500	 : 	0.634
+550	 : 	0.6454545454545455
+600	 : 	0.6666666666666666
+650	 : 	0.6846153846153846
+700	 : 	0.6985714285714286
+750	 : 	0.7013333333333334
+800	 : 	0.71375
+850	 : 	0.731764705882353
+900	 : 	0.7444444444444445
+950	 : 	0.76
+
+Spearsman's rank correlation test:
+correlation = 0.71734072710778229, pvalue = 6.7490875110265385e-316
+
+Model39:
+
+The params are:
+a = 1.20000
+b = 0.19823
+c = 0.22301
+d = 1.20000
+alpha = 2.33333
+beta = 2.80000
+
+Expectation of W^minus is 0.34690989200625366
+Expectation of W^plus is 0.34690989200625372
+
+Mean of original in-degree sequence is 0.35449999999999998
+Mean of original out-degree sequence is 0.32200000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.3765
+Mean of equal-sum out-degree sequence is 0.3765
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.3765
+Mean of out-degree sequnces is 0.3765
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.28
+100	 : 	0.34
+150	 : 	0.34
+200	 : 	0.36
+250	 : 	0.404
+300	 : 	0.4266666666666667
+350	 : 	0.44
+400	 : 	0.455
+450	 : 	0.4577777777777778
+500	 : 	0.47
+550	 : 	0.4781818181818182
+600	 : 	0.5183333333333333
+650	 : 	0.5723076923076923
+700	 : 	0.6242857142857143
+750	 : 	0.6626666666666666
+800	 : 	0.69125
+850	 : 	0.7211764705882353
+900	 : 	0.75
+950	 : 	0.7747368421052632
+
+Spearsman's rank correlation test:
+correlation = 0.52806869812856738, pvalue = 4.9201622655335778e-144
+
+Model40:
+
+The params are:
+a = 1.20000
+b = 1.69956
+c = 1.54505
+d = 0.80000
+alpha = 3.75000
+beta = 3.00000
+
+Expectation of W^minus is 2.3175764198918336
+Expectation of W^plus is 2.3175764198918336
+
+Mean of original in-degree sequence is 2.3574999999999999
+Mean of original out-degree sequence is 2.2989999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.3795000000000002
+Mean of equal-sum out-degree sequence is 2.3795000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.3765
+Mean of out-degree sequnces is 2.3765
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.32
+100	 : 	0.36
+150	 : 	0.41333333333333333
+200	 : 	0.445
+250	 : 	0.444
+300	 : 	0.45666666666666667
+350	 : 	0.48
+400	 : 	0.5025
+450	 : 	0.5377777777777778
+500	 : 	0.55
+550	 : 	0.5727272727272728
+600	 : 	0.595
+650	 : 	0.6230769230769231
+700	 : 	0.6371428571428571
+750	 : 	0.6533333333333333
+800	 : 	0.6725
+850	 : 	0.6905882352941176
+900	 : 	0.7022222222222222
+950	 : 	0.7189473684210527
+
+Spearsman's rank correlation test:
+correlation = 0.61559772492667009, pvalue = 6.1376051535962846e-209
+
+Model41:
+
+The params are:
+a = 1.20000
+b = 2.00000
+c = 1.66667
+d = 1.00000
+alpha = 3.00000
+beta = 3.00000
+
+Expectation of W^minus is 2.5
+Expectation of W^plus is 3.0
+
+Mean of original in-degree sequence is 2.9820000000000002
+Mean of original out-degree sequence is 2.4474999999999998
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.9485000000000001
+Mean of equal-sum out-degree sequence is 2.9485000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.9435
+Mean of out-degree sequnces is 2.9435
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.5
+100	 : 	0.39
+150	 : 	0.4066666666666667
+200	 : 	0.435
+250	 : 	0.456
+300	 : 	0.49333333333333335
+350	 : 	0.5457142857142857
+400	 : 	0.5875
+450	 : 	0.5933333333333334
+500	 : 	0.61
+550	 : 	0.6181818181818182
+600	 : 	0.635
+650	 : 	0.6430769230769231
+700	 : 	0.6628571428571428
+750	 : 	0.68
+800	 : 	0.68875
+850	 : 	0.7082352941176471
+900	 : 	0.7233333333333334
+950	 : 	0.7452631578947368
+
+Spearsman's rank correlation test:
+correlation = 0.68006323922606748, pvalue = 1.1972080858727667e-271
+
+Model42:
+
+The params are:
+a = 1.20000
+b = 0.21357
+c = 0.23730
+d = 1.20000
+alpha = 2.50000
+beta = 3.00000
+
+Expectation of W^minus is 0.35595703124999983
+Expectation of W^plus is 0.35595703124999983
+
+Mean of original in-degree sequence is 0.33450000000000002
+Mean of original out-degree sequence is 0.374
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.38200000000000001
+Mean of equal-sum out-degree sequence is 0.38200000000000001
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.381
+Mean of out-degree sequnces is 0.381
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.36
+100	 : 	0.41
+150	 : 	0.4266666666666667
+200	 : 	0.425
+250	 : 	0.408
+300	 : 	0.41
+350	 : 	0.4142857142857143
+400	 : 	0.4125
+450	 : 	0.4066666666666667
+500	 : 	0.414
+550	 : 	0.4490909090909091
+600	 : 	0.4666666666666667
+650	 : 	0.5230769230769231
+700	 : 	0.5728571428571428
+750	 : 	0.6146666666666667
+800	 : 	0.65
+850	 : 	0.6811764705882353
+900	 : 	0.7166666666666667
+950	 : 	0.7431578947368421
+
+Spearsman's rank correlation test:
+correlation = 0.50848381807366139, pvalue = 5.6635412531695458e-132
+
+Model43:
+
+The params are:
+a = 1.20000
+b = 1.75692
+c = 1.61051
+d = 0.80000
+alpha = 4.00000
+beta = 3.20000
+
+Expectation of W^minus is 2.3425600000000006
+Expectation of W^plus is 2.3425599999999998
+
+Mean of original in-degree sequence is 2.3774999999999999
+Mean of original out-degree sequence is 2.4119999999999999
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.3370000000000002
+Mean of equal-sum out-degree sequence is 2.3370000000000002
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.336
+Mean of out-degree sequnces is 2.336
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.36
+100	 : 	0.33
+150	 : 	0.38
+200	 : 	0.425
+250	 : 	0.44
+300	 : 	0.4633333333333333
+350	 : 	0.49142857142857144
+400	 : 	0.505
+450	 : 	0.5444444444444444
+500	 : 	0.554
+550	 : 	0.58
+600	 : 	0.6
+650	 : 	0.6169230769230769
+700	 : 	0.6385714285714286
+750	 : 	0.6573333333333333
+800	 : 	0.6725
+850	 : 	0.6952941176470588
+900	 : 	0.7011111111111111
+950	 : 	0.728421052631579
+
+Spearsman's rank correlation test:
+correlation = 0.64267503223244926, pvalue = 1.9484660448713405e-233
+
+Model44:
+
+The params are:
+a = 1.20000
+b = 2.00000
+c = 1.66667
+d = 1.00000
+alpha = 3.20000
+beta = 3.20000
+
+Expectation of W^minus is 2.4242424242424243
+Expectation of W^plus is 2.9090909090909092
+
+Mean of original in-degree sequence is 2.8384999999999998
+Mean of original out-degree sequence is 2.4020000000000001
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 2.9474999999999998
+Mean of equal-sum out-degree sequence is 2.9474999999999998
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 2.942
+Mean of out-degree sequnces is 2.942
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.42
+100	 : 	0.48
+150	 : 	0.46
+200	 : 	0.465
+250	 : 	0.492
+300	 : 	0.5233333333333333
+350	 : 	0.5742857142857143
+400	 : 	0.5975
+450	 : 	0.6
+500	 : 	0.622
+550	 : 	0.6454545454545455
+600	 : 	0.6533333333333333
+650	 : 	0.6630769230769231
+700	 : 	0.67
+750	 : 	0.6773333333333333
+800	 : 	0.69875
+850	 : 	0.7082352941176471
+900	 : 	0.73
+950	 : 	0.7389473684210527
+
+Spearsman's rank correlation test:
+correlation = 0.70359316618795242, pvalue = 9.0134826474448678e-299
+
+Model45:
+
+The params are:
+a = 1.20000
+b = 0.22685
+c = 0.24953
+d = 1.20000
+alpha = 2.66667
+beta = 3.20000
+
+Expectation of W^minus is 0.3629590599625625
+Expectation of W^plus is 0.3629590599625625
+
+Mean of original in-degree sequence is 0.3735
+Mean of original out-degree sequence is 0.34899999999999998
+
+After being modified by Algorithm 2.1, 
+Mean of equal-sum in-degree sequence is 0.375
+Mean of equal-sum out-degree sequence is 0.375
+
+After removing self-loops and parallel edges:
+Mean of in-degree sequnces is 0.375
+Mean of out-degree sequnces is 0.375
+
+The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:
+k	 : 	 percentage of overlapping nodes 
+50	 : 	0.24
+100	 : 	0.34
+150	 : 	0.3466666666666667
+200	 : 	0.355
+250	 : 	0.372
+300	 : 	0.42
+350	 : 	0.4057142857142857
+400	 : 	0.435
+450	 : 	0.42444444444444446
+500	 : 	0.442
+550	 : 	0.4781818181818182
+600	 : 	0.49166666666666664
+650	 : 	0.5446153846153846
+700	 : 	0.59
+750	 : 	0.6346666666666667
+800	 : 	0.68
+850	 : 	0.7188235294117648
+900	 : 	0.7477777777777778
+950	 : 	0.7726315789473684
+
+Spearsman's rank correlation test:
+correlation = 0.51118772786622069, pvalue = 1.362869335350894e-133
+

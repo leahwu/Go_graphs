@@ -47,8 +47,10 @@ class PowerLaw:
         self.e_w_minus = self.c * beta/ (self.beta - 1)
         self.e_w_plus = a*beta*self.c**d / (beta - d)
 
-        print("E[W^minus] = ", self.e_w_minus)
-        print("E[W^plus] = ", self.e_w_plus)
+        self.params = {'a': self.a, 'b': self.b, 'c': self.c, 'd': self.d, 'alpha': self.alpha, 'beta': self.beta}
+
+        # print("E[W^minus] = ", self.e_w_minus)
+        # print("E[W^plus] = ", self.e_w_plus)
 
     def gene_iid_pairs_of_w(self, n):
 
@@ -86,6 +88,9 @@ class PowerLaw:
             pair = self.gene_one_pair()
             d_in[i] = pair[0]
             d_out[i] = pair[1]
+
+        # print("mean of in-degree sequence: ", np.mean(d_in))
+        # print("mean of out-degree sequence: ", np.mean(d_out))
 
         return d_in, d_out
 
