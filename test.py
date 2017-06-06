@@ -59,7 +59,7 @@ def test2():
     n = 2000
 # 5*5*3= 75
     models = {}
-    s = 'ALl the graph\'s size is' + repr(n) + '.\n'
+    s = 'ALl the graph\'s size is ' + repr(n) + '.\n'
     i = 1
     for a in a_range:
         for beta in beta_range:
@@ -88,8 +88,8 @@ def test2():
                 s += '\n'
 
                 s += "After removing self-loops and parallel edges:\n"
-                s += "Mean of in-degree sequnces is " + repr(model.mean_in_degree) + '\n'
-                s += "Mean of out-degree sequnces is " + repr(model.mean_out_degree) + '\n'
+                s += "Mean of in-degree sequence is " + repr(model.mean_in_degree) + '\n'
+                s += "Mean of out-degree sequence is " + repr(model.mean_out_degree) + '\n'
                 s += '\n'
 
                 s += "The percentage of overlapping nodes in top k ranked nodes by bc, and pr are:\n"
@@ -102,8 +102,7 @@ def test2():
                 corr, pvalue = model.spearman_test()
                 s += "correlation = " + repr(corr) + ", pvalue = " + repr(pvalue) + "\n"
 
-                param = (a, d, beta)
-                models[param] = model
+                models[i] = model
 
                 s += '\n'
                 i += 1
@@ -123,3 +122,23 @@ def test3():
 
 
 models = test2()
+
+def test4():
+    selected_models = []
+
+    import matplotlib.pyplot as plt
+
+    plt.figure()
+    for model in selected_models:
+        kk = []
+        p = []
+        for k in range(50, 2000, 50):
+            kk.append(k)
+            p.append(model.overlaps(k)[1])
+        d = model.fg.params['d']
+        beta = model.fg.params['beta']
+        a = model.fg.params['a']
+        s = 'a = ' + repr(a) + ", beta = " + repr(beta) + ", d = " + repr(d)
+        plt.plot(kk, p, label=s)
+
+    plt.legend()

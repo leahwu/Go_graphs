@@ -124,14 +124,13 @@ d_range = np.arange(0.8, 1.3, 0.2)  # 3 choices: 0.8, 1.0, 1.2
 
 ### 3.2 Correlation between page rank and betweenness centrality.
 
-Full information in [result.txt][3]
+Full information in [result.txt][result]
 
 
 
 [1]: https://en.wikipedia.org/wiki/Rank_correlation
 [2]: https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient 
-
-
+[result]: https://github.com/leahwu/Go_graphs/blob/master/results1.txt
 
 ####  
 
