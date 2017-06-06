@@ -60,6 +60,8 @@ class DCMGenerator(object):
         # return to a dictionary
         self.page_rank = nx.pagerank(self.graph)
         self.betweenness_centrality = nx.betweenness_centrality(self.graph)
+        self.scaled_betweenness_centrality = [elem/sum(list(dcm_erased_ls[j][i].betweenness_centrality)) for elem in list(dcm_erased_ls[j][i].betweenness_centrality)]
+
 
         self.graph_din = list(self.graph.in_degree().values())
         self.graph_dout = list(self.graph.out_degree().values())
@@ -67,6 +69,27 @@ class DCMGenerator(object):
         self.mean_in_degree = sum(self.graph_din) / self.size
         self.mean_out_degree = sum(self.graph_dout) / self.size
 
+    def __str__(self):
+        s = "The params are:\n"
+        s += "Expectation of W^minus is " + repr(model.fg.e_w_minus) + '\n'
+        s += "Expectation of W^plus is " + repr(model.fg.e_w_plus) + '\n'
+        s += '\n'
+
+        s += "Mean of original in-degree sequence is " + repr(self.mean_original_in_seq) + '\n'
+        s += "Mean of original out-degree sequence is " + repr(self.mean_original_out_seq) + '\n'
+        s += '\n'
+
+        s += "After being modified by Algorithm 2.1, \n"
+        s += "Mean of equal-sum in-degree sequence is " + repr(self.mean_equal_sum_in_seq) + '\n'
+        s += "Mean of equal-sum out-degree sequence is " + repr(self.mean_equal_sum_out_seq) + '\n'
+        s += '\n'
+
+        s += "After removing self-loops and parallel edges:\n"
+        s += "Mean of in-degree sequnces is " + repr(self.mean_in_degree) + '\n'
+        s += "Mean of out-degree sequnces is " + repr(self.mean_out_degree) + '\n'
+        s += '\n'
+
+        return s
 
     def plot_helper(self, seq, color, ms):
         values = sorted(set(seq))
@@ -178,6 +201,9 @@ class DCMGenerator(object):
 
         return corr, pvalue
 
+
+
+
     # return to the number and the percentage of overlapping nodes in top k page-rakned
     # and top k betweenness-centrality nodes
     def overlaps(self, k):
@@ -194,3 +220,5 @@ class DCMGenerator(object):
         overlap_percentage = overlap_number / k
 
         return overlap_number, overlap_percentage
+
+
