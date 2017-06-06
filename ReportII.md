@@ -150,15 +150,31 @@ We could find that both tests' p-value in both in-degree and out-degree are not 
 
 ### 3.2 Correlation between page rank and betweenness centrality.
 
-#### a. Full information in [result.txt][result]
+We test for different parameters as describeds in _2.3_, and we get 75 models. We list the information of:
 
-#### b. Test for spearman correlation
+1. _parameters_
+2. _average of W^+, W^-_
+3. _average degree_ of in-degree sequences and out-degree sequences
+4. The _percentage of overlapping nodes_ in top k ranked nodes by betweenness centrality and page rank
+5. Spearsman's rank correlation test's _correlation_ and _p-value_.
 
-**Spearman's rank correlation coefficient *ρ*** is a nonparametric measure of rank correlation statistical dependence between the ranking of two variables. It assesses how well the relationship between two variables can be described using a **monotonic function**.
+The detailed result is listed in [result.txt][result]
 
-Under the null hypothesis of statistical independence (*ρ* = 0), we could caculate the p-value to check whether *ρ* is statistically significant. If the p-value is small enough, we could reject the null and receive the dependence between the two ranking.
+#### 3.2.1 Relationships between average degree and percentage of overlapping nodes
 
-We use different pairs of alpha and d to generate simple directed graphs and test their pagerank and betweenness centrality statistical dependence.
+We sorted the average degree of nodes of the 75 models in decreasing order, and then plot the average degree of nodes and repsective percentage of overlapping nodes in this order.
+
+![relationship](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/relationship_between.png)
+
+
+
+As we can see from the picture, as the average degree of nodes increase, the percentage of overlapping nodes in top 100 / 200 nodes increases.
+
+To make more investigation, we choose 4 modes which are labeled as m13, m16, m14, m9. The parameters of them are
+
+![4_models](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/overlapping_per.png)
+
+
 
 ## 4. Conclusion
 
@@ -176,13 +192,13 @@ Betweeness centrality and page rank ranking is statistically dependent.
 
   ​
 
--  When average degrees of nodes are bigger than, say around 2, 
+- When average degrees of nodes are bigger than, say around 2, 
 
 
 
 [1]: https://en.wikipedia.org/wiki/Rank_correlation
 [2]: https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
-[result]: https://github.com/leahwu/Go_graphs/blob/master/results1.txt
+[result]: https://github.com/leahwu/Go_graphs/blob/master/results2.txt
 
 ####  
 
