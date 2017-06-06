@@ -1,6 +1,7 @@
 import DCMGenerator as dcm_g
 import time
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def test1():
@@ -45,6 +46,7 @@ def test1():
         overlap_percentage.append(per)
         print(k, per)
 
+    return dcm
 
 def test2():
     f = open("results1.txt", 'w+')
@@ -121,24 +123,65 @@ def test3():
 
 
 
-models = test2()
+
 
 def test4():
-    selected_models = []
+        models = {}
+        import matplotlib.pyplot as plt
 
-    import matplotlib.pyplot as plt
+        plt.figure()
+        ave_deg = {}
+        over_per_100 = {}
+        over_per_200 = {}
 
-    plt.figure()
-    for model in selected_models:
-        kk = []
-        p = []
-        for k in range(50, 2000, 50):
-            kk.append(k)
-            p.append(model.overlaps(k)[1])
-        d = model.fg.params['d']
-        beta = model.fg.params['beta']
-        a = model.fg.params['a']
-        s = 'a = ' + repr(a) + ", beta = " + repr(beta) + ", d = " + repr(d)
-        plt.plot(kk, p, label=s)
+        ave_bc = {}
+        ave_pr = {}
 
-    plt.legend()
+        import operator
+
+        for i in range(1, 76):
+            model = models[i]
+            ave_deg[i] = model.mean_in_degree
+            over_per_100[i] = model.overlaps(100)[1]
+            over_per_200[i] = model.overlaps(200)[1]
+
+            bc_sort = sorted(model.betweenness_centrality.items(), key=operator.itemgetter(1), reverse=True)
+            pr_sort = sorted(model.page_rank.items(), key=operator.itemgetter(1), reverse=True)
+
+            bc_topk = [node[1] for node in bc_sort[0: 100]]
+            pr_topk = [node[1] for node in pr_sort[0: 100]]
+            ave_bc[i] = sum(bc_topk)/100
+            ave_pr[i] = sum(pr_topk)/100
+
+        ave_deg_sorted = sorted(ave_deg.items(), key=operator.itemgetter(1),reverse=True)
+        ave_deg_hist = [node[1] for node in ave_deg_sorted]
+        over_per_100_hist = [over_per_100[node[0]] for node in ave_deg_sorted]
+        over_per_200_hist = [over_per_200[node[0]] for node in ave_deg_sorted]
+
+        ave_bc_hist = [ave_bc[node[0]] for node in ave_deg_sorted]
+        ave_pr_hist = [ave_pr[node[0]] for node in ave_deg_sorted]
+
+        plt.plot(ave_deg_hist, over_per_100_hist, color='green', marker='o', label='k=100')
+        plt.plot(ave_deg_hist, over_per_200_hist, color='blue', marker='v', label='k=200')
+
+        plt.xlabel('average degree of nodes')
+        plt.ylabel('overlapping percentage in tok k nodes')
+        plt.legend()
+        plt.title('relationship between overlapping percentage and ave degree of nodes')
+
+        plt.figure()
+
+        plt.plot(ave_deg_hist, ave_bc_hist, color='red', marker='o', label='page rank')
+        plt.plot(ave_deg_hist, ave_pr_hist, color='cyan', marker='v', label='betweenness centrality')
+
+        plt.xlabel('average degree of nodes')
+        plt.ylabel('values')
+        plt.legend()
+        plt.title('relationship between ave top-100 page rank/betweenness_centrality and ave degree of nodes')
+
+
+
+dcm = test1()
+
+
+

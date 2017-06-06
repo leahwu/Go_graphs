@@ -160,13 +160,8 @@ class DCMGenerator(object):
             txt += para[0] + ' = ' + "%0.2f" % para[1] + ' '
 
         plt.title(txt)
-        plt.title('First '+repr(k) + ' nodes: Comparison between Pagerank and Betweenness centrality \n' + txt)
+        plt.title('First '+repr(k) + ' nodes in decreasing order of Page Rank \n' + txt)
 
-        txt = ''
-        for para in self.fg.params.items():
-            txt += para[0] + ' = ' + "%0.5f" % para[1] + '\t'
-
-        fig.text(.1, .1, txt)
 
         # plot first k nodes in the decreasing order of bc, and then plot their corresponding pagerank
     def bc_vs_pr_plot(self, k=None):
@@ -195,7 +190,7 @@ class DCMGenerator(object):
             txt += para[0] + ' = ' + "%0.2f" % para[1] + ' '
 
         plt.title(txt)
-        plt.title('First ' + repr(k) + ' nodes: Comparison between Pagerank and Betweenness centrality\n' + txt)
+        plt.title('First ' + repr(k) + ' nodes in decreasing order of Betweenness centrality\n' + txt)
 
 
 
