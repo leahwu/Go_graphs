@@ -14,7 +14,7 @@ def test1():
 
     d = beta / alpha
 
-    n = 2000 # simulation times
+    n = 2000 # graph size
 
 
 

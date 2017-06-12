@@ -7,6 +7,8 @@ import ValidDegree as vd
 import scipy.stats as st
 import DCMRevised as dcm_r
 import numpy as np
+from statsmodels.distributions.empirical_distribution import ECDF
+import math
 
 class DCMGenerator(object):
 
@@ -69,8 +71,8 @@ class DCMGenerator(object):
 
     def __str__(self):
         s = "The params are:\n"
-        s += "Expectation of W^minus is " + repr(model.fg.e_w_minus) + '\n'
-        s += "Expectation of W^plus is " + repr(model.fg.e_w_plus) + '\n'
+        s += "Expectation of W^minus is " + repr(self.fg.e_w_minus) + '\n'
+        s += "Expectation of W^plus is " + repr(self.fg.e_w_plus) + '\n'
         s += '\n'
 
         s += "Mean of original in-degree sequence is " + repr(self.mean_original_in_seq) + '\n'
@@ -83,8 +85,8 @@ class DCMGenerator(object):
         s += '\n'
 
         s += "After removing self-loops and parallel edges:\n"
-        s += "Mean of in-degree sequnces is " + repr(self.mean_in_degree) + '\n'
-        s += "Mean of out-degree sequnces is " + repr(self.mean_out_degree) + '\n'
+        s += "Mean of in-degree sequence is " + repr(self.mean_in_degree) + '\n'
+        s += "Mean of out-degree sequence is " + repr(self.mean_out_degree) + '\n'
         s += '\n'
 
         return s
@@ -241,5 +243,64 @@ class DCMGenerator(object):
         overlap_percentage = overlap_number / k
 
         return overlap_number, overlap_percentage
+
+    def corr_in_and_out(self):
+        """
+        Calculate the correlation between in-degree sequence and out-degree sequence.
+        While executing, plt the graph of in_seq and out_seq
+        :return: the correlation
+        """
+        corr, p_value = st.pearsonr(self.d_in, self.d_out)
+
+        plt.figure()
+
+        self.plot_helper(self.d_in, 'red', 'o', 5)
+        self.plot_helper(self.d_out, 'cyan', 'v', 5)
+
+        plt.legend(['In-degree sequence', 'Out-degree sequence'])
+        plt.xlabel('Degree')
+        plt.ylabel('Number of nodes')
+        plt.xlim([0, 40])
+
+        txt = ''
+        for para in self.fg.params.items():
+            txt += para[0] + ' = ' + "%0.2f" % para[1] + ' '
+
+        plt.title("Correlation: " + repr(corr) +" p-value: " + repr(p_value) +'\n' + txt)
+
+        return corr, p_value
+
+    def plot_tail_dist(self, d, name):
+        """
+        Plot the tail distribution of data
+        1-F(x), where F(x) is the empirical distribution of data
+        :param d: self.page_rank or self.betweenness_centrality, type: dictionary
+        :param name: name of d   
+        :return: void
+        """
+
+        data = list(d.values())
+        cdf = ECDF(data)
+
+        plt.plot(cdf.x, [math.log(yy+0.0001, 10) for yy in 1 - cdf.y], label=name, marker='<', markerfacecolor='none', markersize=1)
+
+    def bc_vs_pr_dist(self):
+        """
+        Plot the tail distribution of page rank and betweenness centrality
+        :return: Void
+        """
+        plt.figure()
+        self.plot_tail_dist(self.betweenness_centrality, 'betweenness centrality')
+        self.plot_tail_dist(self.page_rank, 'page rank')
+        plt.legend()
+
+        txt = ''
+        for para in self.fg.params.items():
+            txt += para[0] + ' = ' + "%0.2f" % para[1] + ' '
+
+        plt.title(txt)
+        plt.title('Log Tail distribution\n' + txt)
+
+        plt.show()
 
 
