@@ -252,6 +252,11 @@ class DCMGenerator(object):
         """
         corr, p_value = st.pearsonr(self.d_in, self.d_out)
 
+        return corr, p_value
+
+    def plot_in_and_out(self):
+        corr, p_value = st.pearsonr(self.d_in, self.d_out)
+
         plt.figure()
 
         self.plot_helper(self.d_in, 'red', 'o', 5)
@@ -266,9 +271,7 @@ class DCMGenerator(object):
         for para in self.fg.params.items():
             txt += para[0] + ' = ' + "%0.2f" % para[1] + ' '
 
-        plt.title("Correlation: " + repr(corr) +" p-value: " + repr(p_value) +'\n' + txt)
-
-        return corr, p_value
+        plt.title("Correlation: " + repr(corr) + " p-value: " + repr(p_value) + '\n' + txt)
 
     def plot_tail_dist(self, d, name):
         """

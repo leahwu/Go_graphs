@@ -1,0 +1,1807 @@
+ALl the graph's size is 2000.
+Model1:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 1.625
+
+Mean of in-degree sequence is 3.167
+Mean of out-degree sequence is 3.167
+
+Spearsman's rank correlation test:
+correlation = 0.69157184075917111, pvalue = 1.3757467682938608e-284
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.60966923317221966, pvalue = 6.876792245335773e-204
+
+Model2:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 1.5
+
+Mean of in-degree sequence is 2.97
+Mean of out-degree sequence is 2.97
+
+Spearsman's rank correlation test:
+correlation = 0.67189335904927261, pvalue = 8.098302152433814e-263
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.42746716336585833, pvalue = 1.1854399306735076e-89
+
+Model3:
+
+The params are:
+a = 0.50000
+d = 1.40000
+beta = 3.00000
+alpha = 2.14286
+b = 2.59054
+c = 3.23817
+
+Expectation of W^minus is 4.8572584860186296
+Expectation of W^plus is 4.8572584860186288
+
+Mean of in-degree sequence is 4.9575
+Mean of out-degree sequence is 4.9575
+
+Spearsman's rank correlation test:
+correlation = 0.77089559968842347, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.73016946986439013, pvalue = 0.0
+
+Model4:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 1.4166666666666667
+
+Mean of in-degree sequence is 2.812
+Mean of out-degree sequence is 2.812
+
+Spearsman's rank correlation test:
+correlation = 0.65856336738419108, pvalue = 5.2704614862005843e-249
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.34173887564943656, pvalue = 6.8613704720872031e-56
+
+Model5:
+
+The params are:
+a = 0.50000
+d = 1.40000
+beta = 3.40000
+alpha = 2.42857
+b = 2.98841
+c = 3.58610
+
+Expectation of W^minus is 5.0803022288214619
+Expectation of W^plus is 5.0803022288214619
+
+Mean of in-degree sequence is 4.9925
+Mean of out-degree sequence is 4.9925
+
+Spearsman's rank correlation test:
+correlation = 0.7593867250384988, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.56615503787965626, pvalue = 6.8443897445204806e-170
+
+Model6:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 1.3571428571428572
+
+Mean of in-degree sequence is 2.748
+Mean of out-degree sequence is 2.748
+
+Spearsman's rank correlation test:
+correlation = 0.64451113868306176, pvalue = 3.4514884667563518e-235
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.2191571441400435, pvalue = 3.5590642163136272e-23
+
+Model7:
+
+The params are:
+a = 0.50000
+d = 1.40000
+beta = 3.80000
+alpha = 2.71429
+b = 3.29808
+c = 3.84776
+
+Expectation of W^minus is 5.2219604753849183
+Expectation of W^plus is 5.2219604753849191
+
+Mean of in-degree sequence is 5.234
+Mean of out-degree sequence is 5.234
+
+Spearsman's rank correlation test:
+correlation = 0.75280336604771436, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.59463709470723169, pvalue = 1.4869641371178697e-191
+
+Model8:
+
+The params are:
+a = 0.50000
+d = 1.80000
+beta = 3.80000
+alpha = 2.11111
+b = 1.11558
+c = 1.56181
+
+Expectation of W^minus is 2.1195956290462008
+Expectation of W^plus is 2.1195956290462008
+
+Mean of in-degree sequence is 2.138
+Mean of out-degree sequence is 2.138
+
+Spearsman's rank correlation test:
+correlation = 0.70257283409903992, pvalue = 1.5364564672454138e-297
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.32923914840473484, pvalue = 8.9736376709847033e-52
+
+Model9:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 1.3125
+
+Mean of in-degree sequence is 2.649
+Mean of out-degree sequence is 2.649
+
+Spearsman's rank correlation test:
+correlation = 0.67692824217333003, pvalue = 3.165550144687963e-268
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.23438666793858706, pvalue = 2.3080530990177169e-26
+
+Model10:
+
+The params are:
+a = 0.50000
+d = 1.40000
+beta = 4.20000
+alpha = 3.00000
+b = 3.54489
+c = 4.05131
+
+Expectation of W^minus is 5.3173400372762973
+Expectation of W^plus is 5.3173400372762956
+
+Mean of in-degree sequence is 5.467
+Mean of out-degree sequence is 5.467
+
+Spearsman's rank correlation test:
+correlation = 0.74190502182688411, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.49350430643066701, pvalue = 2.8912077719576197e-123
+
+Model11:
+
+The params are:
+a = 0.50000
+d = 1.80000
+beta = 4.20000
+alpha = 2.33333
+b = 1.24502
+c = 1.66002
+
+Expectation of W^minus is 2.178780029410007
+Expectation of W^plus is 2.178780029410007
+
+Mean of in-degree sequence is 2.1645
+Mean of out-degree sequence is 2.1645
+
+Spearsman's rank correlation test:
+correlation = 0.71772402599872775, pvalue = 2.1732209637614366e-316
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.34485032784371289, pvalue = 6.051037746868952e-57
+
+Model12:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 1.2777777777777779
+
+Mean of in-degree sequence is 2.567
+Mean of out-degree sequence is 2.567
+
+Spearsman's rank correlation test:
+correlation = 0.652868428705495, pvalue = 2.5712042215827066e-243
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.19985107163235519, pvalue = 1.8267682223324051e-19
+
+Model13:
+
+The params are:
+a = 0.50000
+d = 1.40000
+beta = 4.60000
+alpha = 3.28571
+b = 3.74577
+c = 4.21399
+
+Expectation of W^minus is 5.384545038866027
+Expectation of W^plus is 5.3845450388660261
+
+Mean of in-degree sequence is 5.4515
+Mean of out-degree sequence is 5.4515
+
+Spearsman's rank correlation test:
+correlation = 0.75654250574282611, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.38803334149042312, pvalue = 7.2449331298215776e-73
+
+Model14:
+
+The params are:
+a = 0.50000
+d = 1.80000
+beta = 4.60000
+alpha = 2.55556
+b = 1.35118
+c = 1.73723
+
+Expectation of W^minus is 2.2197917793101052
+Expectation of W^plus is 2.2197917793101052
+
+Mean of in-degree sequence is 2.21
+Mean of out-degree sequence is 2.21
+
+Spearsman's rank correlation test:
+correlation = 0.69285110591165877, pvalue = 4.5968781306018747e-286
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.30093014402268303, pvalue = 3.861413296578969e-43
+
+Model15:
+
+The params are:
+a = 0.50000
+d = 2.20000
+beta = 4.60000
+alpha = 2.09091
+b = 0.84727
+c = 1.27091
+
+Expectation of W^minus is 1.6239436102910767
+Expectation of W^plus is 1.6239436102910763
+
+Mean of in-degree sequence is 1.655
+Mean of out-degree sequence is 1.655
+
+Spearsman's rank correlation test:
+correlation = 0.7135032503267188, pvalue = 5.1476623290229319e-311
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.28112249726793198, pvalue = 1.2064308161301414e-37
+
+Model16:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 3.25
+
+Mean of in-degree sequence is 3.1235
+Mean of out-degree sequence is 3.1235
+
+Spearsman's rank correlation test:
+correlation = 0.67339840636531112, pvalue = 2.0094976383983591e-264
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.5539133518556375, pvalue = 3.2571201678655449e-161
+
+Model17:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 3.0
+
+Mean of in-degree sequence is 2.9495
+Mean of out-degree sequence is 2.9495
+
+Spearsman's rank correlation test:
+correlation = 0.69407336515473528, pvalue = 1.7575339259572212e-287
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.38368362858109722, pvalue = 3.7673152267204876e-71
+
+Model18:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 2.8333333333333335
+
+Mean of in-degree sequence is 2.84
+Mean of out-degree sequence is 2.84
+
+Spearsman's rank correlation test:
+correlation = 0.65235509376000866, pvalue = 8.2570715784963768e-243
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.32878664867250829, pvalue = 1.254373388321619e-51
+
+Model19:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 2.7142857142857144
+
+Mean of in-degree sequence is 2.775
+Mean of out-degree sequence is 2.775
+
+Spearsman's rank correlation test:
+correlation = 0.66062943494795845, pvalue = 4.2394190170635982e-251
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.27337297219733375, pvalue = 1.2974558647692676e-35
+
+Model20:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 2.625
+
+Mean of in-degree sequence is 2.669
+Mean of out-degree sequence is 2.669
+
+Spearsman's rank correlation test:
+correlation = 0.68304668782559552, pvalue = 6.0430505683740492e-275
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.21630455568502407, pvalue = 1.3263908881237846e-22
+
+Model21:
+
+The params are:
+a = 1.00000
+d = 0.60000
+beta = 4.60000
+alpha = 7.66667
+b = 0.85381
+c = 0.76843
+
+Expectation of W^minus is 0.98188721348228192
+Expectation of W^plus is 0.98188721348228181
+
+Mean of in-degree sequence is 1.0175
+Mean of out-degree sequence is 1.0175
+
+Spearsman's rank correlation test:
+correlation = 0.57352843381272223, pvalue = 2.6946515538669662e-175
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.051178904083603705, pvalue = 0.022087530674546017
+
+Model22:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 2.5555555555555558
+
+Mean of in-degree sequence is 2.6025
+Mean of out-degree sequence is 2.6025
+
+Spearsman's rank correlation test:
+correlation = 0.67373412967199264, pvalue = 8.7841244575267042e-265
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.17784155182801151, pvalue = 1.1258891674133192e-15
+
+Model23:
+
+The params are:
+a = 1.50000
+d = 0.60000
+beta = 2.60000
+alpha = 4.33333
+b = 1.97180
+c = 1.57744
+
+Expectation of W^minus is 2.5633415691241765
+Expectation of W^plus is 2.5633415691241774
+
+Mean of in-degree sequence is 2.5635
+Mean of out-degree sequence is 2.5635
+
+Spearsman's rank correlation test:
+correlation = 0.62659756715412729, pvalue = 1.3429762929785756e-218
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.31849509768684159, pvalue = 2.1904766338964953e-48
+
+Model24:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 4.875
+
+Mean of in-degree sequence is 3.2125
+Mean of out-degree sequence is 3.2125
+
+Spearsman's rank correlation test:
+correlation = 0.68837312458169175, pvalue = 6.2482097196750341e-281
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.57748364804851593, pvalue = 2.9798505665319591e-178
+
+Model25:
+
+The params are:
+a = 1.50000
+d = 0.60000
+beta = 3.00000
+alpha = 5.00000
+b = 2.09631
+c = 1.74693
+
+Expectation of W^minus is 2.6203921611325671
+Expectation of W^plus is 2.6203921611325667
+
+Mean of in-degree sequence is 2.682
+Mean of out-degree sequence is 2.682
+
+Spearsman's rank correlation test:
+correlation = 0.62171785915855182, pvalue = 2.890660928840968e-214
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.337357373331168, pvalue = 2.0005184313405995e-54
+
+Model26:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 4.5
+
+Mean of in-degree sequence is 3.023
+Mean of out-degree sequence is 3.023
+
+Spearsman's rank correlation test:
+correlation = 0.66668741276093435, pvalue = 2.4465781836427441e-257
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.54081709220966179, pvalue = 2.5414313701656579e-152
+
+Model27:
+
+The params are:
+a = 1.50000
+d = 0.60000
+beta = 3.40000
+alpha = 5.66667
+b = 2.18679
+c = 1.87440
+
+Expectation of W^minus is 2.6553932619066618
+Expectation of W^plus is 2.6553932619066618
+
+Mean of in-degree sequence is 2.6915
+Mean of out-degree sequence is 2.6915
+
+Spearsman's rank correlation test:
+correlation = 0.62190645113239607, pvalue = 1.9722539065937822e-214
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.12653573380368938, pvalue = 1.3616017728455784e-08
+
+Model28:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 4.25
+
+Mean of in-degree sequence is 2.815
+Mean of out-degree sequence is 2.815
+
+Spearsman's rank correlation test:
+correlation = 0.6678238351528103, pvalue = 1.5914054543453723e-258
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.30804208778123376, pvalue = 3.2035179213410682e-45
+
+Model29:
+
+The params are:
+a = 1.50000
+d = 0.60000
+beta = 3.80000
+alpha = 6.33333
+b = 2.25549
+c = 1.97355
+
+Expectation of W^minus is 2.6783901888975299
+Expectation of W^plus is 2.6783901888975294
+
+Mean of in-degree sequence is 2.659
+Mean of out-degree sequence is 2.659
+
+Spearsman's rank correlation test:
+correlation = 0.57736198237040948, pvalue = 3.6790572966916104e-178
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.15138331268646121, pvalue = 1.0098718888532818e-11
+
+Model30:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 4.0714285714285712
+
+Mean of in-degree sequence is 2.8555
+Mean of out-degree sequence is 2.8555
+
+Spearsman's rank correlation test:
+correlation = 0.65118061168492669, pvalue = 1.1813905763320917e-241
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.33466781810957041, pvalue = 1.5437493693965029e-53
+
+Model31:
+
+The params are:
+a = 1.50000
+d = 0.60000
+beta = 4.20000
+alpha = 7.00000
+b = 2.30940
+c = 2.05280
+
+Expectation of W^minus is 2.6943012562182536
+Expectation of W^plus is 2.6943012562182531
+
+Mean of in-degree sequence is 2.6655
+Mean of out-degree sequence is 2.6655
+
+Spearsman's rank correlation test:
+correlation = 0.62412116476432977, pvalue = 2.1707580837748802e-216
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.13036184652698354, pvalue = 4.8774792990297463e-09
+
+Model32:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 3.9375
+
+Mean of in-degree sequence is 2.6165
+Mean of out-degree sequence is 2.6165
+
+Spearsman's rank correlation test:
+correlation = 0.66133646042891048, pvalue = 8.0667779535671406e-252
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.19801656027433417, pvalue = 3.9383389640808298e-19
+
+Model33:
+
+The params are:
+a = 1.50000
+d = 0.60000
+beta = 4.60000
+alpha = 7.66667
+b = 2.35284
+c = 2.11755
+
+Expectation of W^minus is 2.7057629902441573
+Expectation of W^plus is 2.7057629902441573
+
+Mean of in-degree sequence is 2.7375
+Mean of out-degree sequence is 2.7375
+
+Spearsman's rank correlation test:
+correlation = 0.61145583426145034, pvalue = 2.1232466810226827e-205
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.10940088459875329, pvalue = 9.3797473592148979e-07
+
+Model34:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 3.8333333333333335
+
+Mean of in-degree sequence is 2.5715
+Mean of out-degree sequence is 2.5715
+
+Spearsman's rank correlation test:
+correlation = 0.65031306024558111, pvalue = 8.3689881594202207e-241
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.21127681141730531, pvalue = 1.2884016759724477e-21
+
+Model35:
+
+The params are:
+a = 2.00000
+d = 0.60000
+beta = 2.60000
+alpha = 4.33333
+b = 4.04772
+c = 3.23817
+
+Expectation of W^minus is 5.2620300265201809
+Expectation of W^plus is 5.2620300265201818
+
+Mean of in-degree sequence is 5.18
+Mean of out-degree sequence is 5.18
+
+Spearsman's rank correlation test:
+correlation = 0.68363120429075541, pvalue = 1.3510953950490097e-275
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.5057423024286215, pvalue = 2.395622966551517e-130
+
+Model36:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 6.5
+
+Mean of in-degree sequence is 3.134
+Mean of out-degree sequence is 3.134
+
+Spearsman's rank correlation test:
+correlation = 0.7081747936330397, pvalue = 2.2839528528789017e-304
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.46664590748804952, pvalue = 1.0700143660343577e-108
+
+Model37:
+
+The params are:
+a = 2.00000
+d = 0.60000
+beta = 3.00000
+alpha = 5.00000
+b = 4.30331
+c = 3.58610
+
+Expectation of W^minus is 5.3791435363991926
+Expectation of W^plus is 5.3791435363991917
+
+Mean of in-degree sequence is 5.413
+Mean of out-degree sequence is 5.413
+
+Spearsman's rank correlation test:
+correlation = 0.6727961009315383, pvalue = 8.8442011170424261e-264
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.33822905090653965, pvalue = 1.0271305190163863e-54
+
+Model38:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 6.0
+
+Mean of in-degree sequence is 2.9445
+Mean of out-degree sequence is 2.9445
+
+Spearsman's rank correlation test:
+correlation = 0.68056609038858629, pvalue = 3.3515290290816756e-272
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.38104046662949065, pvalue = 4.0377529708469734e-70
+
+Model39:
+
+The params are:
+a = 2.00000
+d = 0.60000
+beta = 3.40000
+alpha = 5.66667
+b = 4.48905
+c = 3.84776
+
+Expectation of W^minus is 5.4509938295684615
+Expectation of W^plus is 5.4509938295684623
+
+Mean of in-degree sequence is 5.491
+Mean of out-degree sequence is 5.491
+
+Spearsman's rank correlation test:
+correlation = 0.65379198080036216, pvalue = 3.1336097912340328e-244
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.29242413083695279, pvalue = 1.0004060917884253e-40
+
+Model40:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 5.666666666666667
+
+Mean of in-degree sequence is 2.85
+Mean of out-degree sequence is 2.85
+
+Spearsman's rank correlation test:
+correlation = 0.69677107745662226, pvalue = 1.2323942628389668e-290
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.33935788010454693, pvalue = 4.3182796222819262e-55
+
+Model41:
+
+The params are:
+a = 2.00000
+d = 0.60000
+beta = 3.80000
+alpha = 6.33333
+b = 4.63006
+c = 4.05131
+
+Expectation of W^minus is 5.4982019433061033
+Expectation of W^plus is 5.4982019433061033
+
+Mean of in-degree sequence is 5.528
+Mean of out-degree sequence is 5.528
+
+Spearsman's rank correlation test:
+correlation = 0.63962159676464103, pvalue = 1.500500727347946e-230
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.26867579156762095, pvalue = 2.0547260730206469e-34
+
+Model42:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 5.4285714285714288
+
+Mean of in-degree sequence is 2.764
+Mean of out-degree sequence is 2.764
+
+Spearsman's rank correlation test:
+correlation = 0.64467981855702128, pvalue = 2.3794490894443823e-235
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.28010112681957056, pvalue = 2.2543263258616222e-37
+
+Model43:
+
+The params are:
+a = 2.00000
+d = 0.60000
+beta = 4.20000
+alpha = 7.00000
+b = 4.74074
+c = 4.21399
+
+Expectation of W^minus is 5.5308641975308639
+Expectation of W^plus is 5.5308641975308648
+
+Mean of in-degree sequence is 5.516
+Mean of out-degree sequence is 5.516
+
+Spearsman's rank correlation test:
+correlation = 0.67431029587202929, pvalue = 2.1174135047917056e-265
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.25060419761989011, pvalue = 5.1135731123300934e-30
+
+Model44:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 5.25
+
+Mean of in-degree sequence is 2.643
+Mean of out-degree sequence is 2.643
+
+Spearsman's rank correlation test:
+correlation = 0.63320153067671758, pvalue = 1.3789478176729144e-224
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.38303943101397497, pvalue = 6.7292908789380726e-71
+
+Model45:
+
+The params are:
+a = 2.00000
+d = 0.60000
+beta = 4.60000
+alpha = 7.66667
+b = 4.82991
+c = 4.34692
+
+Expectation of W^minus is 5.5543928561094775
+Expectation of W^plus is 5.5543928561094784
+
+Mean of in-degree sequence is 5.545
+Mean of out-degree sequence is 5.545
+
+Spearsman's rank correlation test:
+correlation = 0.63481322065259838, pvalue = 4.5271566562084792e-226
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.11343504469081613, pvalue = 3.6526614327728913e-07
+
+Model46:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 5.1111111111111116
+
+Mean of in-degree sequence is 2.604
+Mean of out-degree sequence is 2.604
+
+Spearsman's rank correlation test:
+correlation = 0.63381735592190624, pvalue = 3.7468065113297482e-225
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.22856498900783156, pvalue = 4.0691792512342862e-25
+
+Model47:
+
+The params are:
+a = 2.50000
+d = 0.60000
+beta = 2.60000
+alpha = 4.33333
+b = 7.07107
+c = 5.65685
+
+Expectation of W^minus is 9.1923881554251121
+Expectation of W^plus is 9.1923881554251139
+
+Mean of in-degree sequence is 9.099
+Mean of out-degree sequence is 9.099
+
+Spearsman's rank correlation test:
+correlation = 0.72305528884840509, pvalue = 2.9643938750474793e-323
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.55682836191453822, pvalue = 3.0148503005545427e-163
+
+Model48:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 8.125
+
+Mean of in-degree sequence is 3.3045
+Mean of out-degree sequence is 3.3045
+
+Spearsman's rank correlation test:
+correlation = 0.68908649269146238, pvalue = 9.6441024939952177e-282
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.65295475924119306, pvalue = 2.1126445686435183e-243
+
+Model49:
+
+The params are:
+a = 2.50000
+d = 0.60000
+beta = 3.00000
+alpha = 5.00000
+b = 7.51758
+c = 6.26465
+
+Expectation of W^minus is 9.3969770375915687
+Expectation of W^plus is 9.3969770375915669
+
+Mean of in-degree sequence is 9.457
+Mean of out-degree sequence is 9.457
+
+Spearsman's rank correlation test:
+correlation = 0.71490185272546325, pvalue = 8.7410778633663428e-313
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.54579595257615787, pvalue = 1.1770907446986191e-155
+
+Model50:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 7.5
+
+Mean of in-degree sequence is 3.027
+Mean of out-degree sequence is 3.027
+
+Spearsman's rank correlation test:
+correlation = 0.66866067943620289, pvalue = 2.1109731821570051e-259
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.42006147748210393, pvalue = 2.5158369257856892e-86
+
+Model51:
+
+The params are:
+a = 2.50000
+d = 0.60000
+beta = 3.40000
+alpha = 5.66667
+b = 7.84205
+c = 6.72176
+
+Expectation of W^minus is 9.5224943342554518
+Expectation of W^plus is 9.5224943342554553
+
+Mean of in-degree sequence is 9.4605
+Mean of out-degree sequence is 9.4605
+
+Spearsman's rank correlation test:
+correlation = 0.71860220665055163, pvalue = 1.6086174668503061e-317
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.39788620778754569, pvalue = 7.5149680943218959e-77
+
+Model52:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 7.0833333333333339
+
+Mean of in-degree sequence is 2.8345
+Mean of out-degree sequence is 2.8345
+
+Spearsman's rank correlation test:
+correlation = 0.65591479135174369, pvalue = 2.414008122172629e-246
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.3477634443761497, pvalue = 6.0747663322416729e-58
+
+Model53:
+
+The params are:
+a = 2.50000
+d = 0.60000
+beta = 3.80000
+alpha = 6.33333
+b = 8.08839
+c = 7.07734
+
+Expectation of W^minus is 9.6049635150421047
+Expectation of W^plus is 9.6049635150421029
+
+Mean of in-degree sequence is 9.5655
+Mean of out-degree sequence is 9.5655
+
+Spearsman's rank correlation test:
+correlation = 0.70360378090094511, pvalue = 8.7508853291070606e-299
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.35868748465754985, pvalue = 8.8006422856838817e-62
+
+Model54:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 6.7857142857142865
+
+Mean of in-degree sequence is 2.7055
+Mean of out-degree sequence is 2.7055
+
+Spearsman's rank correlation test:
+correlation = 0.66935464934421618, pvalue = 3.9335517616690045e-260
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.23933735441444606, pvalue = 1.889392440503027e-27
+
+Model55:
+
+The params are:
+a = 2.50000
+d = 0.60000
+beta = 4.20000
+alpha = 7.00000
+b = 8.28173
+c = 7.36154
+
+Expectation of W^minus is 9.6620221249990887
+Expectation of W^plus is 9.6620221249990887
+
+Mean of in-degree sequence is 9.687
+Mean of out-degree sequence is 9.687
+
+Spearsman's rank correlation test:
+correlation = 0.66087749221720216, pvalue = 2.3697801341636632e-251
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.30278167790568439, pvalue = 1.1233779869998825e-43
+
+Model56:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 6.5625
+
+Mean of in-degree sequence is 2.697
+Mean of out-degree sequence is 2.697
+
+Spearsman's rank correlation test:
+correlation = 0.6716882564459431, pvalue = 1.3379005674320803e-262
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.24673585620118105, pvalue = 4.0280183271874874e-29
+
+Model57:
+
+The params are:
+a = 2.50000
+d = 0.60000
+beta = 4.60000
+alpha = 7.66667
+b = 8.43750
+c = 7.59375
+
+Expectation of W^minus is 9.703125
+Expectation of W^plus is 9.7031250000000018
+
+Mean of in-degree sequence is 9.634
+Mean of out-degree sequence is 9.634
+
+Spearsman's rank correlation test:
+correlation = 0.71064429542756546, pvalue = 1.9810416907789008e-307
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.25382209143998419, pvalue = 8.9368972229998107e-31
+
+Model58:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 6.3888888888888893
+
+Mean of in-degree sequence is 2.611
+Mean of out-degree sequence is 2.611
+
+Spearsman's rank correlation test:
+correlation = 0.63150677289713542, pvalue = 4.9006738635184823e-223
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.18055323384560862, pvalue = 4.0688930539680889e-16
+
+Model59:
+
+The params are:
+a = 3.00000
+d = 0.60000
+beta = 2.60000
+alpha = 4.33333
+b = 11.15419
+c = 8.92335
+
+Expectation of W^minus is 14.500449648200556
+Expectation of W^plus is 14.500449648200563
+
+Mean of in-degree sequence is 14.4605
+Mean of out-degree sequence is 14.4605
+
+Spearsman's rank correlation test:
+correlation = 0.76406692701673173, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.69202561189979606, pvalue = 4.1289718661328564e-285
+
+Model60:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 9.75
+
+Mean of in-degree sequence is 3.2735
+Mean of out-degree sequence is 3.2735
+
+Spearsman's rank correlation test:
+correlation = 0.72747608864014046, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.62548266441867506, pvalue = 1.3330559791427108e-217
+
+Model61:
+
+The params are:
+a = 3.00000
+d = 0.60000
+beta = 3.00000
+alpha = 5.00000
+b = 11.85854
+c = 9.88212
+
+Expectation of W^minus is 14.823176532039284
+Expectation of W^plus is 14.823176532039282
+
+Mean of in-degree sequence is 14.97
+Mean of out-degree sequence is 14.97
+
+Spearsman's rank correlation test:
+correlation = 0.76612539103134769, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.63057544606776594, pvalue = 3.4539159053133049e-222
+
+Model62:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 9.0
+
+Mean of in-degree sequence is 2.9235
+Mean of out-degree sequence is 2.9235
+
+Spearsman's rank correlation test:
+correlation = 0.65757769026326218, pvalue = 5.1911742718490635e-248
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.42546811746318963, pvalue = 9.552445908937314e-89
+
+Model63:
+
+The params are:
+a = 3.00000
+d = 0.60000
+beta = 3.40000
+alpha = 5.66667
+b = 12.37038
+c = 10.60318
+
+Expectation of W^minus is 15.021172657690135
+Expectation of W^plus is 15.021172657690137
+
+Mean of in-degree sequence is 14.9875
+Mean of out-degree sequence is 14.9875
+
+Spearsman's rank correlation test:
+correlation = 0.72462237865559465, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.54031370255921118, pvalue = 5.4838220884860178e-152
+
+Model64:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 8.5
+
+Mean of in-degree sequence is 2.8485
+Mean of out-degree sequence is 2.8485
+
+Spearsman's rank correlation test:
+correlation = 0.65046725539117278, pvalue = 5.9122376279023628e-241
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.36648600988401153, pvalue = 1.2887848303512138e-64
+
+Model65:
+
+The params are:
+a = 3.00000
+d = 0.60000
+beta = 3.80000
+alpha = 6.33333
+b = 12.75896
+c = 11.16409
+
+Expectation of W^minus is 15.151262921863694
+Expectation of W^plus is 15.15126292186369
+
+Mean of in-degree sequence is 15.458
+Mean of out-degree sequence is 15.458
+
+Spearsman's rank correlation test:
+correlation = 0.73772813543203375, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.52002791523634295, pvalue = 5.4884942723977323e-139
+
+Model66:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 8.1428571428571423
+
+Mean of in-degree sequence is 2.7625
+Mean of out-degree sequence is 2.7625
+
+Spearsman's rank correlation test:
+correlation = 0.64902990616291167, pvalue = 1.4968232035875886e-239
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.27384107967522475, pvalue = 9.8226990169039206e-36
+
+Model67:
+
+The params are:
+a = 3.00000
+d = 0.60000
+beta = 4.20000
+alpha = 7.00000
+b = 13.06395
+c = 11.61240
+
+Expectation of W^minus is 15.24126951065089
+Expectation of W^plus is 15.241269510650888
+
+Mean of in-degree sequence is 15.124
+Mean of out-degree sequence is 15.124
+
+Spearsman's rank correlation test:
+correlation = 0.72216355104088781, pvalue = 3.7548989083934737e-322
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.36759284511905965, pvalue = 5.029018055287067e-65
+
+Model68:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 7.875
+
+Mean of in-degree sequence is 2.6225
+Mean of out-degree sequence is 2.6225
+
+Spearsman's rank correlation test:
+correlation = 0.66193081800513132, pvalue = 1.992520788272509e-252
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.24154084884581575, pvalue = 6.0880212033116569e-28
+
+Model69:
+
+The params are:
+a = 3.00000
+d = 0.60000
+beta = 4.60000
+alpha = 7.66667
+b = 13.30966
+c = 11.97869
+
+Expectation of W^minus is 15.306106869481876
+Expectation of W^plus is 15.306106869481873
+
+Mean of in-degree sequence is 15.221
+Mean of out-degree sequence is 15.221
+
+Spearsman's rank correlation test:
+correlation = 0.73473578318394572, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.38219150386323864, pvalue = 1.4411861678889207e-70
+
+Model70:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 7.666666666666667
+
+Mean of in-degree sequence is 2.5625
+Mean of out-degree sequence is 2.5625
+
+Spearsman's rank correlation test:
+correlation = 0.65983122500944924, pvalue = 2.7446816123832595e-250
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.16827006852241491, pvalue = 3.6014683421385033e-14
+
+Model71:
+
+The params are:
+a = 3.50000
+d = 0.60000
+beta = 2.60000
+alpha = 4.33333
+b = 16.39854
+c = 13.11883
+
+Expectation of W^minus is 21.318097476088226
+Expectation of W^plus is 21.318097476088234
+
+Mean of in-degree sequence is 21.294
+Mean of out-degree sequence is 21.294
+
+Spearsman's rank correlation test:
+correlation = 0.77833115058278757, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.7850261762397952, pvalue = 0.0
+
+Model72:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 2.60000
+alpha = 2.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.25
+Expectation of W^plus is 11.374999999999998
+
+Mean of in-degree sequence is 3.209
+Mean of out-degree sequence is 3.209
+
+Spearsman's rank correlation test:
+correlation = 0.73045839834726534, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.50590148283287262, pvalue = 1.9292760106528864e-130
+
+Model73:
+
+The params are:
+a = 3.50000
+d = 0.60000
+beta = 3.00000
+alpha = 5.00000
+b = 17.43405
+c = 14.52837
+
+Expectation of W^minus is 21.792560222743951
+Expectation of W^plus is 21.792560222743944
+
+Mean of in-degree sequence is 21.603
+Mean of out-degree sequence is 21.603
+
+Spearsman's rank correlation test:
+correlation = 0.79241273260318312, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.6962090139292505, pvalue = 5.6339616821665374e-290
+
+Model74:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.00000
+alpha = 3.00000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 3.0
+Expectation of W^plus is 10.5
+
+Mean of in-degree sequence is 3.1405
+Mean of out-degree sequence is 3.1405
+
+Spearsman's rank correlation test:
+correlation = 0.66800539528480529, pvalue = 1.0272768933993372e-258
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.53172748949122783, pvalue = 2.2378956258589415e-146
+
+Model75:
+
+The params are:
+a = 3.50000
+d = 0.60000
+beta = 3.40000
+alpha = 5.66667
+b = 18.18653
+c = 15.58846
+
+Expectation of W^minus is 22.083647796503175
+Expectation of W^plus is 22.083647796503183
+
+Mean of in-degree sequence is 21.86
+Mean of out-degree sequence is 21.86
+
+Spearsman's rank correlation test:
+correlation = 0.77274006268501561, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.61920604686439817, pvalue = 4.5874620006748481e-212
+
+Model76:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.40000
+alpha = 3.40000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.8333333333333335
+Expectation of W^plus is 9.9166666666666679
+
+Mean of in-degree sequence is 2.891
+Mean of out-degree sequence is 2.891
+
+Spearsman's rank correlation test:
+correlation = 0.66460804686225206, pvalue = 3.5197519922645569e-255
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.3208634256390131, pvalue = 4.0328806987455676e-49
+
+Model77:
+
+The params are:
+a = 3.50000
+d = 0.60000
+beta = 3.80000
+alpha = 6.33333
+b = 18.75781
+c = 16.41309
+
+Expectation of W^minus is 22.274902343750011
+Expectation of W^plus is 22.274902343750004
+
+Mean of in-degree sequence is 22.049
+Mean of out-degree sequence is 22.049
+
+Spearsman's rank correlation test:
+correlation = 0.7322302875575718, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.59010236831912111, pvalue = 5.8431642892743633e-188
+
+Model78:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 3.80000
+alpha = 3.80000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.7142857142857144
+Expectation of W^plus is 9.5
+
+Mean of in-degree sequence is 2.7285
+Mean of out-degree sequence is 2.7285
+
+Spearsman's rank correlation test:
+correlation = 0.6432946740927814, pvalue = 5.0105732216114262e-234
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.24068612086434735, pvalue = 9.4591803598291317e-28
+
+Model79:
+
+The params are:
+a = 3.50000
+d = 0.60000
+beta = 4.20000
+alpha = 7.00000
+b = 19.20619
+c = 17.07217
+
+Expectation of W^minus is 22.407227152966779
+Expectation of W^plus is 22.407227152966779
+
+Mean of in-degree sequence is 22.154
+Mean of out-degree sequence is 22.154
+
+Spearsman's rank correlation test:
+correlation = 0.75159675189918795, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.49007320485187572, pvalue = 2.4852258420347844e-121
+
+Model80:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.20000
+alpha = 4.20000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.625
+Expectation of W^plus is 9.1875
+
+Mean of in-degree sequence is 2.6425
+Mean of out-degree sequence is 2.6425
+
+Spearsman's rank correlation test:
+correlation = 0.66470902810442811, pvalue = 2.7676861315020918e-255
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.24386610680017051, pvalue = 1.8198474461035137e-28
+
+Model81:
+
+The params are:
+a = 3.50000
+d = 0.60000
+beta = 4.60000
+alpha = 7.66667
+b = 19.56743
+c = 17.61069
+
+Expectation of W^minus is 22.502548964992279
+Expectation of W^plus is 22.502548964992279
+
+Mean of in-degree sequence is 22.156
+Mean of out-degree sequence is 22.156
+
+Spearsman's rank correlation test:
+correlation = 0.74378353344588333, pvalue = 0.0
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.44653218702950026, pvalue = 1.311953008984608e-98
+
+Model82:
+
+The params are:
+a = 1.00000
+d = 1.00000
+beta = 4.60000
+alpha = 4.60000
+b = 2.00000
+c = 2.00000
+
+Expectation of W^minus is 2.5555555555555558
+Expectation of W^plus is 8.9444444444444446
+
+Mean of in-degree sequence is 2.574
+Mean of out-degree sequence is 2.574
+
+Spearsman's rank correlation test:
+correlation = 0.65359500263701287, pvalue = 4.9121891211476351e-244
+
+Correlation between in-degree sequence and out-degree sequence is: 
+corr = 0.20068747309763896, pvalue = 1.2837819341098415e-19
+
+Correlation between rank_corr and degree_corr is:
+(0.77521011261142347, 1.2509202211547114e-17)
