@@ -285,7 +285,7 @@ class DCMGenerator(object):
         data = list(d.values())
         cdf = ECDF(data)
 
-        plt.plot(cdf.x, [math.log(yy+0.0001, 10) for yy in 1 - cdf.y], label=name, marker='<', markerfacecolor='none', markersize=1)
+        plt.plot([math.log(elem) for elem in cdf.x[1:-1]], [math.log(1 - elem) for elem in cdf.y[1:-1]], label=name, marker='<', markerfacecolor='none', markersize=1)
 
     def bc_vs_pr_dist(self):
         """
