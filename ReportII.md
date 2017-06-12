@@ -2,7 +2,7 @@
 
 Luhuan Wu, Xiaohui Li
 
-June 4, 2017.   
+June 6, 2017.   
 
 
 
@@ -170,11 +170,60 @@ We sorted the average degree of nodes of the 75 models in decreasing order, and 
 
 As we can see from the picture, as the average degree of nodes increase, the percentage of overlapping nodes in top 100 / 200 nodes increases.
 
-To make more investigation, we choose 4 modes which are labeled as m13, m16, m14, m9. The parameters of them are
+This suggests that when the average degree of nodes increases, two rankings by page rand and betweeness centrality tend to overlap more.
+
+#### 3.2.2 Further investigation into models of varying average degree of nodes
+
+To make further investigation, we choose 4 modes which are labeled as m13, m16, m14, m9. The parameters and average degree of nodes of them are
+
+|      | a    | b     | c     | alpha | beta | d    | average degree of nodes |
+| ---- | ---- | ----- | ----- | ----- | ---- | ---- | ----------------------- |
+| m13  | 0.6  | 0.056 | 0.051 | 4.125 | 3.3  | 0.8  | 0.071                   |
+| m16  | 0.8  | 0.198 | 0.175 | 3.125 | 2.5  | 0.8  | 0.3025                  |
+| m14  | 1    | 2     | 2     | 3.3   | 3.3  | 1    | 2.946                   |
+| m9   | 0.6  | 6.598 | 7.734 | 2.4   | 2.9  | 1.2  | 11.3135                 |
+
+We plot the relationship between overlapping percentage of top-k nodes and average degree of nodes as below:
 
 ![4_models](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/overlapping_per.png)
 
+From the plot we could see a clear positive correlation when k = 50, 100, 150, 200.
 
+This concides with the fact we derived above:
+
+When the average degree of nodes increases, two rankings by page rand and betweeness centrality tend to overlap more.
+
+Now we want to find out why when the average degree is rather low, say in m13, 0.071, the percentage of overlapping is low, and why it turns out the other way around when the average degree is high. We make the plots of relationship between page rank and betweenness centrality.
+
+**m13, average degree of nodes = 0.071 **
+
+![m13](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m13.png)
+
+We can see that when all page_rank is near 0, while most but 2 betweenness centrality is 0. So actually, their rankings should overlap in most cases. The problem why it differs from our precious result lies in python's sort treats the order of objects of same values. That is to say
+
+{node1: 0, node2: 0, node3: 0} is a different ranking from {node2: 0, node1:0 ,node3: 0}.
+
+**m16, average degree of noes = 0.3025**
+
+![m16](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m16.png)
+
+**m14, average degree of nodes = 2.946**
+
+![m14](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m14.png)
+
+**m9, average degree of nodes = 11.3125**
+
+![m9_1](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m9.png)
+
+![m9_2](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m9_2.png)
+
+![m9_3](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m9_3.png)
+
+![m9_4](https://raw.githubusercontent.com/leahwu/Go_graphs/master/week2_images/m9_4.png)
+
+
+
+In the plots above we could see a strong positive correlation between page rank and betweenness centrality when the average degree of nodes are high(>10). But when average degree of nodes decrease, the correlation decreases, but is still positive. When the average degree of nodes is very close to 0 (0.071), most of the nodes's page rank and betweenness centrality is close to 0, which overlaps again.
 
 ## 4. Conclusion
 
@@ -188,11 +237,11 @@ Given WLLN's requirement for finite second moment constraint the parameters, we 
 
 Betweeness centrality and page rank ranking is statistically dependent.
 
-- When the mean degree of the nodes get higher, the overlapping percentage tends to be higher.
+- When the average degree of the nodes is away from zero, and when it gets higher, the overlapping percentage tends to be higher.
+
+  But when the average degree of nodes is very close to 0, most of the nodes's page rank and betweenness centrality is close to 0, which overlaps again.
 
   ​
-
-- When average degrees of nodes are bigger than, say around 2, 
 
 
 
