@@ -2,13 +2,13 @@ from collections import Counter
 import PowerLawDistribution as pld
 import matplotlib.pyplot as plt
 import networkx as nx
-import operator
+import operator,math
 import ValidDegree as vd
 import scipy.stats as st
 import DCMRevised as dcm_r
 import numpy as np
 from statsmodels.distributions.empirical_distribution import ECDF
-import math
+
 
 class DCMGenerator(object):
 
@@ -67,6 +67,13 @@ class DCMGenerator(object):
         self.size = len(self.graph_din)
         self.mean_in_degree = sum(self.graph_din) / self.size
         self.mean_out_degree = sum(self.graph_dout) / self.size
+
+        BC = list(self.betweenness_centrality.values())
+        bcmax = max(BC)
+        N = len(BC)
+        self.graph_centrality = (N * bcmax - sum(BC)) / (N-1)
+
+
 
     def __str__(self):
         s = "The params are:\n"
@@ -302,6 +309,7 @@ class DCMGenerator(object):
         data = list(d.values())
         cdf = ECDF(data)
 
+
         plt.plot(cdf.x[:self.size - 1], [math.log(yy) for yy in (1 - cdf.y)[:self.size - 1]], label=name, marker='<', markerfacecolor='none',
                  markersize=1)
 
@@ -319,6 +327,30 @@ class DCMGenerator(object):
 
         plt.plot([math.log(xx) for xx in cdf.x[1:]], [math.log(yy) for yy in (1 - cdf.y)[1:]], label=name, marker='<',
                  markerfacecolor='none', markersize=1)
+
+
+    def plot_tail_dist_loglog(self, d, name):
+        """
+                Plot the tail distribution of data
+                1-F(x), where F(x) is the empirical distribution of data
+                :param d: self.page_rank or self.betweenness_centrality, type: dictionary
+                :param name: name of d   
+                :return: void
+                """
+
+        data = list(d.values())
+        cdf = ECDF(data)
+        # filter out the zero term
+        for x in cdf.x:
+            if x <= 0:
+                cdf.x = cdf.x[1:]
+                cdf.y = cdf.y[1:]
+        # eliminating the cdf = 1 term
+        cdf.x = cdf.x[:-1]
+        cdf.y = cdf.y[:-1]
+
+        plt.plot([math.log(elem) for elem in cdf.x], [math.log(1 - elem) for elem in cdf.y], label=name, marker='<', markerfacecolor='none', markersize=1)
+
 
     def bc_vs_pr_dist(self):
         """
