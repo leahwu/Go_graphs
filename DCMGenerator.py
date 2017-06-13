@@ -2,13 +2,13 @@ from collections import Counter
 import PowerLawDistribution as pld
 import matplotlib.pyplot as plt
 import networkx as nx
-import operator
+import operator,math
 import ValidDegree as vd
 import scipy.stats as st
 import DCMRevised as dcm_r
 import numpy as np
 from statsmodels.distributions.empirical_distribution import ECDF
-import math
+
 
 class DCMGenerator(object):
 
@@ -68,6 +68,13 @@ class DCMGenerator(object):
         self.size = len(self.graph_din)
         self.mean_in_degree = sum(self.graph_din) / self.size
         self.mean_out_degree = sum(self.graph_dout) / self.size
+
+        BC = list(self.betweenness_centrality.values())
+        bcmax = max(BC)
+        N = len(BC)
+        self.graph_centrality = (N * bcmax - sum(BC)) / (N-1)
+
+
 
     def __str__(self):
         s = "The params are:\n"
@@ -285,7 +292,16 @@ class DCMGenerator(object):
         data = list(d.values())
         cdf = ECDF(data)
 
-        plt.plot([math.log(elem) for elem in cdf.x[1:-1]], [math.log(1 - elem) for elem in cdf.y[1:-1]], label=name, marker='<', markerfacecolor='none', markersize=1)
+        # filter out the zero term
+        for x in cdf.x:
+            if x <= 0:
+                cdf.x = cdf.x[1:]
+                cdf.y = cdf.y[1:]
+        # eliminating the cdf = 1 term
+        cdf.x = cdf.x[:-1]
+        cdf.y = cdf.y[:-1]
+
+        plt.plot([math.log(elem) for elem in cdf.x], [math.log(1 - elem) for elem in cdf.y], label=name, marker='<', markerfacecolor='none', markersize=1)
 
     def bc_vs_pr_dist(self):
         """
