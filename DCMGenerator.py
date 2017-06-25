@@ -176,8 +176,8 @@ class DCMGenerator(object):
         # nodes = [str(node[0]) for node in pr_sort ]
         pr_scores = [node[1] for node in pr_sort]
         bc_scores = [bc[node[0]] for node in pr_sort]
-        bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
-        plt.plot(bc_scaled_scores[0: k], 'bx', markersize=3)
+        # bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
+        plt.plot(bc_scores[0: k], 'bx', markersize=3)
         plt.plot(pr_scores[0: k], 'ro', markersize=1)
 
 
@@ -207,9 +207,9 @@ class DCMGenerator(object):
         # nodes = [str(node[0]) for node in pr_sort ]
         bc_scores = [node[1] for node in bc_sort]
         pr_scores = [pr[node[0]] for node in bc_sort]
-        bc_scaled_scores = [elem / sum(bc_scores) for elem in bc_scores]
+
         plt.plot(pr_scores[0: k], 'ro', markersize=1)
-        plt.plot(bc_scaled_scores[0: k], 'bx', markersize=3)
+        plt.plot(bc_scores[0: k], 'bx', markersize=3)
 
         plt.legend(['Page_Rank', 'Betweenness_Centrality'])
         plt.xlabel('Node')
@@ -273,8 +273,8 @@ class DCMGenerator(object):
         in_dict = {}
         out_dict ={}
         for i in range(0, max_value + 1):
-            in_dict[i] = Counter(self.d_in)[i]
-            out_dict[i] = Counter(self.d_out)[i]
+            in_dict[i] = Counter(self.graph_din)[i]
+            out_dict[i] = Counter(self.graph_dout)[i]
         corr, p = st.pearsonr(list(in_dict.values()), list(out_dict.values()))
         return corr, p
 
@@ -297,49 +297,46 @@ class DCMGenerator(object):
 
         plt.title("Correlation: " + repr(corr) + " p-value: " + repr(p_value) + '\n' + txt)
 
-    def plot_tail_dist(self, d, name):
+    @staticmethod
+    def plot_tail_dist(seq, name=''):
         """
         Plot the tail distribution of data
         1-F(x), where F(x) is the empirical distribution of data
-        :param d: self.page_rank or self.betweenness_centrality, type: dictionary
+        :param seq: array like
         :param name: name of d   
         :return: void
         """
+        cdf = ECDF(seq)
 
-        data = list(d.values())
-        cdf = ECDF(data)
-
-
-        plt.plot(cdf.x[:self.size - 1], [math.log(yy) for yy in (1 - cdf.y)[:self.size - 1]], label=name, marker='<', markerfacecolor='none',
+        plt.plot(cdf.x, 1 - cdf.y, label=name, marker='<', markerfacecolor='none',
                  markersize=1)
 
-    def plot_tail_dist_log(self, d, name):
+    @staticmethod
+    def plot_tail_dist_log(seq, name=''):
         """
         Plot the tail distribution of data
         1-F(x), where F(x) is the empirical distribution of data
-        :param d: self.page_rank or self.betweenness_centrality, type: dictionary
+        :param seq: array like
         :param name: name of d   
         :return: void
         """
 
-        data = list(d.values())
-        cdf = ECDF(data)
+        cdf = ECDF(seq)
 
-        plt.plot([math.log(xx) for xx in cdf.x[1:]], [math.log(yy) for yy in (1 - cdf.y)[1:]], label=name, marker='<',
-                 markerfacecolor='none', markersize=1)
+        plt.plot(cdf.x[:len(seq) - 1], [math.log(yy) for yy in (1 - cdf.y)[:len(seq) - 1]], label=name, marker='<', markerfacecolor='none',
+                 markersize=1)
 
-
-    def plot_tail_dist_loglog(self, d, name):
+    @staticmethod
+    def plot_tail_dist_loglog(seq, name=''):
         """
-                Plot the tail distribution of data
-                1-F(x), where F(x) is the empirical distribution of data
-                :param d: self.page_rank or self.betweenness_centrality, type: dictionary
-                :param name: name of d   
-                :return: void
-                """
+        Plot the tail distribution of data
+        1-F(x), where F(x) is the empirical distribution of data
+        :param seq: array like
+        :param name: name of d   
+        :return: void
+        """
 
-        data = list(d.values())
-        cdf = ECDF(data)
+        cdf = ECDF(seq)
         # filter out the zero term
         for x in cdf.x:
             if x <= 0:

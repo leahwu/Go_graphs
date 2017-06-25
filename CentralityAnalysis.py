@@ -4,7 +4,7 @@ import networkx as nx
 import scipy.stats as st
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-
+"""
 # generate a list of DC graphs
 DCMlist = [dcm_g.DCMGenerator(1, 1, 3, 1000, 'Erased') for i in range(100)]
 
@@ -18,6 +18,7 @@ plt1.hist(graph_centra)
 plt1.title("Histogram for graph btweeness centrality")
 patch = mpatches.Patch(label='Mean: 0.105 Variance: 0.0034')
 plt1.legend(handles=patch)
+"""
 
 # define a remove impact function
 ## tool function

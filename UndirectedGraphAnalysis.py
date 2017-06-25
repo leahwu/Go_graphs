@@ -52,9 +52,10 @@ def ranking_spear_corr(graph):
 
 
 rankcorr = []
+models = []
 for i in range(100):
     graph_temp = Graph_generate( rvs(n,c,beta) )
     rankcorr += [ranking_spear_corr(graph_temp)[0]]
-
+    models.append(graph_temp)
 
 mean_rankcorr = np.mean(rankcorr)
