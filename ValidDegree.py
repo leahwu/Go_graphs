@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-def directed_gen(d, beta, fg, n):
+def directed_gen(alpha, beta, fg, n):
     """
     a function that generates same-sum sample pair of bi-degree using the algorithm
     the function returns a tuple  (in-degree, out-degree)
@@ -15,7 +15,7 @@ def directed_gen(d, beta, fg, n):
     """
 
     # derive kappa
-    alpha = beta / d
+
     kappa = min(1 - 1/alpha, 1 - 1/beta, 1/2)
     delta_0 = 9.95 / 10 * kappa  # take a fixed delta0
     tol = n ** (1 - kappa + delta_0) # take the tolerance limit for delta_n
@@ -74,10 +74,9 @@ def test():
     a = 1
     alpha = 3
     beta = 4
-    d = beta / alpha
 
 
     import PowerLawDistribution as pld
-    fg = pld.PowerLaw(a, d, beta)
+    fg = pld.PowerLaw(a, alpha, beta)
 
     directed_gen(alpha, beta, fg, 2000)

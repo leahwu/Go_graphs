@@ -12,11 +12,11 @@ from statsmodels.distributions.empirical_distribution import ECDF
 
 class DCMGenerator(object):
 
-    def __init__(self, a, d, beta, n, algorithm):
+    def __init__(self, a, alpha, beta, n, algorithm):
 
         if algorithm == 'Erased':
-            self.fg = pld.PowerLaw(a, d, beta)
-            degree_seq = vd.directed_gen(d, beta, self.fg, n)
+            self.fg = pld.PowerLaw(a, alpha, beta)
+            degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
             # after modifying the degree sequence to make the sum(d_in) = sum(d_out) using alg 2.1
             self.mean_equal_sum_in_seq = np.mean(degree_seq[0])
@@ -44,8 +44,8 @@ class DCMGenerator(object):
         if algorithm == 'Repeated':
             flag = False
             while not flag:
-                self.fg = pld.PowerLaw(a, d, beta)
-                degree_seq = vd.directed_gen(d, beta, self.fg, n)
+                self.fg = pld.PowerLaw(a, alpha, beta)
+                degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
                 # after modifying the degree sequence to make the sum(d_in) = sum(d_out) using alg 2.1
                 self.d_in = degree_seq[0].tolist()
