@@ -5,13 +5,15 @@ import numpy as np
 from math import sqrt
 from scipy.stats import pearsonr
 
-def test1(a, d, beta, m=2000):
+def test1(a, alpha, beta, m=2000):
     """
     Test EW+ = EW- ~ average of W Samples
     EW+ = b * alpha / (alpha - 1) = EW- = c * beta / (beta - 1)
     :return: 
     """
-    model = pld.PowerLaw(a, d, beta)
+    model = pld.PowerLaw(a, alpha, beta)
+    d = model.d
+
     expectation = model.alpha * model.b / (model.alpha - 1)
     expectation_2 = beta * model.c / (beta - 1)
 
@@ -50,22 +52,17 @@ def test2(c, beta, m=2000):
     return w
 
 
-def test3(a ,d, beta, n=2000):
+def test3(a, alpha, beta, b=10, n=2000):
     """
     test for degree correlation
-    :param a: 
-    :param d: 
-    :param beta: 
-    :param m: 
-    :return: 
     """
 
-    model = pld.PowerLaw(a, d, beta)
+    model = pld.PowerLaw(a, alpha, beta,b)
     a = model.a
     b = model.b
     c = model.c
     d = model.d
-    beta =model.beta
+    beta = model.beta
     alpha = model.alpha
 
     d_in, d_out = model.rvs(n)
@@ -98,3 +95,15 @@ def test3(a ,d, beta, n=2000):
     sample_corr = pearsonr(d_in, d_out)
     print('correlation(d_in, d_out) = ', corr, "sample corr = ", sample_corr[0])
 
+
+def test4(a, alpha, beta, b=10):
+    """
+    test for correlation of the graph
+    :param a: 
+    :param alpha: 
+    :param beta: 
+    :param b: 
+    :return: 
+    """
+
+    model = dcm_g.DCMGenerator(a, alpha, beta, )
