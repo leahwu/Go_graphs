@@ -5,19 +5,10 @@ import scipy.stats as st
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-# generate a list of DC graphs
-DCMlist = [dcm_g.DCMGenerator(1, 1, 3, 1000, 'Erased') for i in range(100)]
+
 
 # test for the graph centrality
-graph_centra = [g.graph_centrality for g in DCMlist]
 
-st.describe(graph_centra)
-
-plt1 = plt.figure(1)
-plt1.hist(graph_centra)
-plt1.title("Histogram for graph btweeness centrality")
-patch = mpatches.Patch(label='Mean: 0.105 Variance: 0.0034')
-plt1.legend(handles=patch)
 
 # define a remove impact function
 ## tool function
@@ -57,20 +48,43 @@ def imp_remove(dcm, n, rule = "pagerank"):
         # add the graph centrality
         central += [graph_centra(graph_copy)]
 
-    return central
+    return central,elim
 
-
+"""
 central_1 = imp_remove(DCMlist[0],20)
 central_10 = imp_remove(DCMlist[0], 20, rule = "btwcentrality")
 
 # plot
 plt2 = plt.figure(2)
-plt2.title('Graph centrality after eliminating highest ranking node Correlation: 0.968')
+plt.title('Graph centrality after eliminating highest ranking node Correlation: 0.968')
 plt.xlabel('Eliminate nodes number')
 plt.ylabel('Graph betweenness centrality')
 plt.plot(central_10, color = 'blue', marker = 'o', markersize = "3")
 plt.plot(central_1, color = 'red', marker = 'v', markersize = "3")
 plt.legend(['Betweenness centrality', 'Pagerank'])
-
 # check the correlation
 st.pearsonr(central_1, central_10)
+"""
+"""
+large_mean = dcm_g.DCMGenerator(4.5, 0.6, 3.8, 1000, 'Erased')
+
+central_1, elim_1_pk = imp_remove(large_mean, 50)
+central_10, elim_1_bc = imp_remove(large_mean, 50, rule = "btwcentrality")
+
+
+
+little_mean = dcm_g.DCMGenerator(0.5, 1.8, 3.8, 1000, 'Erased')
+lxh_little = little_mean.copy()
+central_2, elim_2_pk = imp_remove(little_mean, 50)
+central_20, elim_2_bc = imp_remove(little_mean, 50, rule = "btwcentrality")
+
+little_mean.in_degree(elim_2_bc)
+little_mean.in_degree(elim_2_bc)
+"""
+lit
+lxh2_pk
+
+same_degree = dcm_g.DCMGenerator(3, 1, 3, 1000, 'Erased')
+central_3, elim_3_pk = imp_remove(same_degree, 50)
+central_30, elim_3_bc = imp_remove(same_degree, 50, rule = "btwcentrality")
+
