@@ -40,6 +40,9 @@ def directed_gen(alpha, beta, fg, n):
         in_seq = bi_seq[0]
         out_seq = bi_seq[1]
 
+        original_din = np.copy(in_seq)
+        original_dout = np.copy(out_seq)
+
         in_sum = sum(in_seq)
         out_sum = sum(out_seq)
         print("in_sum", end=":")
@@ -69,14 +72,3 @@ def directed_gen(alpha, beta, fg, n):
         print(sum(out_seq))
 
     return in_seq, out_seq, original_din, original_dout
-
-def test():
-    a = 1
-    alpha = 3
-    beta = 4
-
-
-    import PowerLawDistribution as pld
-    fg = pld.PowerLaw(a, alpha, beta)
-
-    directed_gen(alpha, beta, fg, 2000)

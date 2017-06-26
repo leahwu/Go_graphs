@@ -106,4 +106,34 @@ def test4(a, alpha, beta, b=10):
     :return: 
     """
 
-    model = dcm_g.DCMGenerator(a, alpha, beta, )
+    model = dcm_g.DCMGenerator(a, alpha, beta, 2000, 'Erased', b=b)
+
+    corr1 = pearsonr(model.d_in_original, model.d_out_original)[0]
+    corr2 = pearsonr(model.d_in, model.d_out)[0]
+    corr3 = pearsonr(model.graph_din, model.graph_dout)[0]
+
+    corr = get_corr(a, alpha, beta, b)
+    print(corr, corr1, corr2, corr3)
+    return model
+
+
+def get_corr(a, alpha, beta, b):
+
+    d = beta / alpha
+
+    c = (b / a) ** (alpha / beta)
+
+    e_d_in = b * alpha / (alpha - 1)
+    e_d_out = c * beta / (beta - 1)
+
+    e_w_plus_square = alpha * b ** 2 / (alpha - 2)
+    e_w_minus_square = beta * c ** 2 / (beta - 2)
+
+    e_prod = a * beta * c ** (d + 1) / (beta - d - 1)
+    var_d_in = e_d_in + e_w_plus_square - e_d_in ** 2
+    var_d_out = e_d_out + e_w_minus_square - e_d_out ** 2
+
+    corr = (e_prod - e_d_in * e_d_out) / sqrt(var_d_in * var_d_out)
+
+    return corr
+
