@@ -21,7 +21,7 @@ class PowerLaw:
     
     """
 
-    def __init__(self, a, alpha, beta):
+    def __init__(self, a, alpha, beta, b =None):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
         self.a = a
@@ -30,11 +30,11 @@ class PowerLaw:
         self.alpha = alpha
 
         if self.d == 1:
-            self.b = 2 # set default values
+            self.b = b # set default values
         else:
             self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
 
-        self.c = (self.b / self.a) ** (self.alpha / beta)
+        self.c = (self.b / self.a) ** (self.alpha / self.beta)
 
         print("The parameters are:")
         print("a = ", self.a)
