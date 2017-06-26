@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import poisson
-
+import DCMGenerator as dcm_g
 
 
 def generate_w(c, beta):
-    # generate r.v. w ~ (x/c)^{-\beta}
+    # generate r.v. w ~ (x/c)^{-\beta} as tail distribution
     u = np.random.uniform(0, 1)
     w = c * (1 - u)**(-1.0/beta)
     return w
@@ -31,7 +31,6 @@ class PowerLaw:
 
         if self.d == 1:
             self.b = 2 # set default values
-            self.a = 1
         else:
             self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
 
@@ -63,8 +62,7 @@ class PowerLaw:
             w_minus[i] = generate_w(self.c, self.beta)
             w_plus[i] = self.a * w_minus[i] ** self.d
 
-
-        return w_minus, w_plus
+        return w_plus, w_minus
 
     def gene_one_pair(self):
         """
@@ -142,6 +140,16 @@ def test():
     print("mean of out-degree sequence is ", np.mean(dout))
 
 
+ww = []
+poisson_rvs = []
+for i in range(0, 2000):
+    w = generate_w(2, 3)
+    rv = poisson.rvs(mu=w)
+    ww.append(w)
+    poisson_rvs.append(rv)
+
+ww = np.array(ww)
+poisson_rvs = np.array(poisson_rvs)
 
 
 

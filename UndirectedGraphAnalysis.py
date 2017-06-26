@@ -4,7 +4,6 @@ from scipy.stats import poisson
 import networkx as nx
 import scipy.stats as st
 import matplotlib.pyplot as plt
-import RandomWalkBetweenness as rwbtw
 
 def gene_one_pair(c, beta):
     """
@@ -62,6 +61,7 @@ def ranking_spear_corr(graph):
     return [corr1, corr2, corr3]
 
 
+<<<<<<< HEAD
 rankcorr1 = []
 rankcorr2 = []
 rankcorr3 = []
@@ -90,13 +90,3 @@ plt.plot(pr_scores[0: k], 'ro', markersize=1)
 plt.plot(rw_scores[0:k], 'gv', markersize=1)
 
 
-##
-rw_sort = sorted(rw.items(), key=operator.itemgetter(1), reverse=True)
-
-rw_scores_rw = [node[1] for node in rw_sort]
-bc_scores_rw = [bc[node[0]] for node in rw_sort]
-pr_scores_rw = [pr[node[0]] for node in rw_sort]
-plt.figure(2)
-plt.plot(rw_scores_rw[0: k], 'gv', markersize=1)
-plt.plot(pr_scores_rw[0: k], 'bx', markersize=1)
-plt.plot(bc_scores_rw[0: k], 'ro', markersize=1)

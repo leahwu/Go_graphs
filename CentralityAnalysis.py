@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 
-
-# test for the graph centrality
-
-
 # define a remove impact function
 ## tool function
 def max_dic(dic):
