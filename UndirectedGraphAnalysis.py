@@ -5,7 +5,6 @@ import networkx as nx
 import scipy.stats as st
 import matplotlib.pyplot as plt
 
-
 def gene_one_pair(c, beta):
     """
     method to generate one sample (d+, d-)
@@ -32,10 +31,15 @@ def Graph_generate(seq):
     cm = nx.configuration_model(seq)
 
     # remove parallel edges
-    cm = nx.DiGraph(cm)
+    cm = nx.Graph(cm)
 
     # remove self-loops
     cm.remove_edges_from(cm.selfloop_edges())
+
+    # remove the isolation part
+    remove_list = [node for node in cm.nodes() if not ( node in list(max(nx.connected_components(cm), key=len))) ]
+    cm.remove_nodes_from(remove_list)
+
     return cm
 
 # exogeneous parameters
@@ -43,19 +47,46 @@ c = 4.33
 beta = 30.74
 n = 1000
 
+
 def ranking_spear_corr(graph):
     pr = list(nx.pagerank(graph).values())
     bc = list(nx.betweenness_centrality(graph).values())
-    corr, pvalue =st.spearmanr(pr, bc)
+    rw = list(nx.current_flow_betweenness_centrality(graph).values())
 
-    return corr, pvalue
+    corr1, pvalue1 = st.spearmanr(pr, bc)
+    corr2, pvalue2 = st.spearmanr(pr, rw)
+    corr3, pvalue3 = st.spearmanr(bc, rw)
 
 
-rankcorr = []
-models = []
+    return [corr1, corr2, corr3]
+
+
+<<<<<<< HEAD
+rankcorr1 = []
+rankcorr2 = []
+rankcorr3 = []
+
 for i in range(100):
     graph_temp = Graph_generate( rvs(n,c,beta) )
-    rankcorr += [ranking_spear_corr(graph_temp)[0]]
-    models.append(graph_temp)
+    rankcorr1 += [ranking_spear_corr(graph_temp)[0]]
+    rankcorr2 += [ranking_spear_corr(graph_temp)[1]]
+    rankcorr3 += [ranking_spear_corr(graph_temp)[2]]
 
-mean_rankcorr = np.mean(rankcorr)
+mean_rankcorr = [np.mean(rankcorr1), np.mean(rankcorr2), np.mean(rankcorr3)]
+
+
+ # nodes = [str(node[0]) for node in pr_sort ]
+pr = nx.pagerank(graph_temp)
+bc = nx.betweenness_centrality(graph_temp)
+rw = nx.current_flow_betweenness_centrality(graph_temp)
+pr_sort = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
+
+pr_scores = [node[1] for node in pr_sort]
+bc_scores = [bc[node[0]] for node in pr_sort]
+rw_scores = [rw[node[0]] for node in pr_sort]
+plt.figure(1)
+plt.plot(bc_scaled_scores[0: k], 'bx', markersize=3)
+plt.plot(pr_scores[0: k], 'ro', markersize=1)
+plt.plot(rw_scores[0:k], 'gv', markersize=1)
+
+

@@ -21,20 +21,20 @@ class PowerLaw:
     
     """
 
-    def __init__(self, a, d, beta):
+    def __init__(self, a, alpha, beta, b =None):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
         self.a = a
-        self.d = d
+        self.d = beta/ alpha
         self.beta = beta
-        self.alpha = beta / d
+        self.alpha = alpha
 
-        if d == 1:
-            self.b = 10 # set default values
+        if self.d == 1:
+            self.b = b # set default values
         else:
             self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
 
-        self.c = (self.b / self.a) ** (self.alpha / beta)
+        self.c = (self.b / self.a) ** (self.alpha / self.beta)
 
         print("The parameters are:")
         print("a = ", self.a)
@@ -45,7 +45,7 @@ class PowerLaw:
         print("beta = ", self.beta)
 
         self.e_w_minus = self.c * beta/ (self.beta - 1)
-        self.e_w_plus = a*beta*self.c**d / (beta - d)
+        self.e_w_plus = a*beta*self.c**self.d / (beta - self.d)
 
         self.params = {'a': self.a, 'd': self.d, 'beta': self.beta, 'alpha': self.alpha,
                        'b': self.b, 'c': self.c}
@@ -118,23 +118,7 @@ def difference(bi_degree):
 #a = 2
 #alpha = 3
 
-def test_converg_speed(a, d, beta, N,  rep = 10):
-    power_law = PowerLaw(a, d, beta)
-    relative_diff = []
-    for n in N:
-        # generate the sequence with sample size n
-        diff_arr = np.zeros(rep)
-        for i in range(rep):
-            bi_seq = power_law.rvs(n)
-            diff_arr[i] = difference(bi_seq)
-            print(i, diff_arr[i])
 
-        # get the average sequence degree difference
-        diff = np.average(diff_arr)
-        # use the relative with n to measure the convergence
-        print(diff, n)
-        relative_diff += [diff/n]
-    return relative_diff
 
 def test():
     a = 1.2  # the lower bound for W+
@@ -145,7 +129,7 @@ def test():
 
     n = 5000  # graph size
 
-    pld = PowerLaw(a, d, beta)
+    pld = PowerLaw(a, alpha, beta)
     din, dout = pld.rvs(n)
 
     w_minus, w_plus = pld.gene_iid_pairs_of_w(n)
