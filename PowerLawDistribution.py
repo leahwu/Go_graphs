@@ -34,7 +34,7 @@ class PowerLaw:
         else:
             self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
 
-        self.c = (self.b / self.a) ** (self.alpha / self.beta)
+        self.c = (self.b / self.a)**(self.alpha / self.beta)
 
         print("The parameters are:")
         print("a = ", self.a)
@@ -52,6 +52,7 @@ class PowerLaw:
 
         # print("E[W^minus] = ", self.e_w_minus)
         # print("E[W^plus] = ", self.e_w_plus)
+
 
     def gene_iid_pairs_of_w(self, n):
 
