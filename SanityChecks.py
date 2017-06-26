@@ -5,13 +5,15 @@ import numpy as np
 from math import sqrt
 from scipy.stats import pearsonr
 
-def test1(a, d, beta, m=2000):
+def test1(a, alpha, beta, m=2000):
     """
     Test EW+ = EW- ~ average of W Samples
     EW+ = b * alpha / (alpha - 1) = EW- = c * beta / (beta - 1)
     :return: 
     """
-    model = pld.PowerLaw(a, d, beta)
+    model = pld.PowerLaw(a, alpha, beta)
+    d = model.d
+
     expectation = model.alpha * model.b / (model.alpha - 1)
     expectation_2 = beta * model.c / (beta - 1)
 
@@ -50,22 +52,17 @@ def test2(c, beta, m=2000):
     return w
 
 
-def test3(a ,d, beta, n=2000):
+def test3(a, alpha, beta, b=10, n=2000):
     """
     test for degree correlation
-    :param a: 
-    :param d: 
-    :param beta: 
-    :param m: 
-    :return: 
     """
 
-    model = pld.PowerLaw(a, d, beta)
+    model = pld.PowerLaw(a, alpha, beta,b)
     a = model.a
     b = model.b
     c = model.c
     d = model.d
-    beta =model.beta
+    beta = model.beta
     alpha = model.alpha
 
     d_in, d_out = model.rvs(n)
@@ -97,4 +94,46 @@ def test3(a ,d, beta, n=2000):
     corr = (e_prod - e_d_in * e_d_out) / sqrt(var_d_in * var_d_out)
     sample_corr = pearsonr(d_in, d_out)
     print('correlation(d_in, d_out) = ', corr, "sample corr = ", sample_corr[0])
+
+
+def test4(a, alpha, beta, b=10):
+    """
+    test for correlation of the graph
+    :param a: 
+    :param alpha: 
+    :param beta: 
+    :param b: 
+    :return: 
+    """
+
+    model = dcm_g.DCMGenerator(a, alpha, beta, 2000, 'Erased', b=b)
+
+    corr1 = pearsonr(model.d_in_original, model.d_out_original)[0]
+    corr2 = pearsonr(model.d_in, model.d_out)[0]
+    corr3 = pearsonr(model.graph_din, model.graph_dout)[0]
+
+    corr = get_corr(a, alpha, beta, b)
+    print(corr, corr1, corr2, corr3)
+    return model
+
+
+def get_corr(a, alpha, beta, b):
+
+    d = beta / alpha
+
+    c = (b / a) ** (alpha / beta)
+
+    e_d_in = b * alpha / (alpha - 1)
+    e_d_out = c * beta / (beta - 1)
+
+    e_w_plus_square = alpha * b ** 2 / (alpha - 2)
+    e_w_minus_square = beta * c ** 2 / (beta - 2)
+
+    e_prod = a * beta * c ** (d + 1) / (beta - d - 1)
+    var_d_in = e_d_in + e_w_plus_square - e_d_in ** 2
+    var_d_out = e_d_out + e_w_minus_square - e_d_out ** 2
+
+    corr = (e_prod - e_d_in * e_d_out) / sqrt(var_d_in * var_d_out)
+
+    return corr
 
