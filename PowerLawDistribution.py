@@ -30,7 +30,7 @@ class PowerLaw:
         self.alpha = beta / d
 
         if d == 1:
-            self.b = 2 # set default values
+            self.b = 10 # set default values
         else:
             self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
 
