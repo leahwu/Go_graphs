@@ -13,7 +13,8 @@ def max_dic(dic):
     k = list(dic.keys())
     return k[v.index(max(v))]
 
-def graph_centra(graph, type = "btw"):
+
+def graph_centra(graph, type="btw"):
     N = nx.number_of_nodes(graph)
     if type == "btw":
         bc_dic = nx.betweenness_centrality(graph)
@@ -22,7 +23,7 @@ def graph_centra(graph, type = "btw"):
         return (N * bcmax - sum(bc_list)) / (N-1)
 
 
-def imp_remove(dcm, n, rule = "pagerank"):
+def imp_remove(dcm, n, rule="pagerank"):
     # copy the graph for manipulation
     graph_copy = dcm.graph
     # the list of centrality
@@ -34,7 +35,7 @@ def imp_remove(dcm, n, rule = "pagerank"):
 
     elim = []  # eliminated list
     for i in range(n):
-        node_lab = max_dic(rank_copy)
+        node_lab = max_dic(rank_copy)  # node label
         elim += [node_lab]
         rank_copy.pop(node_lab)
 
@@ -44,7 +45,7 @@ def imp_remove(dcm, n, rule = "pagerank"):
         # add the graph centrality
         central += [graph_centra(graph_copy)]
 
-    return central,elim
+    return central, elim
 
 """
 central_1 = imp_remove(DCMlist[0],20)
@@ -77,10 +78,5 @@ central_20, elim_2_bc = imp_remove(little_mean, 50, rule = "btwcentrality")
 little_mean.in_degree(elim_2_bc)
 little_mean.in_degree(elim_2_bc)
 """
-lit
-lxh2_pk
 
-same_degree = dcm_g.DCMGenerator(3, 1, 3, 1000, 'Erased')
-central_3, elim_3_pk = imp_remove(same_degree, 50)
-central_30, elim_3_bc = imp_remove(same_degree, 50, rule = "btwcentrality")
 

@@ -17,38 +17,65 @@ class PowerLaw:
     a distribution class to specifically generate the bi-degree sequence 
     from double power law distribution with intrinsic dependence.
     
-    We need beta > 2, beta > 2 * d, beta > d + 1 for finite variance, and beta > 1 for zero mean.
-    
+    If W+ and W- are dependent, we need beta > 2, beta > 2 * d, beta > d + 1 for finite variance, and beta > 1 for zero mean.
+    Else, alpha, beta > 2 would satisfy
     """
 
-    def __init__(self, a, alpha, beta, b=10):
+    def __init__(self, a, alpha, beta, b, dependency=True):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
-        self.a = a
-        self.d = beta/ alpha
-        self.beta = beta
-        self.alpha = alpha
+        # dependency is True i.f.f W^+ = aW^d. Otherwise, W^+ and W^- are generated independently
 
-        if self.d == 1:
-            self.b = b
+        self.dependency = dependency
+
+        if dependency:
+            self.d = beta/ alpha
+            self.beta = beta
+            self.alpha = alpha
+
+            if self.alpha == self.beta:
+                if b is None:
+                    b = 10  # set default value to be 10
+                else:
+                    self.b = b
+                self.a = 1
+                self.c = b
+            else:
+                self.a = a
+                self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
+                self.c = (self.b / self.a) ** (self.alpha / self.beta)
+
+
+            print("The parameters are:")
+            print("a = ", self.a)
+            print("b = ", self.b)
+            print("c = ", self.c)
+            print("d = ", self.d)
+            print("alpha = ", self.alpha)
+            print("beta = ", self.beta)
+
+            self.e_w_minus = self.c * beta/ (self.beta - 1)
+            self.e_w_plus = a*beta*self.c**self.d / (beta - self.d)
+
+            self.params = {'a': self.a, 'd': self.d, 'beta': self.beta, 'alpha': self.alpha,
+                           'b': self.b, 'c': self.c}
+
         else:
-            self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
+            self.alpha = alpha
+            self.beta = beta
+            self.b = b
+            self.c = b * alpha * (beta - 1) / ((alpha - 1) * beta)
 
-        self.c = (self.b / self.a) ** (self.alpha / self.beta)
+            print("The parameters are:")
+            print("b = ", self.b)
+            print("c = ", self.c)
+            print("alpha = ", self.alpha)
+            print("beta = ", self.beta)
 
-        print("The parameters are:")
-        print("a = ", self.a)
-        print("b = ", self.b)
-        print("c = ", self.c)
-        print("d = ", self.d)
-        print("alpha = ", self.alpha)
-        print("beta = ", self.beta)
+            self.e_w_minus = self.c * beta / (beta - 1)
+            self.e_w_plus = b * alpha / (alpha - 1)
 
-        self.e_w_minus = self.c * beta/ (self.beta - 1)
-        self.e_w_plus = a*beta*self.c**self.d / (beta - self.d)
-
-        self.params = {'a': self.a, 'd': self.d, 'beta': self.beta, 'alpha': self.alpha,
-                       'b': self.b, 'c': self.c}
+            self.params = {'alpha': self.alpha, 'beta': self.beta, 'b': self.b, 'c': self.c}
 
         # print("E[W^minus] = ", self.e_w_minus)
         # print("E[W^plus] = ", self.e_w_plus)
@@ -60,7 +87,10 @@ class PowerLaw:
 
         for i in range(0, n):
             w_minus[i] = generate_w(self.c, self.beta)
-            w_plus[i] = self.a * w_minus[i] ** self.d
+            if self.dependency:
+                w_plus[i] = self.a * w_minus[i] ** self.d
+            else:
+                w_plus[i] = generate_w(self.b, self.alpha)
 
         return w_plus, w_minus
 
@@ -70,7 +100,10 @@ class PowerLaw:
         :return: tuple with a pair of d+ and d- 
         """
         w_minus = generate_w(self.c, self.beta)
-        w_plus = self.a * w_minus ** self.d
+        if self.dependency:
+            w_plus = self.a * w_minus ** self.d
+        else:
+            w_plus = generate_w(self.b, self.alpha)
         # derive the sample degree from W+ and W-
         d_plus = int(poisson(mu=w_plus).rvs())
         d_minus = int(poisson(mu=w_minus).rvs())
@@ -140,16 +173,19 @@ def test():
     print("mean of out-degree sequence is ", np.mean(dout))
 
 
-ww = []
-poisson_rvs = []
-for i in range(0, 2000):
-    w = generate_w(2, 3)
-    rv = poisson.rvs(mu=w)
-    ww.append(w)
-    poisson_rvs.append(rv)
 
-ww = np.array(ww)
-poisson_rvs = np.array(poisson_rvs)
+def test_2(alpha, beta, b):
+    n = 5000  # graph size
+    # a does not matter
+    pld = PowerLaw(1, alpha, beta, b, dependency=False)
+    din, dout = pld.rvs(n)
+
+    w_minus, w_plus = pld.gene_iid_pairs_of_w(n)
+    print("mean of w_minus is ", np.mean(w_minus))
+    print("mean of w_plus is ", np.mean(w_plus))
+
+    print("mean of in-degree sequence is ", np.mean(din))
+    print("mean of out-degree sequence is ", np.mean(dout))
 
 
 
