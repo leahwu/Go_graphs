@@ -12,10 +12,10 @@ from statsmodels.distributions.empirical_distribution import ECDF
 
 class DCMGenerator(object):
 
-    def __init__(self, a, alpha, beta, n, algorithm, b=None, dependency=True):
+    def __init__(self, a, alpha, beta, n, algorithm, b = None, iden = False, dependency=True):
 
         if algorithm == 'Erased':
-            self.fg = pld.PowerLaw(a, alpha, beta, b, dependency=dependency)
+            self.fg = pld.PowerLaw(a, alpha, beta, b, iden = iden, dependency=dependency)
             degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
             # after modifying the degree sequence to make the sum(d_in) = sum(d_out) using alg 2.1
@@ -61,6 +61,9 @@ class DCMGenerator(object):
         # return to a dictionary
         self.page_rank = nx.pagerank(self.graph)
         self.betweenness_centrality = nx.betweenness_centrality(self.graph)
+        self.total_degree = self.graph.degree()
+        self.in_degree = self.graph.in_degree()
+        self.out_degree = self.graph.out_degree()
 
         self.graph_din = list(self.graph.in_degree().values())
         self.graph_dout = list(self.graph.out_degree().values())

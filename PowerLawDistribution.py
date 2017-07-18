@@ -21,11 +21,12 @@ class PowerLaw:
     Else, alpha, beta > 2 would satisfy
     """
 
-    def __init__(self, a, alpha, beta, b, dependency=True):
+    def __init__(self, a, alpha, beta, b, iden = False, dependency=True):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
         # dependency is True i.f.f W^+ = aW^d. Otherwise, W^+ and W^- are generated independently
 
+        self.iden = iden
         self.dependency = dependency
 
         if dependency:
@@ -40,6 +41,7 @@ class PowerLaw:
                     self.b = b
                 self.a = 1
                 self.c = b
+
             else:
                 self.a = a
                 self.b = (self.alpha / (self.alpha - 1) * (beta - 1) / beta * a ** (self.alpha / beta)) ** (beta / (self.alpha - beta))
@@ -54,7 +56,7 @@ class PowerLaw:
             print("alpha = ", self.alpha)
             print("beta = ", self.beta)
 
-            self.e_w_minus = self.c * beta/ (self.beta - 1)
+            self.e_w_minus = self.c * beta/ (beta - 1)
             self.e_w_plus = a*beta*self.c**self.d / (beta - self.d)
 
             self.params = {'a': self.a, 'd': self.d, 'beta': self.beta, 'alpha': self.alpha,
@@ -79,8 +81,7 @@ class PowerLaw:
 
             self.params = {'alpha': self.alpha, 'beta': self.beta, 'b': self.b, 'c': self.c}
 
-        # print("E[W^minus] = ", self.e_w_minus)
-        # print("E[W^plus] = ", self.e_w_plus)
+        print("Sequence degree mean is ", self.e_w_plus)
 
 
     def gene_iid_pairs_of_w(self, n):
@@ -108,8 +109,13 @@ class PowerLaw:
         else:
             w_plus = generate_w(self.b, self.alpha)
         # derive the sample degree from W+ and W-
-        d_plus = int(poisson(mu=w_plus).rvs())
-        d_minus = int(poisson(mu=w_minus).rvs())
+        if not self.iden:
+            d_plus = int(poisson(mu=w_plus).rvs())
+            d_minus = int(poisson(mu=w_minus).rvs())
+        else:
+            d_plus = int(poisson(mu=w_plus).rvs())
+            d_minus = d_plus
+
         return d_plus, d_minus
 
     def rvs(self, n):

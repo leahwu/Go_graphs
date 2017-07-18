@@ -189,6 +189,10 @@ def graph_remove(dcm, n, rule="pagerank"):
         rank_copy = dict(dcm.page_rank)
     elif rule == "btwcentrality":
         rank_copy = dict(dcm.betweenness_centrality)
+    elif rule == "totaldeg":
+        rank_copy = dcm.total_degree
+    elif rule == "indeg":
+        rank_copy = dcm.in_degree
 
     elim = []  # eliminated list
     for i in np.arange(1, n + 1):
@@ -212,6 +216,8 @@ def graph_remove_indep(dcm, s, rule="pagerank"):
         rank_copy = dict(dcm.page_rank)
     elif rule == "btwcentrality":
         rank_copy = dict(dcm.betweenness_centrality)
+    elif rule == "totaldeg":
+        rank_copy = dcm.
 
     graphs = []
 
