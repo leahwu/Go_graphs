@@ -2,6 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import poisson
 import DCMGenerator as dcm_g
+from math import exp
+from sympy import  integrate
+from sympy import exp as sp_exp
+from sympy.abc import x
+
 
 
 def generate_w(c, beta):
@@ -21,7 +26,7 @@ class PowerLaw:
     Else, alpha, beta > 2 would satisfy
     """
 
-    def __init__(self, a, alpha, beta, b, iden = False, dependency=True):
+    def __init__(self, a, alpha, beta, b, iden=False, dependency=True):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
         # dependency is True i.f.f W^+ = aW^d. Otherwise, W^+ and W^- are generated independently
@@ -197,4 +202,52 @@ def test_2(alpha, beta, b):
     print("mean of out-degree sequence is ", np.mean(dout))
 
 
+def test_din(a, alpha, beta, b=None, dep=True, n=2000):
+    """
+    :param a: 
+    :param alpha: 
+    :param beta: 
+    :param b: 
+    :param dep: 
+    :param n: size of sequence
+    :return: P(din=0), P(dout=0), sample mean of e^[-w+], sample mean of e^[-W-]
+    """
 
+    pl = PowerLaw(a, alpha, beta, b, dependency=dep)
+    w_minus, w_plus = pl.gene_iid_pairs_of_w(n)
+
+    d_out = np.zeros(n, dtype=np.int)
+    d_in = np.zeros(n, dtype=np.int)
+    for i in range(0, n):
+        d_in[i] = int(poisson(mu=w_plus[i]).rvs())
+        d_out[i] = int(poisson(mu=w_minus[i]).rvs())
+
+    p1 = 0
+    p2 = 0
+    for d in d_in:
+        if d == 0:
+            p1 += 1
+    for d in d_out:
+        if d == 0:
+            p2 += 1
+    p1 /= n
+    p2 /= n
+
+    e_w_plus = np.array([exp(-w) for w in w_plus])
+    e_w_minus = np.array([exp(-w) for w in w_minus])
+
+    return p1, p2, e_w_plus.mean(), e_w_minus.mean()
+
+
+
+def integ(alpha, b):
+    """
+    :param alpha: 
+    :param b: 
+    :return: integral of -alpha * b * e^(-x) * x ^(-alpha-1), from b to infty
+    That is the integral of e^-W+ from b to infty
+    That is E[e^[-W+]]
+    """
+    result = integrate(sp_exp(-x) * x**(-alpha-1), (x, b, float("inf")))
+    result *= -alpha * b **alpha
+    return result

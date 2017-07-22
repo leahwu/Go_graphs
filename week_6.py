@@ -216,8 +216,8 @@ def graph_remove_indep(dcm, s, rule="pagerank"):
         rank_copy = dict(dcm.page_rank)
     elif rule == "btwcentrality":
         rank_copy = dict(dcm.betweenness_centrality)
-    elif rule == "totaldeg":
-        rank_copy = dcm.
+    #elif rule == "totaldeg":
+     #   rank_copy =
 
     graphs = []
 
