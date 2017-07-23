@@ -252,6 +252,38 @@ def integ(alpha, b):
     result *= -alpha * b **alpha
     return result
 
+def test_din_coh(alpha, beta, E, d, n=2000):
+    """
+    :return: P(din=0), P(dout=0), sample mean of e^[-w+], sample mean of e^[-W-]
+    """
+
+    pl = coherent_power_Law(alpha, beta, E, d)
+    w_minus, w_plus = pl.gene_iid_pairs_of_w(n)
+
+    d_out = np.zeros(n, dtype=np.int)
+    d_in = np.zeros(n, dtype=np.int)
+
+    for i in range(0, n):
+        d_in[i] = int(poisson(mu=w_plus[i]).rvs())
+        d_out[i] = int(poisson(mu=w_minus[i]).rvs())
+
+    p1 = 0
+    p2 = 0
+    for d in d_in:
+        if d == 0:
+            p1 += 1
+    for d in d_out:
+        if d == 0:
+            p2 += 1
+    p1 /= n
+    p2 /= n
+
+    e_w_plus = np.array([exp(-w) for w in w_plus])
+    e_w_minus = np.array([exp(-w) for w in w_minus])
+
+    return p1, p2, e_w_plus.mean(), e_w_minus.mean()
+
+
 class coherent_power_Law( PowerLaw ):
 
     def __init__(self, alpha, beta, E, d, iden = False):
@@ -285,25 +317,41 @@ class coherent_power_Law( PowerLaw ):
 
         print("Sequence degree mean is ", self.e_w_plus)
 
-        def gene_one_pair(self):
-            """
-            method to generate one sample (d+, d-)
-            :return: tuple with a pair of d+ and d-
-            """
-            w_minus = generate_w(self.c, self.beta)
+    def gene_one_pair(self):
+        """
+        method to generate one sample (d+, d-)
+        :return: tuple with a pair of d+ and d-
+        """
+        w_minus = generate_w(self.c, self.beta)
 
-            w_minus_copy = generate_w(self.c, self.beta) ## indep copy of W-
-
-
-            w_plus = self.a * d * w_minus ** self.s + self.a * (1 - d) * w_minus_copy ** self.s
+        w_minus_copy = generate_w(self.c, self.beta) ## indep copy of W-
 
 
-            # derive the sample degree from W+ and W-
-            if not self.iden:
-                d_plus = int(poisson(mu=w_plus).rvs())
-                d_minus = int(poisson(mu=w_minus).rvs())
-            else:
-                d_plus = int(poisson(mu=w_plus).rvs())
-                d_minus = d_plus
+        w_plus = self.a * d * w_minus ** self.s + self.a * (1 - d) * w_minus_copy ** self.s
 
-            return d_plus, d_minus
+
+        # derive the sample degree from W+ and W-
+        if not self.iden:
+            d_plus = int(poisson(mu=w_plus).rvs())
+            d_minus = int(poisson(mu=w_minus).rvs())
+        else:
+            d_plus = int(poisson(mu=w_plus).rvs())
+            d_minus = d_plus
+
+        return d_plus, d_minus
+
+
+    def gene_iid_pairs_of_w(self, n):
+
+        w_minus = np.zeros(n)
+        w_plus = np.zeros(n)
+
+        for i in range(0, n):
+            w_minus[i] = generate_w(self.c, self.beta)
+
+            w_minus_copy = generate_w(self.c, self.beta)
+
+            w_plus[i] = self.a * self.d * w_minus[i] ** self.s + self.a * (1 - self.d) * w_minus_copy ** self.s
+
+
+        return w_plus, w_minus

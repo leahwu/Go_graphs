@@ -1,5 +1,7 @@
 import math
 import matplotlib.pyplot as plt
+import PowerLawDistribution as pld
+
 
 def corr(alpha, beta, E, d):
     s = beta/alpha
