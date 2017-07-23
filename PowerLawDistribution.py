@@ -251,3 +251,59 @@ def integ(alpha, b):
     result = integrate(sp_exp(-x) * x**(-alpha-1), (x, b, float("inf")))
     result *= -alpha * b **alpha
     return result
+
+class coherent_power_Law( PowerLaw ):
+
+    def __init__(self, alpha, beta, E, d, iden = False):
+        # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
+        # b equals to c, could be assigned with any positive values, we default it as b = 2
+        # dependency is True i.f.f W^+ = aW^d. Otherwise, W^+ and W^- are generated independently
+
+        self.alpha = alpha
+        self.beta = beta
+        self.iden = iden ## whether perfected correlated or not
+        self.s = beta / alpha
+        self.E = E   ## expected degree E
+        self.d = d
+
+        self.dependency = True ## keep the default variable
+
+        self.c =  E * (beta - 1) / beta
+        self.b  = E * (alpha- 1) / alpha
+        self.a = self.c **((alpha - beta) / alpha) * (beta * (alpha - 1)) / (alpha * (beta - 1))
+
+        print("The parameters are:")
+        print("b = ", self.b)
+        print("c = ", self.c)
+        print("d = ", self.d)
+        print("alpha = ", self.alpha)
+        print("beta = ", self.beta)
+        print("s =", self.s)
+
+        self.e_w_minus = self.c * beta / (beta - 1)
+        self.e_w_plus = self.b * alpha / (alpha - 1)
+
+        print("Sequence degree mean is ", self.e_w_plus)
+
+        def gene_one_pair(self):
+            """
+            method to generate one sample (d+, d-)
+            :return: tuple with a pair of d+ and d-
+            """
+            w_minus = generate_w(self.c, self.beta)
+
+            w_minus_copy = generate_w(self.c, self.beta) ## indep copy of W-
+
+
+            w_plus = self.a * d * w_minus ** self.s + self.a * (1 - d) * w_minus_copy ** self.s
+
+
+            # derive the sample degree from W+ and W-
+            if not self.iden:
+                d_plus = int(poisson(mu=w_plus).rvs())
+                d_minus = int(poisson(mu=w_minus).rvs())
+            else:
+                d_plus = int(poisson(mu=w_plus).rvs())
+                d_minus = d_plus
+
+            return d_plus, d_minus

@@ -3,7 +3,7 @@ import PowerLawDistribution as pld
 import  validate as vd
 import numpy as np
 from math import sqrt
-from scipy.stats import pearsonr
+import scipy.stats as st
 import matplotlib.pyplot as plt
 from scipy import stats
 import networkx as nx
@@ -142,7 +142,7 @@ def cons_mean_graph(alpha, d, E, n = 2000, algo = "Erased", iden = False, depend
     theo_corr = get_corr(a, alpha, beta, b)
     print("Correlation: ",theo_corr)
 
-    gen_dcm = dcm.DCMGenerator(a, alpha, beta, n, algo, b = b, iden = False, dependency = dependency)
+    gen_dcm = dcm.DCMGenerator(a, alpha, beta, n, algo, b = b, iden = iden, dependency = dependency)
 
     return gen_dcm.graph
 
@@ -182,7 +182,7 @@ def test_corr(alpha = 3, mean = 3):
 def test_shortpath_marginal(d, s, alpha = 3, E =3, n = 2000,iden = False, dependency = True):
     result = []
     # digraph
-    digraph_whole = cons_mean_graph(alpha, d, E, n = n, iden = False, dependency = True)
+    digraph_whole = cons_mean_graph(alpha, d, E, n = n, iden = iden, dependency = dependency)
 
     Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
     digraph_giant = Gcc[0]
@@ -203,29 +203,7 @@ def test_shortpath_marginal(d, s, alpha = 3, E =3, n = 2000,iden = False, depend
 
     return result
 
-def test_shortpath_indep(s, d, alpha = 3, E =3, n = 2000, iden = False, dependency = True):
-    result = []
-    # digraph
-    digraph_whole = cons_mean_graph(alpha, d, E, n=n, iden = iden, dependency = dependency)
 
-    Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
-    digraph_giant = Gcc[0]
-    print("GiantComponent: ", digraph_giant.number_of_nodes())
-
-    oldgraph, graph_pr, elim_pr, shortpath_pr = graph_remove_indep(digraph_giant, s, rule = "pagerank")
-    oldgraph, graph_bc, elim_bc, shortpath_bc = graph_remove_indep(digraph_giant, s, rule = "btwcentrality")
-    oldgraph, graph_total, elim_total, shortpath_total = graph_remove_indep(digraph_giant, s, rule="totaldeg")
-    oldgraph, graph_indeg, elim_indeg, shortpath_indeg = graph_remove_indep(digraph_giant, s, rule="indeg")
-    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg = graph_remove_indep(digraph_giant, s, rule="outdeg")
-
-    result.append([graph_pr, elim_pr, shortpath_pr])
-    result.append([graph_bc, elim_bc, shortpath_bc])
-    result.append([graph_total, elim_total, shortpath_total])
-    result.append([graph_indeg, elim_indeg, shortpath_indeg])
-    result.append([graph_outdeg, elim_outdeg, shortpath_outdeg])
-    result.append(oldgraph)
-
-    return result
 
 def sort_dict(d):
     sort = sorted(d.items(), key=operator.itemgetter(1), reverse=True)
@@ -247,46 +225,31 @@ def plot_result(result):
     plt.suptitle('Average short path after eliminating node based upon different ranking')
     plt.title('Giant Component Size:  Expected mean:   Correlation: ')
 
-def comprehensive_test(alpha, d, E, s, n = 2000, iden = False, dependency = True):
-    result_mar = []
-    result_indep = []
-    # digraph
-    digraph_whole = cons_mean_graph(alpha, d, E, n = n, iden = iden, dependency = dependency)
-
-    Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
-    digraph_giant = Gcc[0]
-    print("GiantComponent: ", digraph_giant.number_of_nodes())
-
-    oldgraph, graph_pk, elim_pk, shortpath_pk, count_dicon_pk = graph_remove(digraph_giant, n=n, rule="pagerank")
-    oldgraph, graph_bc, elim_bc, shortpath_bc, count_dicon_bc = graph_remove(digraph_giant, n=n, rule="btwcentrality")
-    oldgraph, graph_total, elim_total, shortpath_total, count_dicon_total = graph_remove(digraph_giant, n=n,
-                                                                                         rule="totaldeg")
-    oldgraph, graph_indeg, elim_indeg, shortpath_indeg, count_dicon_indeg = graph_remove(digraph_giant, n=n,
-                                                                                         rule="indeg")
-    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg, count_dicon_outdeg = graph_remove(digraph_giant, n=n,
-                                                                                             rule="outdeg")
-
-    result_mar.append([graph_pk, elim_pk, shortpath_pk, count_dicon_pk])
-    result_mar.append([graph_bc, elim_bc, shortpath_bc, count_dicon_bc])
-    result_mar.append([graph_total, elim_total, shortpath_total, count_dicon_total])
-    result_mar.append([graph_indeg, elim_indeg, shortpath_indeg, count_dicon_indeg])
-    result_mar.append([graph_outdeg, elim_outdeg, shortpath_outdeg, count_dicon_outdeg])
 
 
-    oldgraph, graph_pr, elim_pr, shortpath_pr = graph_remove_indep(digraph_giant,s, rule = "pagerank")
-    oldgraph, graph_bc, elim_bc, shortpath_bc = graph_remove_indep(digraph_giant, s,rule = "btwcentrality")
-    oldgraph, graph_total, elim_total, shortpath_total = graph_remove_indep(digraph_giant, s,rule="totaldeg")
-    oldgraph, graph_indeg, elim_indeg, shortpath_indeg = graph_remove_indep(digraph_giant, s,rule="indeg")
-    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg = graph_remove_indep(digraph_giant, s,rule="outdeg")
+def test_empirical_corr(result):
+    graph = result[0][0]
+    d_in = [v for v in graph.in_degree().values()]
+    d_out = [v for v in graph.out_degree().values()]
+    corr, p = st.pearsonr(d_in, d_out)
+    return corr
 
-    result_indep.append([graph_pr, elim_pr, shortpath_pr])
-    result_indep.append([graph_bc, elim_bc, shortpath_bc])
-    result_indep.append([graph_total, elim_total, shortpath_total])
-    result_indep.append([graph_indeg, elim_indeg, shortpath_indeg])
-    result_indep.append([graph_outdeg, elim_outdeg, shortpath_outdeg])
-    result_indep.append(oldgraph)
+def test_plot(result):
+    path_pr = result[0][2]
+    path_bc = result[1][2]
+    path_tot = result[2][2]
+    path_in = result[3][2]
+    path_out = result[4][2]
+
+    plt.plot(path_pr)
+    plt.plot(path_bc)
+    plt.plot(path_tot)
+    plt.plot(path_in)
+    plt.plot(path_out)
 
 
-
-    return result_mar, result_indep
-
+    plt.suptitle('Different ranking node effect on average short path [Perfectly correlated]')
+    plt.title('Giant size:   Expected mean:  Correlation: ')
+    plt.xlabel("Node eliminated")
+    plt.ylabel('Average short path')
+    plt.legend(['Page rank', 'Btw Centrality', 'Total degree', 'In degree', 'Out degree'])

@@ -12,9 +12,29 @@ from statsmodels.distributions.empirical_distribution import ECDF
 
 class DCMGenerator(object):
 
-    def __init__(self, a, alpha, beta, n, algorithm, b = None, iden = False, dependency=True):
+    def __init__(self, alpha, beta, E, d, n, algorithm = 'Erased', a = 1, b = None, iden = False, dependency=True, type = "coherent"):
 
-        if algorithm == 'Erased':
+        if algorithm == 'Erased' and type == "coherent":
+            self.fg =  pld.coherent_power_Law(alpha, beta, E, d)
+            degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
+
+            # after modify
+            self.d_in = degree_seq[0].tolist()
+            self.d_out = degree_seq[1].tolist()
+
+            # generate the multigraph
+            dcm = nx.directed_configuration_model(self.d_in, self.d_out)
+
+            # remove parallel edges
+            dcm = nx.DiGraph(dcm)
+            # remove self-loops
+            dcm.remove_edges_from(dcm.selfloop_edges())
+
+            # get the simple directed configuration graph
+            self.graph = dcm
+
+
+        elif algorithm == 'Erased':
             self.fg = pld.PowerLaw(a, alpha, beta, b, iden = iden, dependency=dependency)
             degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
@@ -41,7 +61,7 @@ class DCMGenerator(object):
             # get the simple directed configuration graph
             self.graph = dcm
 
-        if algorithm == 'Repeated':
+        elif algorithm == 'Repeated':
             flag = False
             while not flag:
                 self.fg = pld.PowerLaw(a, alpha, beta)
@@ -68,15 +88,16 @@ class DCMGenerator(object):
         self.graph_din = list(self.graph.in_degree().values())
         self.graph_dout = list(self.graph.out_degree().values())
         self.size = len(self.graph_din)
+
+        # the sample mean of in-out degree
         self.mean_in_degree = sum(self.graph_din) / self.size
         self.mean_out_degree = sum(self.graph_dout) / self.size
 
-        BC = list(self.betweenness_centrality.values())
-        bcmax = max(BC)
-        N = len(BC)
-        self.graph_centrality = (N * bcmax - sum(BC)) / (N-1)
+        # sample degree correlation
+        self.graph_corr = st.pearsonr(self.graph_din, self.graph_dout)
 
-
+        # sample BC - PR ranking correlation
+        self.BC_PR_corr = self.spearman_correlation()
 
     def __str__(self):
         s = "The params are:\n"
@@ -226,7 +247,7 @@ class DCMGenerator(object):
 
 
 
-    def spearman_test(self):
+    def spearman_correlation(self):
         pr = list(self.page_rank.values())
         bc = list(self.betweenness_centrality.values())
         corr, pvalue =st.spearmanr(pr, bc)
