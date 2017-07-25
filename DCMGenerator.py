@@ -7,6 +7,7 @@ import ValidDegree as vd
 import scipy.stats as st
 import DCMRevised as dcm_r
 import numpy as np
+
 from statsmodels.distributions.empirical_distribution import ECDF
 
 
@@ -15,7 +16,7 @@ class DCMGenerator(object):
     def __init__(self, alpha, beta, E, d, n, algorithm='Erased', a=1, b=None, iden=False, dependency=True, type="coherent"):
 
         if algorithm == 'Erased' and type == "coherent":
-            self.fg = pld.coherent_power_Law(alpha, beta, E, d)
+            self.fg =  pld.coherent_power_Law(alpha, beta, E, d, iden = iden)
             degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
             # after modify
@@ -87,11 +88,10 @@ class DCMGenerator(object):
 
         self.graph_din = list(self.graph.in_degree().values())
         self.graph_dout = list(self.graph.out_degree().values())
-        self.size = len(self.graph_din)
 
         # the sample mean of in-out degree
-        self.mean_in_degree = sum(self.graph_din) / self.size
-        self.mean_out_degree = sum(self.graph_dout) / self.size
+        self.mean_in_degree = sum(self.graph_din) / n
+        self.mean_out_degree = sum(self.graph_dout) / n
 
         # sample degree correlation
         self.graph_corr = st.pearsonr(self.graph_din, self.graph_dout)

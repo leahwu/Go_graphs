@@ -9,12 +9,9 @@ def corr(alpha, beta, E, d):
     c = E * (beta - 1) / beta
 
     a = c **((alpha - beta) / alpha) * (beta * (alpha - 1)) / (alpha * (beta - 1))
-    print("a ", a)
 
-    b1 = a * c ** s
     b = E * (alpha - 1) / alpha
 
-    print("b1: ", b1, " b: ", b)
 
     E_W_1s = beta / (beta - 1 - s) * c ** (1 + s)
     Var_W_s = beta / (beta - 2 * s) * c ** (2 * s) - (beta * c ** s / (beta - s)) ** 2
@@ -28,8 +25,6 @@ def corr(alpha, beta, E, d):
 
     corr = Cov_Dplus_Dminus / ((Var_Dplus) ** (1/2) * (Var_Dminus) ** (1/2))
 
-    print("var d+", Var_Dplus, "var d-", Var_Dminus)
-    print("cov", Cov_Dplus_Dminus)
 
     return corr
 
