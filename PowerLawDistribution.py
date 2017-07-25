@@ -327,7 +327,7 @@ class coherent_power_Law( PowerLaw ):
         w_minus_copy = generate_w(self.c, self.beta) ## indep copy of W-
 
 
-        w_plus = self.a * d * w_minus ** self.s + self.a * (1 - d) * w_minus_copy ** self.s
+        w_plus = self.a * self.d * w_minus ** self.s + self.a * (1 - self.d) * w_minus_copy ** self.s
 
 
         # derive the sample degree from W+ and W-
