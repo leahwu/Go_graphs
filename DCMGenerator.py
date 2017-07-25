@@ -35,7 +35,7 @@ class DCMGenerator(object):
 
 
         elif algorithm == 'Erased':
-            self.fg = pld.PowerLaw(a, alpha, beta, b, iden = iden, dependency=dependency)
+            self.fg = pld.PowerLaw(a, alpha, beta, b, iden=iden, dependency=dependency)
             degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
             # after modifying the degree sequence to make the sum(d_in) = sum(d_out) using alg 2.1

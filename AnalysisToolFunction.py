@@ -153,7 +153,7 @@ def cons_mean_graph(alpha, d, E, n=2000, algo="Erased", iden=False, dependency =
     theo_corr = get_corr(a, alpha, beta, b)
     print("Correlation: ",theo_corr)
 
-    gen_dcm = dcm.DCMGenerator(a, alpha, beta, n, algo, b = b, iden = iden, dependency = dependency)
+    gen_dcm = dcm.DCMGenerator(a, alpha, beta, n, algo, b=b, iden=iden, dependency = dependency)
 
     return gen_dcm.graph
 

@@ -50,3 +50,18 @@ computed degree corr(theoretical):
 
 观察结果如上
 
+
+
+## Check Powerlaw
+
+一共有四幅图片明明开头是check powerlaw
+
+check power law_1.png 是case1 alpha=beta d=0 我肉眼fit了一下 page rank 和in degree 的斜率在2.1左右，图中fit的直线的斜率就是2.1。
+
+注：我记得老师说当alpha 不等于beta的时候， 还是当degree corr 不等于1的时候，pagerank的斜率应该要和powerlaw 的index差1？ 总而言之就验证in degree的斜率好了，不要提page rank了。
+
+
+
+Check_powerlaw_2.png 是case1 alpha=beta d从0变到1 因为powerlaw index一样，所以预期plot的斜率重合，画图验证这一点了。
+
+check_powerlaw_3.png 是case2 alpha！=beta 但是由于alpha=2。1， beta=2.3 十分接近，我去fit 了graph的in degree， fit的直线斜率是在2.1+， 我觉得是在误差允许范围内。我没有fit page rank。。 
