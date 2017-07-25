@@ -7,6 +7,7 @@ import scipy.stats as st
 import matplotlib.pyplot as plt
 from scipy import stats
 import networkx as nx
+import operator
 
 def max_dic(dic):
     v = list(dic.values())
@@ -50,7 +51,20 @@ def get_corr(a, alpha, beta, b=None):
 
     return corr
 
-def graph_remove(digraph, n, s, rule="pagerank"):
+
+def graph_remove(digraph, s, rule="pagerank"):
+    """
+    
+    :param digraph: 
+    :param s: top s nodes to be removed
+    :param rule: 
+    :return: tuples:
+    digraph: the original graph
+    graph_copy: the graph after eliminating top s ranked nodes
+    elim: the label of nodes being eliminated
+    scc_node: number of nodes in the largest scc
+    """
+
     #remove the top-n-ranked nodes subsequently
     # number of nodes leads to disconnectivity
     count_discon = 0
@@ -72,7 +86,7 @@ def graph_remove(digraph, n, s, rule="pagerank"):
         rank_copy = digraph.out_degree()
 
     elim = []  # eliminated list
-    scc_node = [] # strongly components total node
+    scc_node = [] # number of nodes in the largest strongly components
 
     for i in range(s):
         node_label = max_dic(rank_copy)
@@ -81,16 +95,12 @@ def graph_remove(digraph, n, s, rule="pagerank"):
         graph_copy.remove_node(node_label)
 
         # Strongly Connected Components
-        scc = sorted(nx.strongly_connected_component_subgraphs(graph_copy), key=len, reverse=True)
-        scc_i = scc[0]
-
+        scc_i = max(nx.strongly_connected_component_subgraphs(graph_copy), key=len)  # the largest scc
 
         ave_sp.append(nx.average_shortest_path_length(scc_i))
         scc_node.append(scc_i.number_of_nodes())
 
-
     return digraph, graph_copy, elim, ave_sp, scc_node
-
 
 
 def graph_remove_indep(digraph, s,  rule="pagerank"):
@@ -131,7 +141,8 @@ def graph_remove_indep(digraph, s,  rule="pagerank"):
 
     return digraph, graph_copy, elim, ave_sp
 
-def cons_mean_graph(alpha, d, E, n = 2000, algo = "Erased", iden = False, dependency = True):
+
+def cons_mean_graph(alpha, d, E, n=2000, algo="Erased", iden=False, dependency = True):
     # use alpha, d, and E three parameters to derive graph
     beta = alpha * d
     b = E * (alpha - 1)/alpha
@@ -163,7 +174,8 @@ def test_connected():
         giant_component.append(G0)
     return num_compo, num_giant_node, giant_component
 
-def test_corr(alpha = 3, mean = 3):
+
+def test_corr(alpha=3, mean=3):
     E = mean
     d_lst = range(10001,100001,1)
 
@@ -174,25 +186,25 @@ def test_corr(alpha = 3, mean = 3):
         b = E * (alpha - 1) / alpha
         c = E * (beta - 1) / beta
         a = b / c ** (beta / alpha)
-        corr_d = get_corr(a, alpha, beta, b = b)
+        corr_d = get_corr(a, alpha, beta, b=b)
         corr.append(corr_d)
     return corr
 
 ## ** Important function
-def test_shortpath_marginal(d, s, alpha = 3, E =3, n = 2000,iden = False, dependency = True):
+def test_shortpath_marginal(d, alpha, beta, s, E =3, n = 2000,iden = False, dependency = True):
     result = []
     # digraph
-    digraph_whole = cons_mean_graph(alpha, d, E, n = n, iden = iden, dependency = dependency)
+    digraph_whole = gen_coh_model(alpha, beta, E, d, n = n)
 
     Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
     digraph_giant = Gcc[0]
     print("GiantComponent: ", digraph_giant.number_of_nodes())
 
-    oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s = s, n = n, rule = "pagerank")
-    oldgraph, graph_bc, elim_bc, shortpath_bc, scc_node_bc = graph_remove(digraph_giant, s = s, n = n, rule = "btwcentrality")
-    oldgraph, graph_total, elim_total, shortpath_total, scc_node_total = graph_remove(digraph_giant, s = s, n = n, rule="totaldeg")
-    oldgraph, graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg = graph_remove(digraph_giant, s = s, n = n, rule="indeg")
-    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg = graph_remove(digraph_giant, s = s, n = n, rule="outdeg")
+    oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s=s, rule="pagerank")
+    oldgraph, graph_bc, elim_bc, shortpath_bc, scc_node_bc = graph_remove(digraph_giant, s=s, rule="btwcentrality")
+    oldgraph, graph_total, elim_total, shortpath_total, scc_node_total = graph_remove(digraph_giant, s=s, rule="totaldeg")
+    oldgraph, graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg = graph_remove(digraph_giant, s=s, rule="indeg")
+    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg = graph_remove(digraph_giant, s=s, rule="outdeg")
 
     result.append([graph_pk, elim_pk, shortpath_pk, scc_node_pk])
     result.append([graph_bc, elim_bc, shortpath_bc, scc_node_bc])
@@ -202,7 +214,6 @@ def test_shortpath_marginal(d, s, alpha = 3, E =3, n = 2000,iden = False, depend
     result.append(oldgraph)
 
     return result
-
 
 
 def sort_dict(d):
@@ -253,3 +264,60 @@ def test_plot(result):
     plt.xlabel("Node eliminated")
     plt.ylabel('Average short path')
     plt.legend(['Page rank', 'Btw Centrality', 'Total degree', 'In degree', 'Out degree'])
+
+
+def gen_coh_model(alpha, beta, E, d, n=2000):
+    """
+    :param alpha: 
+    :param beta: 
+    :param E: 
+    :param d: 
+    :param n: 
+    :return: generate coherent model
+    """
+    return dcm.DCMGenerator(alpha, beta, E, d, n)
+
+
+def test_shortpath_marginal_2(model, s):
+    """
+    
+    :param model: dcm model
+    :param s: top s nodes to be removed
+    :return: 
+    """
+    result = []
+    # digraph
+    digraph_whole = model.graph
+
+    Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
+    digraph_giant = Gcc[0]
+    print("GiantComponent: ", digraph_giant.number_of_nodes())
+
+    oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s=s, rule="pagerank")
+    oldgraph, graph_bc, elim_bc, shortpath_bc, scc_node_bc = graph_remove(digraph_giant, s=s, rule="btwcentrality")
+    oldgraph, graph_total, elim_total, shortpath_total, scc_node_total = graph_remove(digraph_giant, s=s,
+                                                                                      rule="totaldeg")
+    oldgraph, graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg = graph_remove(digraph_giant, s=s, rule="indeg")
+    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg = graph_remove(digraph_giant, s=s,
+                                                                                          rule="outdeg")
+
+    result.append([graph_pk, elim_pk, shortpath_pk, scc_node_pk])
+    result.append([graph_bc, elim_bc, shortpath_bc, scc_node_bc])
+    result.append([graph_total, elim_total, shortpath_total, scc_node_total])
+    result.append([graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg])
+    result.append([graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg])
+    result.append(oldgraph)
+
+    return result
+
+
+def plot_ave(result):
+    plt.plot(result[0][2], label='page rank')
+    plt.plot(result[1][2], label='betweenness centrality')
+    plt.plot(result[2][2], label='total degree')
+    plt.plot(result[3][2], label='in degree')
+    plt.plot(result[4][2], label='out degree')
+
+    plt.legend()
+    plt.ylabel('Average shortest path length')
+    plt.xlabel('Rank of the nodes eliminated subsequently')

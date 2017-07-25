@@ -1,6 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 import PowerLawDistribution as pld
+import numpy as np
 
 
 def corr(alpha, beta, E, d):
@@ -33,18 +34,12 @@ def corr(alpha, beta, E, d):
     return corr
 
 
-alpha = 3
-beta = 3
-E = 3
-
-
 def test_corr(alpha, beta, E):
-    d_lst = range(0,101,1)
+    d_lst = np.arange(0, 1.01, 0.01)
     corr_lst = []
 
     for d in d_lst:
-        d_i = d/100
-        cor_d = corr(alpha, beta, E, d_i)
+        cor_d = corr(alpha, beta, E, d)
         corr_lst.append(cor_d)
 
     return corr_lst

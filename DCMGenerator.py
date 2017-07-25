@@ -12,10 +12,10 @@ from statsmodels.distributions.empirical_distribution import ECDF
 
 class DCMGenerator(object):
 
-    def __init__(self, alpha, beta, E, d, n, algorithm = 'Erased', a = 1, b = None, iden = False, dependency=True, type = "coherent"):
+    def __init__(self, alpha, beta, E, d, n, algorithm='Erased', a=1, b=None, iden=False, dependency=True, type="coherent"):
 
         if algorithm == 'Erased' and type == "coherent":
-            self.fg =  pld.coherent_power_Law(alpha, beta, E, d)
+            self.fg = pld.coherent_power_Law(alpha, beta, E, d)
             degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
             # after modify
