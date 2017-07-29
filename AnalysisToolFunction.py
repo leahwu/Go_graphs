@@ -278,22 +278,22 @@ def gen_coh_model(alpha, beta, E, d, n=2000):
     return dcm.DCMGenerator(alpha, beta, E, d, n)
 
 
-def test_shortpath_marginal_2(model, s):
+def test_shortpath_marginal_2(graph, s):
     """
     
-    :param model: dcm model
+    :param graph:
     :param s: top s nodes to be removed
     :return: 
     """
     result = []
     # digraph
-    digraph_whole = model.graph
+    digraph_whole = graph
 
     Gcc = nx.strongly_connected_component_subgraphs(digraph_whole)
     digraph_giant = max(Gcc, key=len)
     print("GiantComponent: ", digraph_giant.number_of_nodes())
 
-    oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s=s, rule="pagerank")
+    oldgraph, graph_pr, elim_pr, shortpath_pr, scc_node_pr = graph_remove(digraph_giant, s=s, rule="pagerank")
     oldgraph, graph_bc, elim_bc, shortpath_bc, scc_node_bc = graph_remove(digraph_giant, s=s, rule="btwcentrality")
     oldgraph, graph_total, elim_total, shortpath_total, scc_node_total = graph_remove(digraph_giant, s=s,
                                                                                       rule="totaldeg")
@@ -301,7 +301,7 @@ def test_shortpath_marginal_2(model, s):
     oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg = graph_remove(digraph_giant, s=s,
                                                                                           rule="outdeg")
 
-    result.append([graph_pk, elim_pk, shortpath_pk, scc_node_pk])
+    result.append([graph_pr, elim_pr, shortpath_pr, scc_node_pr])
     result.append([graph_bc, elim_bc, shortpath_bc, scc_node_bc])
     result.append([graph_total, elim_total, shortpath_total, scc_node_total])
     result.append([graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg])
