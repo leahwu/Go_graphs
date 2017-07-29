@@ -191,13 +191,13 @@ def test_corr(alpha=3, mean=3):
     return corr
 
 ## ** Important function
-def test_shortpath_marginal(d, alpha, beta, s, E =3, n = 2000,iden = False, dependency = True):
+def test_shortpath_marginal(d, alpha, beta, s, E=3, n=2000,iden=False, dependency=True):
     result = []
     # digraph
-    digraph_whole = gen_coh_model(alpha, beta, E, d, n = n)
+    digraph_whole = gen_coh_model(alpha, beta, E, d, n=n).graph
 
-    Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
-    digraph_giant = Gcc[0]
+    Gcc = nx.strongly_connected_component_subgraphs(digraph_whole)
+    digraph_giant = max(Gcc, key=len)
     print("GiantComponent: ", digraph_giant.number_of_nodes())
 
     oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s=s, rule="pagerank")
@@ -289,8 +289,8 @@ def test_shortpath_marginal_2(model, s):
     # digraph
     digraph_whole = model.graph
 
-    Gcc = sorted(nx.strongly_connected_component_subgraphs(digraph_whole), key=len, reverse=True)
-    digraph_giant = Gcc[0]
+    Gcc = nx.strongly_connected_component_subgraphs(digraph_whole)
+    digraph_giant = max(Gcc, key=len)
     print("GiantComponent: ", digraph_giant.number_of_nodes())
 
     oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s=s, rule="pagerank")

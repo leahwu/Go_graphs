@@ -105,7 +105,7 @@ def directed_configuration_model_revised(in_degree_sequence,
     # allow multiedges and selfloops
     G=nx.empty_graph(N,create_using)
 
-    if N==0 or max(in_degree_sequence)==0: # done if no edges
+    if N == 0 or max(in_degree_sequence)==0: # done if no edges
         return G
 
     # build stublists of available degree-repeated stubs
