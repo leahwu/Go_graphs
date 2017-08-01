@@ -6,6 +6,8 @@ from math import exp
 from sympy import  integrate
 from sympy import exp as sp_exp
 from sympy.abc import x
+import scipy.stats as st
+from TheoreticaFunctionlTool import get_corr
 
 
 
@@ -284,9 +286,9 @@ def test_din_coh(alpha, beta, E, d, n=2000):
     return p1, p2, e_w_plus.mean(), e_w_minus.mean()
 
 
-class coherent_power_Law( PowerLaw ):
+class coherent_power_Law(PowerLaw):
 
-    def __init__(self, alpha, beta, E, d, iden = False):
+    def __init__(self, alpha, beta, E, d, iden=False):
         # special case when alpha equals to beta, then a must be 1 and W+ equals to W-
         # b equals to c, could be assigned with any positive values, we default it as b = 2
         # dependency is True i.f.f W^+ = aW^d. Otherwise, W^+ and W^- are generated independently
@@ -355,3 +357,10 @@ class coherent_power_Law( PowerLaw ):
 
 
         return w_plus, w_minus
+
+
+def test_coherent_degree_corr(alpha, beta, E, d, n):
+    co = coherent_power_Law(alpha, beta, E, d)
+    d_in, d_out = co.rvs(n)
+    print('sample corr:', st.pearsonr(d_in, d_out)[0])
+    print('computed corr:', get_corr(alpha, beta, E, d))

@@ -46,7 +46,7 @@ def inter_corr(alpha, beta, E, n = 5000, rep = 10):
         deg_corr_d_mean = np.mean(deg_corr_d_i)
         BC_PR_corr_d_mean = np.mean(BC_PR_corr_d_i)
 
-        theo_corr.append(tft.corr(alpha, beta, E, d/100))
+        theo_corr.append(tft.get_corr(alpha, beta, E, d / 100))
         deg_corr.append(deg_corr_d_mean)
         BC_PR_corr.append(BC_PR_corr_d_mean)
 
