@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import networkx as nx
 import operator
+import pandas as pd
+
 
 def max_dic(dic):
     v = list(dic.values())
@@ -214,6 +216,41 @@ def test_shortpath_marginal(d, alpha, beta, s, E=3, n=2000,iden=False, dependenc
     result.append(oldgraph)
 
     return result
+
+
+def to_df(result, i):
+    # write into a DataFrame
+    # i stands for result[j][i] the i_th item
+    #if i == 2:
+     #   name = 'ave_short_path'
+    #if i == 3:
+     #   name = 'node number'
+    df = pd.DataFrame({'PR': result[0][i], 'BC': result[1][i],
+                       'total_degree': result[2][i],
+                       'in_degree': result[3][i],
+                       'out_degree': result[4][i]}, )
+    return df
+
+#TODO
+def model_to_df(model):
+    # write the basic info of the model to df, including:
+
+    #params, corr
+    df1 = pd.DataFrame(model.fg.params)
+
+    # in degree sequence, out degree sequence, pr, bc
+    df2 = pd.DataFrame({'in_degree': model.d_in, 'out_degree': model.d_out, 'PR': model.page_rank,
+                       'BC': model.betweenness_centrality})
+
+    return df1, df2
+
+def to_excel(result, file_path):
+    writer = pd.ExcelWriter(file_path)
+    df1 = to_df(result, 2)
+    df2 = to_df(result, 3)
+    df1.to_excel(writer, sheet_name='ave_short_path')
+    df2.to_excel(writer, sheet_name='node number being removed')
+    writer.save()
 
 
 def sort_dict(d):

@@ -7,7 +7,7 @@ from sympy import  integrate
 from sympy import exp as sp_exp
 from sympy.abc import x
 import scipy.stats as st
-from TheoreticaFunctionlTool import get_corr
+from TheoreticalFunctionTool import get_corr
 
 
 
@@ -300,6 +300,8 @@ class coherent_power_Law(PowerLaw):
         self.E = E   ## expected degree E
         self.d = d
 
+        self.params = {'alpha': self.alpha, 'beta': self.beta, 'b': self.b, 'c': self.c}
+
         self.dependency = True ## keep the default variable
 
         self.c = E * (beta - 1) / beta
@@ -315,9 +317,9 @@ class coherent_power_Law(PowerLaw):
         print("s =", self.s)
 
         self.e_w_minus = self.c * beta / (beta - 1)
-        self.e_w_plus = self.b * alpha / (alpha - 1)
+        # self.e_w_plus = self.b * alpha / (alpha - 1)
 
-        print("Sequence degree mean is ", self.e_w_plus)
+        print("Sequence degree mean is ", self.e_w_minus)
 
     def gene_one_pair(self):
         """
@@ -333,12 +335,12 @@ class coherent_power_Law(PowerLaw):
 
 
         # derive the sample degree from W+ and W-
-        if not self.iden:
-            d_plus = int(poisson(mu=w_plus).rvs())
-            d_minus = int(poisson(mu=w_minus).rvs())
-        else:
+        if self.iden:
             d_plus = int(poisson(mu=w_plus).rvs())
             d_minus = d_plus
+        else:
+            d_plus = int(poisson(mu=w_plus).rvs())
+            d_minus = int(poisson(mu=w_minus).rvs())
 
         return d_plus, d_minus
 
@@ -359,8 +361,24 @@ class coherent_power_Law(PowerLaw):
         return w_plus, w_minus
 
 
-def test_coherent_degree_corr(alpha, beta, E, d, n):
+def get_sample_corr(alpha, beta, E, d, n):
     co = coherent_power_Law(alpha, beta, E, d)
     d_in, d_out = co.rvs(n)
-    print('sample corr:', st.pearsonr(d_in, d_out)[0])
-    print('computed corr:', get_corr(alpha, beta, E, d))
+    return d_in, d_out, st.pearsonr(d_in, d_out)[0]
+
+
+def test_coherent_degree_corr(alpha, beta, E, d, n, m):
+    # m : simulation times
+    corrs = []
+    d_ins = []
+    d_outs = []
+    for i in range(0, m):
+        result = get_sample_corr(alpha, beta, E, d, n)
+        d_ins.append(result[0])
+        d_outs.append(result[1])
+        corrs.append(result[2])
+
+    corrs = np.array(corrs)
+
+    return d_ins, d_outs, corrs
+

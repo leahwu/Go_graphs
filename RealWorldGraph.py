@@ -5,6 +5,9 @@ from AnalysisToolFunction import test_shortpath_marginal_2, plot_ave
 import scipy.stats as st
 import DCMGenerator as dcm_g
 from week_6 import d_tolist
+from week_6 import get_loglog
+from week_6 import abline
+from week_6 import linear_fit
 
 data = pd.read_csv('wiki-Vote.txt', header=3, sep='\t')
 data.columns=['FromNodeId', 'ToNodeId']
@@ -19,8 +22,8 @@ graph.add_edges_from(edges)
 
 result = test_shortpath_marginal_2(graph, 5)
 
-din = list(graph.in_degree().values())
-dout = list(graph.out_degree().values())
+din = d_tolist(graph.in_degree())
+dout = d_tolist(graph.out_degree())
 
 corr, p = st.pearsonr(din, dout)
 

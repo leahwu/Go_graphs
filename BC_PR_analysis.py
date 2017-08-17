@@ -1,5 +1,5 @@
 import DCMGenerator as dcm
-import TheoreticaFunctionlTool as tft
+import TheoreticalFunctionTool as tft
 import matplotlib.pyplot as plt
 import scipy.stats as st
 import numpy as np

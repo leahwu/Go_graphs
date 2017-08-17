@@ -54,7 +54,7 @@ def get_corr_new_version(alpha, beta, E, d):
     E_W_s = beta / (beta - s) * c ** s
 
     #E[(W^+)^2]
-    E_Wplus_2 = a**2 * (d**2 + (1 - d)**2) * E_W_2s + 2 * a**2 * d * (1 - d) * E**2
+    E_Wplus_2 = a**2 * (d**2 + (1 - d)**2) * E_W_2s + 2 * a**2 * d * (1 - d) * E_W_s**2
 
     Cov_Dplus_Dminus = a*d*E_W_s_plus_1 + a * (1-d)*E_W_s*E - E**2
 
