@@ -300,13 +300,14 @@ class coherent_power_Law(PowerLaw):
         self.E = E   ## expected degree E
         self.d = d
 
-        self.params = {'alpha': self.alpha, 'beta': self.beta, 'b': self.b, 'c': self.c}
-
         self.dependency = True ## keep the default variable
 
         self.c = E * (beta - 1) / beta
         self.b = E * (alpha- 1) / alpha
         self.a = self.c **((alpha - beta) / alpha) * (beta * (alpha - 1)) / (alpha * (beta - 1))
+
+        self.params = {'alpha': self.alpha, 'beta': self.beta, 's': self.s, 'Expected degree': self.E, 'd': self.d,
+                       'c': self.c, 'b': self.b, 'a': self.a}
 
         print("The parameters are:")
         print("b = ", self.b)

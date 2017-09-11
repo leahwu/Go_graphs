@@ -96,7 +96,7 @@ def graph_remove(digraph, s, rule="pagerank"):
         rank_copy.pop(node_label)
         graph_copy.remove_node(node_label)
 
-        # Strongly Connected Components
+        #largest Strongly Connected Components
         scc_i = max(nx.strongly_connected_component_subgraphs(graph_copy), key=len)  # the largest scc
 
         ave_sp.append(nx.average_shortest_path_length(scc_i))
@@ -135,9 +135,8 @@ def graph_remove_indep(digraph, s,  rule="pagerank"):
         rank_copy.pop(node_label)
         graph_copy.remove_node(node_label)
 
-        # strongly connected component
-        scc = sorted(nx.strongly_connected_component_subgraphs(graph_copy), key=len, reverse=True)
-        scc_i = scc[0]
+        #largest strongly connected component
+        scc_i = max(nx.strongly_connected_component_subgraphs(graph_copy), key=len)
 
         ave_sp.append(nx.average_shortest_path_length(scc_i))
 
@@ -191,66 +190,6 @@ def test_corr(alpha=3, mean=3):
         corr_d = get_corr(a, alpha, beta, b=b)
         corr.append(corr_d)
     return corr
-
-## ** Important function
-def test_shortpath_marginal(d, alpha, beta, s, E=3, n=2000,iden=False, dependency=True):
-    result = []
-    # digraph
-    digraph_whole = gen_coh_model(alpha, beta, E, d, n=n).graph
-
-    Gcc = nx.strongly_connected_component_subgraphs(digraph_whole)
-    digraph_giant = max(Gcc, key=len)
-    print("GiantComponent: ", digraph_giant.number_of_nodes())
-
-    oldgraph, graph_pk, elim_pk, shortpath_pk, scc_node_pk = graph_remove(digraph_giant, s=s, rule="pagerank")
-    oldgraph, graph_bc, elim_bc, shortpath_bc, scc_node_bc = graph_remove(digraph_giant, s=s, rule="btwcentrality")
-    oldgraph, graph_total, elim_total, shortpath_total, scc_node_total = graph_remove(digraph_giant, s=s, rule="totaldeg")
-    oldgraph, graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg = graph_remove(digraph_giant, s=s, rule="indeg")
-    oldgraph, graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg = graph_remove(digraph_giant, s=s, rule="outdeg")
-
-    result.append([graph_pk, elim_pk, shortpath_pk, scc_node_pk])
-    result.append([graph_bc, elim_bc, shortpath_bc, scc_node_bc])
-    result.append([graph_total, elim_total, shortpath_total, scc_node_total])
-    result.append([graph_indeg, elim_indeg, shortpath_indeg, scc_node_indeg])
-    result.append([graph_outdeg, elim_outdeg, shortpath_outdeg, scc_node_outdeg])
-    result.append(oldgraph)
-
-    return result
-
-
-def to_df(result, i):
-    # write into a DataFrame
-    # i stands for result[j][i] the i_th item
-    #if i == 2:
-     #   name = 'ave_short_path'
-    #if i == 3:
-     #   name = 'node number'
-    df = pd.DataFrame({'PR': result[0][i], 'BC': result[1][i],
-                       'total_degree': result[2][i],
-                       'in_degree': result[3][i],
-                       'out_degree': result[4][i]}, )
-    return df
-
-#TODO
-def model_to_df(model):
-    # write the basic info of the model to df, including:
-
-    #params, corr
-    df1 = pd.DataFrame(model.fg.params)
-
-    # in degree sequence, out degree sequence, pr, bc
-    df2 = pd.DataFrame({'in_degree': model.d_in, 'out_degree': model.d_out, 'PR': model.page_rank,
-                       'BC': model.betweenness_centrality})
-
-    return df1, df2
-
-def to_excel(result, file_path):
-    writer = pd.ExcelWriter(file_path)
-    df1 = to_df(result, 2)
-    df2 = to_df(result, 3)
-    df1.to_excel(writer, sheet_name='ave_short_path')
-    df2.to_excel(writer, sheet_name='node number being removed')
-    writer.save()
 
 
 def sort_dict(d):
@@ -358,3 +297,81 @@ def plot_ave(result):
     plt.legend()
     plt.ylabel('Average shortest path length')
     plt.xlabel('Rank of the nodes eliminated subsequently')
+
+
+# wrtie to excel function
+
+def to_df(result, i):
+    # write into a DataFrame
+    # i stands for result[j][i] the i_th item
+
+    l = len(result[0][i])
+    df = pd.DataFrame({'PR': result[0][i], 'BC': result[1][i],
+                       'total_degree': result[2][i],
+                       'in_degree': result[3][i],
+                       'out_degree': result[4][i]}, index=np.arange(1, l + 1, 1))
+    df.index.name = '#nodes being removed'
+    if i == 1:
+        df.name = 'index of the removed node'
+    if i == 2:
+        df.name = 'ave_short_path_length'
+    if i == 3:
+        df.name = '#nodes in largest scc'
+    return df
+
+
+def d_tolist(d):
+    # convert the values of a dict to a list
+    return list(d.values())
+
+
+def multiple_dfs(df_list, sheets, file_name, spaces):
+    writer = pd.ExcelWriter(file_name,engine='xlsxwriter')
+    row = 0
+    for dataframe in df_list:
+        dataframe.to_excel(writer,sheet_name=sheets,startrow=row , startcol=0)
+        row = row + len(dataframe.index) + spaces + 1
+    writer.save()
+
+
+def model_to_df(model, params, giant=None):
+    # write the basic info of the model to df, including:
+
+    # params should include at least: alpha, beta, b, c, d, s, E, computed corr (and Giant component)
+
+    df1 = pd.DataFrame(params, index=['value'])
+    df1.name = 'parameters'
+
+    # add corr
+    df1['sample degree corr'] = model.corr_in_and_out()[0]
+    df1['p-value for sample degree corr'] = model.corr_in_and_out()[1]
+    if giant is not None:
+        df1['size of giant component'] = giant
+
+    # in degree sequence, out degree sequence, pr, bc
+    df2 = pd.DataFrame({'in_degree': model.d_in, 'out_degree': model.d_out, 'PR': d_tolist(model.page_rank),
+                       'BC': d_tolist(model.betweenness_centrality)})
+    df2.index.name = 'node index'
+    df2.name = 'in, out, pr, and bc'
+
+
+    #edge sequences
+    df3 = pd.DataFrame(model.graph.edges(), columns=['from', 'to'])
+    df3.name = 'edge sequence'
+
+
+    return df1, df2, df3
+
+
+def model_to_excel(file_path, model, result, params, giant=None):
+    dfs = model_to_df(model, params, giant)
+    writer = pd.ExcelWriter(file_path)
+    for df in dfs:
+        df.to_excel(writer, sheet_name=df.name)
+
+    for i in [1, 2, 3]:
+        df = to_df(result, i)
+
+        df.to_excel(writer, sheet_name=df.name)
+
+    writer.save()

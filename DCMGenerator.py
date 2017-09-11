@@ -16,7 +16,7 @@ class DCMGenerator(object):
     def __init__(self, alpha, beta, E, d, n, algorithm='Erased', a=1, b=None, iden=False, dependency=True, type="coherent"):
 
         if algorithm == 'Erased' and type == "coherent":
-            self.fg =  pld.coherent_power_Law(alpha, beta, E, d, iden = iden)
+            self.fg =  pld.coherent_power_Law(alpha, beta, E, d, iden=iden)
             degree_seq = vd.directed_gen(alpha, beta, self.fg, n)
 
             # after modify
