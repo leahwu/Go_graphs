@@ -2,4 +2,5 @@ This repo records the weekly progress on the Project [DCM_simulation_and_analysi
 
 
 
-Final report [here] (https://github.com/leahwu/DCM_simulaiton_and_analysis/blob/master/FinalReport.pdf)
+Final report [here](https://github.com/leahwu/DCM_simulaiton_and_analysis/blob/master/FinalReport.pdf).
+
