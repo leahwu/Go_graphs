@@ -1,4 +1,1 @@
-# Go_graphs
-This super coooooooool project!
-
-Starting a
+This repo has merged to DCM_simulation_and_analysis. Please go to DCM_simulation_and_analysis.
